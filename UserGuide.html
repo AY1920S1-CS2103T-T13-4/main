@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Mark - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Mark - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
@@ -13,16 +13,32 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.9. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#viewing-help-code-help-code">3.1. Viewing help: <code>help</code></a></li>
+<li><a href="#adding-a-bookmark-code-add-code">3.2. Adding a bookmark: <code>add</code></a></li>
+<li><a href="#listing-all-bookmarks-code-list-code">3.3. Listing all bookmarks: <code>list</code></a></li>
+<li><a href="#editing-a-bookmark-code-edit-code">3.4. Editing a bookmark: <code>edit</code></a></li>
+<li><a href="#locating-bookmarks-by-name-url-or-tag-code-find-code">3.5. Locating bookmarks by name, URL, or tag: <code>find</code></a></li>
+<li><a href="#deleting-a-bookmark-code-delete-code">3.6. Deleting a bookmark: <code>delete</code></a></li>
+<li><a href="#opening-a-bookmark-code-goto-code">3.7. Opening a bookmark: <code>goto</code></a></li>
+<li><a href="#opening-a-bookmark-from-a-reminder-code-goto-reminder-code">3.8. Opening a bookmark from a reminder: <code>goto reminder</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.9. Clearing all entries: <code>clear</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.10. Undoing previous command: <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.11. Redoing the previously undone command: <code>redo</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program: <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.13. Saving the data</a></li>
+<li><a href="#exporting-bookmarks-code-export-code">3.14. Exporting bookmarks: <code>export</code></a></li>
+<li><a href="#importing-bookmarks-code-import-code">3.15. Importing bookmarks: <code>import</code></a></li>
+<li><a href="#creating-automatic-tags-code-autotag-code">3.16. Creating automatic tags: <code>autotag</code></a></li>
+<li><a href="#saving-offline-readable-copies-of-bookmarked-website-code-cache-code">3.17. Saving offline Readable copies of bookmarked website: <code>cache</code></a></li>
+<li><a href="#making-annotations-on-offline-copy-of-bookmarked-website-code-annotate-code">3.18. Making annotations on offline copy of bookmarked website: <code>annotate</code></a></li>
+<li><a href="#viewing-annotated-bookmarked-website-code-offline-code">3.19. Viewing annotated bookmarked website: <code>offline</code></a></li>
+<li><a href="#adding-reminder-code-reminder-code">3.20. Adding reminder: <code>reminder</code></a></li>
+<li><a href="#editing-reminder-code-reminder-edit-code">3.21. Editing reminder: <code>reminder edit</code></a></li>
+<li><a href="#deleting-reminder-code-reminder-delete-code">3.22. Deleting reminder: <code>reminder delete</code></a></li>
+<li><a href="#sorting-bookmarks-code-sort-code">3.23. Sorting bookmarks: <code>sort</code></a></li>
+<li><a href="#expanding-folder-hierarchy-code-expand-code">3.24. Expanding folder hierarchy: <code>expand</code></a></li>
+<li><a href="#collapsing-folder-hierarchy-code-collapse-code">3.25. Collapsing folder hierarchy: <code>collapse</code></a></li>
+<li><a href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.26. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -34,7 +50,14 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 3 (AB3) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB3 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>Mark is for those who prefer to use a <strong>desktop app for managing
+bookmarks.</strong> More importantly, it is optimized for those who prefer to
+work with a <strong>Command Line Interface (CLI)</strong> while still having the
+benefits of a Graphical User Interface (GUI). If you can type fast, Mark
+can get your bookmark organisation and note-taking done faster than
+traditional GUI apps. Interested? Jump to
+<a href="#quick-start"><span class="underline">Section 2, “Quick Start”</span></a> to get
+started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -44,47 +67,51 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
+<p>Ensure you have Java 11 or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
+<p>Download the latest mark.jar here.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your Bookmark Manager.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<p>Double-click the file to start the app. The GUI should appear in a few
+seconds.</p>
+</li>
+<li>
+<p>Type the command in the command box and press Enter to execute it.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. typing help and pressing Enter will open the help window.</p>
+</li>
+</ul>
 </div>
-</div>
-</li>
-<li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
 </li>
 <li>
 <p>Some example commands you can try:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong>list</strong> : lists all bookmarks</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong>add u/git-scm.com/book/en/v2 n/Pro Git f/Tutorials</strong> : adds a bookmark
+named Pro Git to the Bookmark Manager.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong>delete 3</strong> : deletes the 3rd bookmark shown in the current list</p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><strong>exit</strong> : exits the app</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details
+of each command.</p>
 </li>
 </ol>
 </div>
@@ -93,52 +120,65 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
 <p><strong>Command Format</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in UPPER_CASE are the parameters to be supplied by the user e.g.
+in add u/URL, URL is a parameter which can be used as add
+u/luminus.nus.edu.sg.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
-</li>
+<p>Items in square brackets are optional e.g u/URL [t/TAG] can be used as
+u/luminus.nus.edu.sg t/NUS or as u/luminus.nus.edu.sg.</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
-</li>
-<li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Default values for optional items are specified with an = symbol. E.g.
+u/URL [t/TAG=CS2103T]the default value for the tag is CS2103T if not
+specified.</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Items with …​ after them can be used multiple times including zero times
+e.g. [t/TAG]…​ can be used as (i.e. 0 times), t/module, t/module
+t/read-later etc.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g. if the command specifies n/NAME
+u/URL, u/URL n/NAME is also acceptable.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help: <code>help</code></a></h3>
+<div class="paragraph">
+<p>Format: <strong>help</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="adding-a-bookmark-code-add-code"><a class="link" href="#adding-a-bookmark-code-add-code">3.2. Adding a bookmark: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p>Adds a bookmark to the bookmark manager.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+<p>Format: <strong>add u/URL n/NAME [f/FOLDER] [t/TAG]…​</strong></p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A person can have any number of tags (including 0)
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>A bookmark can have any number of tags (including 0).</p>
+</li>
+<li>
+<p>Use the keyword <strong>this</strong> in place of URL to bookmark the current page,
+e.g. <strong>add u/this n/Homepage</strong>. Only valid if a web-page is currently
+being viewed.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -146,33 +186,38 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p>add u/nus-cs2103-ay1920s1.github.io n/Module Website f/CS2103T</p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p>add u/www.youtube.com/watch?v=9AMcN-wkspU n/IntelliJ Tips and Tricks
+t/video t/watch-later</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
+<h3 id="listing-all-bookmarks-code-list-code"><a class="link" href="#listing-all-bookmarks-code-list-code">3.3. Listing all bookmarks: <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>Shows a list of all bookmarks in the bookmark manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>list</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
+<h3 id="editing-a-bookmark-code-edit-code"><a class="link" href="#editing-a-bookmark-code-edit-code">3.4. Editing a bookmark: <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Edits an existing bookmark in the bookmark manager.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="paragraph">
+<p>Format: <strong>edit INDEX [u/URL] [n/NAME] [f/FOLDER] [t/TAG]…​ [r/REMARK]</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Edits the bookmark at the specified INDEX. The index refers to the index
+number shown in the displayed bookmark list. The index must be a
+positive integer 1, 2, 3, …​</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -181,14 +226,14 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing tags, the existing tags of the bookmark will be removed i.e
+adding of tags is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all the bookmark’s tags by typing t/ without specifying
+any tags after it.</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -196,44 +241,50 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+<p><strong>edit 1 n/CS2103T Website f/AY1920-S1</strong><br>
+Edits the name and folder of the 1st bookmark to be CS2103T Website and
+AY1920-S1 respectively.</p>
 </li>
 <li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
+<p><strong>edit 2 t/</strong><br>
+Clears all existing tags from the 2nd bookmark.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
+<h3 id="locating-bookmarks-by-name-url-or-tag-code-find-code"><a class="link" href="#locating-bookmarks-by-name-url-or-tag-code-find-code">3.5. Locating bookmarks by name, URL, or tag: <code>find</code></a></h3>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Finds bookmarks that contain any of the given keywords in their name or
+URL, or that are tagged with the given tag(s).</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="paragraph">
+<p>Format: <strong>find [KEYWORD]&#8230;&#8203; [t/TAG]&#8230;&#8203;</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+<p>At least one keyword or tag must be provided</p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+<p>Keyword search is case insensitive. e.g video will match Video</p>
 </li>
 <li>
-<p>Only the name is searched.</p>
+<p>The order of the keywords does not matter. e.g. Website Video will match
+Video Website</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+<p>Keywords are only searched in the URL and name.</p>
 </li>
 <li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Words will be partially matched e.g. Video will match Videos</p>
+</li>
+<li>
+<p>Bookmarks matching at least one search criteria will be returned (i.e.
+OR search). e.g. Website Video t/Fun will return CS2103T Website, Video
+Streaming, and all videos tagged with Fun</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -241,38 +292,43 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+<p><strong>find Luminus</strong><br>
+Returns luminus website and GER1000 LumiNUS</p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><strong>find CS2103T CS2101 CS2105</strong><br>
+Returns any bookmark with CS2103T, CS2101, or CS2105 in its name or in
+its url</p>
+</li>
+<li>
+<p><strong>find GitHub t/CS2103T</strong><br>
+Returns any bookmark with the tag CS2103T or that contains github in
+either name or URL.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
+<h3 id="deleting-a-bookmark-code-delete-code"><a class="link" href="#deleting-a-bookmark-code-delete-code">3.6. Deleting a bookmark: <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
+<p>Deletes the specified bookmark from the bookmark manager.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="paragraph">
+<p>Format/ <strong>delete INDEX</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
+<p>Deletes the bookmark at the specified INDEX.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list.</p>
+<p>The index refers to the index number shown in the displayed bookmark
+list.</p>
 </li>
 <li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>The index must be a positive integer 1, 2, 3, …​</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -280,43 +336,755 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
+<p><strong>list</strong><br>
+<strong>delete 2</strong> <br>
+Deletes the 2nd bookmark in the bookmark manager.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
+<p><strong>find luminus</strong><br>
+<strong>delete 1</strong><br>
+Deletes the 1st bookmark in the results of the find command.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="opening-a-bookmark-code-goto-code"><a class="link" href="#opening-a-bookmark-code-goto-code">3.7. Opening a bookmark: <code>goto</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>Opens the specified version of the bookmark from the bookmark manager.</p>
+</div>
+<div class="paragraph">
+<p>Fomat: <strong>goto INDEX [v/VERSION]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the flag v/ is not present, go to the online version</p>
+</li>
+<li>
+<p>v/ with no VERSION: Go to the most current version</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Goto 1</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></h3>
+<h3 id="opening-a-bookmark-from-a-reminder-code-goto-reminder-code"><a class="link" href="#opening-a-bookmark-from-a-reminder-code-goto-reminder-code">3.8. Opening a bookmark from a reminder: <code>goto reminder</code></a></h3>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>Opens the specified version of the bookmark from the bookmark manager.</p>
+</div>
+<div class="paragraph">
+<p>Fomat: <strong>goto reminder INDEX</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the index of the reminder as viewed on the dashboard</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>goto reminder 1</strong><br>
+If reminder 1 points to bookmark 5, this command is equivalent to <strong>goto
+5</strong>. I.e. opens bookmark 5.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.9. Clearing all entries: <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
+<p>Clears all entries from the bookmark manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>clear</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.10. Undoing previous command: <code>undo</code></a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Restores the list to the state before the previous undoable command was
+executed.</p>
+</div>
+<div class="paragraph">
+<p>Undoable commands include commands that modify the bookmark list or
+reminders (add, edit, delete, clear, reminder, reminder edit, reminder
+delete etc).</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>undo</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.11. Redoing the previously undone command: <code>redo</code></a></h3>
+<div class="paragraph">
+<p>Reverses the most recent ‘undo’ command.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>redo</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.12. Exiting the program: <code>exit</code></a></h3>
+<div class="paragraph">
+<p>Exits the program.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>exit</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<div class="paragraph">
+<p>Bookmark manager data are saved in the hard disk automatically after any
+command that changes the data.</p>
+</div>
+<div class="paragraph">
+<p>There is no need to save manually. However, it is possible to save with
+a different file name or to save specific bookmarks only, by using the
+command export.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-bookmarks-code-export-code"><a class="link" href="#exporting-bookmarks-code-export-code">3.14. Exporting bookmarks: <code>export</code></a></h3>
+<div class="paragraph">
+<p>Exports the displayed list of bookmarks to the hard disk.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>export [FILENAME]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p></p>
+<div class="paragraph">
+<p>FILENAME should not include the file extension. E.g. myBookmarks and not
+myBookmarks.json</p>
+</div>
+</li>
+<li>
+<p>If no file name is specified, the default file name is the name of the
+first bookmark and “AndOtherBookmarks”. E.g.
+CS2103TWebsiteAndOtherBookmarks</p>
+</li>
+<li>
+<p>FILENAME is overwritten if it already exists.</p>
+</li>
+<li>
+<p>Bookmarks are exported to the folder with relative path data/bookmarks/.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>list</strong><br>
+<strong>export myBookmarks</strong><br>
+Exports all bookmarks in the bookmark manager to a file named
+myBookmarks.json.</p>
+</li>
+<li>
+<p><strong>find luminus</strong><br>
+(result of find command: cs2101Luminus, cs2103TLuminus, cs2105Luminus)<br>
+<strong>export</strong><br>
+Exports the results of the find command to a file named
+cs2101LuminusAndOtherBookmarks.json.</p>
+</li>
+<li>
+<p><strong>find t/favorite</strong><br>
+ <strong>export favorites</strong><br>
+Exports all bookmarks tagged with favorite to a file named
+favorites.json</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importing-bookmarks-code-import-code"><a class="link" href="#importing-bookmarks-code-import-code">3.15. Importing bookmarks: <code>import</code></a></h3>
+<div class="paragraph">
+<p>Imports bookmarks from files on the hard disk.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>import FILENAME [MORE_FILENAMES]&#8230;&#8203;</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>FILENAME should not include the file extension. E.g. myBookmarks and not
+myBookmarks.json</p>
+</li>
+<li>
+<p>FILENAME is case sensitive.</p>
+</li>
+<li>
+<p>FILENAME should be a file stored in the folder data/bookmarks/ (relative
+to the application directory).</p>
+</li>
+<li>
+<p>The file corresponding to FILENAME should have a valid format, identical
+to the JSON files produced by <strong>export</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>import myBookmarks</strong><br>
+Imports bookmarks from the file
+[applicationHome]/data/bookmarks/myBookmarks.json</p>
+</li>
+<li>
+<p><strong>import myBookmarks nusBookmarks youtubeBookmarks</strong><br>
+Imports bookmarks from the files myBookmarks.json, nusBookmarks.json,
+and youtubeBookmarks.json.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-automatic-tags-code-autotag-code"><a class="link" href="#creating-automatic-tags-code-autotag-code">3.16. Creating automatic tags: <code>autotag</code></a></h3>
+<div class="paragraph">
+<p>Creates a tag that will be automatically applied to bookmarks that match
+the given conditions.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>autotag NAME [u/PARTIAL_URL] [nu/NOT_PARTIAL_URL] [f/FOLDER]
+[nf/NOT_FOLDER]&#8230;&#8203; [t/TAG]&#8230;&#8203; [nt/NOT_TAG]&#8230;&#8203;</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If an autotag with name NAME already exists, the user is prompted
+whether the conditions for NAME should be overwritten.</p>
+</li>
+<li>
+<p>An autotag is applied when a bookmark matches all of its conditions (u/,
+nu/, f/, nf/, t/, and nt/). Hence, if conditions contradict each other,
+this autotag will not be automatically applied to any bookmark. E.g.
+u/github.com/bookmarker nu/github.com/bookmarker</p>
+</li>
+<li>
+<p>PARTIAL_URL and NOT_PARTIAL_URL can be any part of a URL. E.g. youtube,
+.nus.edu.sg, or github.com/bookmarker.</p>
+</li>
+<li>
+<p>NOT_PARTIAL_URL, NOT_FOLDER, and NOT_TAG are partial URLs, folders, or
+tags that bookmarks to be tagged should <em>not</em> match.</p>
+</li>
+<li>
+<p>Bookmarks can also be tagged with NAME using regular tags, i.e. if an
+autotag YouTube matches bookmarks with URL youtube.com, it is possible
+for the user to tag bookmarks with URLs not containing youtube.com with
+the tag YouTube.</p>
+</li>
+<li>
+<p>If none of the optional fields are specified, the given tag will not be
+automatically applied to any bookmark. However, NAME can still be used
+as a regular tag.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>autotag Miscellaneous f/NUS nt/academic nt/admin</strong><br>
+ Creates an autotag named Miscellaneous that tags all bookmarks in the
+folder <em>NUS</em> but not tagged as <em>academic</em> or <em>admin</em>.</p>
+</li>
+<li>
+<p><strong>autotag Luminus u/luminus</strong><br>
+ Creates an autotag that adds the tag Luminus to all bookmarks with URLs
+containing <em>luminus</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-offline-readable-copies-of-bookmarked-website-code-cache-code"><a class="link" href="#saving-offline-readable-copies-of-bookmarked-website-code-cache-code">3.17. Saving offline Readable copies of bookmarked website: <code>cache</code></a></h3>
+<div class="paragraph">
+<p>Saves the bookmarked website locally for offline viewing.</p>
+</div>
+<div class="paragraph">
+<p>(Not done automatically for all bookmarks as the user may not want to
+autosave everything. E.g. doesn’t make sense to save a local copy of
+your email website, bank website or LumiNUS)</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>cache INDEX [s/SAVE_NOW] [u/AUTO_UPDATE] [d/VERSION]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the bookmark that you want to save a local copy of</p>
+</li>
+<li>
+<p>SHOULD_AUTOUPDATE (default false) if true, it will check daily for any
+updates. Any old versions will be archived and users will be able to see
+the different versions and delete them / name them</p>
+</li>
+<li>
+<p>If AUTO_UPDATE is missing, will not auto update.</p>
+</li>
+<li>
+<p>VERSION is the version number of cache to be deleted.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>cache 1 s/true u/true</strong><br>
+Saves the bookmark at index 1 locally, and updates it daily.</p>
+</li>
+<li>
+<p><strong>cache 1</strong><br>
+Show the list of cached copies.</p>
+</li>
+<li>
+<p><strong>cache 1 d/2</strong><br>
+Deletes the cached version at the second index.</p>
+</li>
+<li>
+<p><strong>cache 1 u/true</strong><br>
+Manually save a new copy of the site.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>[Updates working copy with notes and suggests migrating notes to
+new working copy. Whenever a local copy is to be updated, the current
+version of the local copy with notes will be archived. Then new copy
+will then be compared to old copy (like diff): if notes are attached to
+affected paragraphs, user will be prompted to keep or skip the notes;
+otherwise notes are automatically copied over.]</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/media/image1.jpg" alt="image" width="451" height="224"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="making-annotations-on-offline-copy-of-bookmarked-website-code-annotate-code"><a class="link" href="#making-annotations-on-offline-copy-of-bookmarked-website-code-annotate-code">3.18. Making annotations on offline copy of bookmarked website: <code>annotate</code></a></h3>
+<div class="paragraph">
+<p>Makes annotations on locally saved, offline version of the bookmarked
+website. You can have various options, including:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Highlight paragraph on local copy and attach a note to said paragraph.<br>
+When a paragraph is chosen to be highlighted, it is optional to add a
+supplementary note (Notes can be added to justify the highlight or as
+content-relevant notes for future reference to bookmark).</p>
+</li>
+<li>
+<p>Modify and update notes of paragraph by changing note content.<br>
+If a highlight is removed but had a note attached to it, the note will
+be moved to a “lost notes” section of the copy.</p>
+</li>
+<li>
+<p>Delete notes or clear annotations<br>
+Notes of a certain paragraph, “lost notes” section, or entire document
+can be wiped out. If you choose to clear annotations, all notes and
+highlights will be removed and the offline copy will be reverted to
+clean slate.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Format: <strong>annotate INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the bookmark that you want to annotate offline version of</p>
+</li>
+<li>
+<p>DELETE is either <strong>all</strong>, <strong>lost</strong> or <strong>one</strong>. If <strong>one</strong>, then a/<strong>P_NUM</strong> must
+be present.</p>
+</li>
+<li>
+<p>P_NUM is the number of the paragraph to be marked or deleted.</p>
+</li>
+<li>
+<p>NOTES is the content of notes to add. If this field is included
+alongside the delete field, then the notes of the paragraph will be
+removed.</p>
+</li>
+<li>
+<p>HCOLOUR is either <strong>orange</strong>, <strong>pink</strong>, <strong>green</strong> or <strong>yellow</strong>. This selects
+the highlight colour to mark out paragraphs. If no colour is specified,
+yellow is the default colour. If this field is included alongside the
+delete field, then highlight of the paragraph will be removed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <strong>annotate edit P_NUM [p/NEW_P_NUM] [n/NOTES]
+[h/HIGHLIGHT_COLOUR]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If HIGHLIGHT_COLOUR is specified with a lost note index, nothing
+happens.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Annotate edit 1 p/2 - Move notes from para 1 to para 2</p>
+</li>
+<li>
+<p>Annotate edit 1 n/new notes - Edit the notes for para 1</p>
+</li>
+<li>
+<p>Annotate edit 1 h/yellow - Change the highlight color for para 1</p>
+</li>
+<li>
+<p>Annotate edit L1 p/1 - Move lost notes L1 to para 1</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: *annotate delete P_NUM *</p>
+</div>
+<div class="paragraph">
+<p>Deletes notes associated with the specified paragraphs.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Annotate delete 1</strong></p>
+</li>
+<li>
+<p><strong>Annotate delete L1</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>annotate 1 a/2 n/summary of paragraph h/yellow</strong><br>
+In offline copy of bookmark 1, highlights paragraph 2 yellow and
+attaches note with content “summary of paragraph” to the paragraph.</p>
+</li>
+<li>
+<p><strong>annotate 1 a/2 h/pink</strong><br>
+In offline copy of bookmark 1, overwrites any existing highlight and
+highlights paragraph 2 with pink. Any notes attached remain attached.</p>
+</li>
+<li>
+<p><strong>annotate 1 a/2 n/change note content</strong><br>
+In offline copy of bookmark 1, changes note attached to paragraph 2 to
+note with content “change note content”.</p>
+</li>
+<li>
+<p><strong>annotate 1 d/one a/2 n/ h/</strong><br>
+In offline copy of bookmark 1, delete all annotations on paragraph 2.
+Highlights and notes are removed altogether for paragraph 2.</p>
+</li>
+<li>
+<p><strong>annotate 1 d/one a/2 n/</strong><br>
+In offline copy of bookmark 1, removes the note on paragraph 2 but
+leaves the highlight on paragraph 2.</p>
+</li>
+<li>
+<p><strong>annotate 1 d/one a/2 h/</strong><br>
+In offline copy of bookmark 1, removes the highlight on paragraph 2.
+Notes on paragraph 2 are moved to “lost notes” section.</p>
+</li>
+<li>
+<p><strong>annotate 1 d/lost</strong><br>
+In offline copy of bookmark 1, deletes all notes in the “lost notes”
+section.</p>
+</li>
+<li>
+<p><strong>annotate 1 d/all</strong><br>
+Removes all annotations in the offline copy of bookmark 1.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-annotated-bookmarked-website-code-offline-code"><a class="link" href="#viewing-annotated-bookmarked-website-code-offline-code">3.19. Viewing annotated bookmarked website: <code>offline</code></a></h3>
+<div class="paragraph">
+<p>Shows offline copy of a selected bookmark. The offline view tab will
+show the latest offline copy with annotations by default.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>offline INDEX [v/VERSION = current]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the bookmark that you want to view notes of</p>
+</li>
+<li>
+<p>VERSION is the version of the cached version to show. Default is the
+current version</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>offline 1</strong><br>
+Shows annotated offline copy of bookmark 1.</p>
+</li>
+<li>
+<p><strong>offline 1 v/2</strong><br>
+Shows the 2nd version of offline copy of bookmark 1. If it is annotated,
+then annotations are shown as well.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-reminder-code-reminder-code"><a class="link" href="#adding-reminder-code-reminder-code">3.20. Adding reminder: <code>reminder</code></a></h3>
+<div class="paragraph">
+<p>Adds a reminder to visit a bookmark. You can set the deadline (when you
+want the reminder remind you) and the start time is optional. The app
+will inform you at that time before the start time and the deadline.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>reminder INDEX t/TIME_DATE [n/NOTE=Open]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the index of the bookmark that you want to add with a reminder.</p>
+</li>
+<li>
+<p>TIME_DATE follows HHMM dd/mm/yyyy format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>reminder 1 2359 02/07/2019</strong><br>
+Adds a reminder for bookmark 1, and set the deadline at 02/07/2019. The
+reminder will remind you at 23:59 on 2nd July, 2019.</p>
+</li>
+<li>
+<p><strong>reminder 1 2359 02/07/2019 1200 29/06/2019</strong><br>
+Adds a reminder for bookmark 1, and set the start time at 12:00 of
+29/06/2019, the deadline at 23:59 of 02/07/2019. The reminder will
+remind you at these two timings.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-reminder-code-reminder-edit-code"><a class="link" href="#editing-reminder-code-reminder-edit-code">3.21. Editing reminder: <code>reminder edit</code></a></h3>
+<div class="paragraph">
+<p>Format: <strong>reminder edit INDEX [t/TIME_DATE] [n/NOTE]</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-reminder-code-reminder-delete-code"><a class="link" href="#deleting-reminder-code-reminder-delete-code">3.22. Deleting reminder: <code>reminder delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes the the specified reminder.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>reminder delete INDEX</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-bookmarks-code-sort-code"><a class="link" href="#sorting-bookmarks-code-sort-code">3.23. Sorting bookmarks: <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sorts the displayed bookmarks according to different criteria (name,
+order added) and displays them as a list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>sort [CRITERIA]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CRITERIA is the field you use to sort. Acceptable values of CRITERIA
+are: <strong>name</strong> and <strong>default</strong>.</p>
+</li>
+<li>
+<p>CRITERIA is case insensitive, e.g. both URL and url are acceptable
+criteria.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>sort name</strong><br>
+Lists all the bookmarks based on name/alphabetical order.</p>
+</li>
+<li>
+<p><strong>sort default</strong><br>
+Sort all the bookmarks based on the order they were added.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="expanding-folder-hierarchy-code-expand-code"><a class="link" href="#expanding-folder-hierarchy-code-expand-code">3.24. Expanding folder hierarchy: <code>expand</code></a></h3>
+<div class="paragraph">
+<p>Expands the folder hierarchy by the specified number of levels.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>expand [LEVEL]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LEVEL should be an integer. If it is more than zero, folder hierarchy
+will expand by LEVEL number of levels. If LEVEL is less than zero,
+folder hierarchy will collapse by the given number of levels. If LEVEL
+is zero, nothing happens.</p>
+</li>
+<li>
+<p>Current level of display + LEVEL must be positive and less than or equal
+to the maximum number of levels</p>
+</li>
+<li>
+<p>If LEVEL is negative, the folder hierarchy will be collapsed by the
+specified number of levels</p>
+</li>
+<li>
+<p>If LEVEL is not specified, expand to the maximum number of levels.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>expand 3</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="collapsing-folder-hierarchy-code-collapse-code"><a class="link" href="#collapsing-folder-hierarchy-code-collapse-code">3.25. Collapsing folder hierarchy: <code>collapse</code></a></h3>
+<div class="paragraph">
+<p>Collapses the folder hierarchy by the specified number of levels.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>collapse [LEVEL]</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LEVEL should be an integer. If it is more than zero, folder hierarchy
+will collapse by LEVEL number of levels. If LEVEL is less than zero,
+folder hierarchy will expand by the given number of levels. If LEVEL is
+zero, nothing happens.</p>
+</li>
+<li>
+<p>Current level of display + LEVEL must be positive and less than or equal
+to the maximum number of levels of the folder hierarchy</p>
+</li>
+<li>
+<p>If LEVEL is negative, the folder hierarchy will be collapsed by the
+specified number of levels</p>
+</li>
+<li>
+<p>If LEVEL is not specified, collapse to show only one level of folders.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>collapse 1</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code"><a class="link" href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.26. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></h3>
+<div class="paragraph">
+<p>Switches the current app view to the tab that corresponds to the given
+index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <strong>tab INDEX</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is 1, 2 or 3, which correspond to the
+<a href="#faq"><span class="underline">Dashboard</span></a>, Online, and Offline tabs
+respectively.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>tab 1</strong><br>
+Goes to the Dashboard tab</p>
+</li>
+<li>
+<p><strong>tab 2</strong><br>
+Goes to the Online tab which is a web view</p>
+</li>
+<li>
+<p><strong>tab 3</strong><br>
+Goes to the Offline tab which shows the offline copy of bookmarks</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -325,42 +1093,34 @@ There is no need to save manually.</p>
 <h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<p><strong>What are Tabs?</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> Different user displays. There are three tabs: dashboard, online view
+(web browser), and offline view (caches and notes).</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>What is the Dashboard?</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> The default tab in view when the application starts. The dashboard
+contains a help section (command summary), favorite tags, current
+reminders, and a view of the folder hierarchy for bookmarks.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&lt;more coming soon&gt;</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>&lt;coming soon&gt;</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-22 18:50:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-28 14:30:53 UTC</div></div></div></body></html>
