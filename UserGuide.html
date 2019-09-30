@@ -31,18 +31,21 @@
 <li><a href="#creating-automatic-tags-code-autotag-code">3.16. Creating automatic tags: <code>autotag</code></a></li>
 <li><a href="#saving-offline-readable-copies-of-bookmarked-website-code-cache-code">3.17. Saving offline Readable copies of bookmarked website: <code>cache</code></a></li>
 <li><a href="#making-annotations-on-offline-copy-of-bookmarked-website-code-annotate-code">3.18. Making annotations on offline copy of bookmarked website: <code>annotate</code></a></li>
-<li><a href="#viewing-annotated-bookmarked-website-code-offline-code">3.19. Viewing annotated bookmarked website: <code>offline</code></a></li>
-<li><a href="#adding-reminder-code-reminder-code">3.20. Adding reminder: <code>reminder</code></a></li>
-<li><a href="#editing-reminder-code-reminder-edit-code">3.21. Editing reminder: <code>reminder edit</code></a></li>
-<li><a href="#deleting-reminder-code-reminder-delete-code">3.22. Deleting reminder: <code>reminder delete</code></a></li>
-<li><a href="#sorting-bookmarks-code-sort-code">3.23. Sorting bookmarks: <code>sort</code></a></li>
-<li><a href="#expanding-folder-hierarchy-code-expand-code">3.24. Expanding folder hierarchy: <code>expand</code></a></li>
-<li><a href="#collapsing-folder-hierarchy-code-collapse-code">3.25. Collapsing folder hierarchy: <code>collapse</code></a></li>
-<li><a href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.26. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></li>
+<li><a href="#deleting-annotations-on-offline-copy-of-bookmarked-website-code-annotate-delete-code">3.19. Deleting annotations on offline copy of bookmarked website: <code>annotate delete</code></a></li>
+<li><a href="#modifying-annotations-on-offline-copy-of-bookmarked-website-code-annotate-edit-code">3.20. Modifying annotations on offline copy of bookmarked website: <code>annotate edit</code></a></li>
+<li><a href="#viewing-annotated-bookmarked-website-code-offline-code">3.21. Viewing annotated bookmarked website: <code>offline</code></a></li>
+<li><a href="#adding-reminder-code-reminder-code">3.22. Adding reminder: <code>reminder</code></a></li>
+<li><a href="#editing-reminder-code-reminder-edit-code">3.23. Editing reminder: <code>reminder edit</code></a></li>
+<li><a href="#deleting-reminder-code-reminder-delete-code">3.24. Deleting reminder: <code>reminder delete</code></a></li>
+<li><a href="#sorting-bookmarks-code-sort-code">3.25. Sorting bookmarks: <code>sort</code></a></li>
+<li><a href="#expanding-folder-hierarchy-code-expand-code">3.26. Expanding folder hierarchy: <code>expand</code></a></li>
+<li><a href="#collapsing-folder-hierarchy-code-collapse-code">3.27. Collapsing folder hierarchy: <code>collapse</code></a></li>
+<li><a href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.28. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
 <li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#glossary">6. Glossary</a></li>
 </ul>
 </div>
 </div>
@@ -444,50 +447,54 @@ delete etc).</p>
 <p>Exits the program.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>exit</strong></p>
+<p>Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
 <div class="paragraph">
-<p>Bookmark manager data are saved in the hard disk automatically after any
-command that changes the data.</p>
+<p>Mark data are saved in the hard disk automatically after any command
+that changes the data.</p>
 </div>
 <div class="paragraph">
-<p>There is no need to save manually. However, it is possible to save with
-a different file name or to save specific bookmarks only, by using the
-command export.</p>
+<p>There is no need to save data manually. It is also possible to save
+specific bookmarks with a different file name using the command <code>export</code>
+(see <a href="#_exporting_bookmarks_export">[_exporting_bookmarks_export]</a>).</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="exporting-bookmarks-code-export-code"><a class="link" href="#exporting-bookmarks-code-export-code">3.14. Exporting bookmarks: <code>export</code></a></h3>
 <div class="paragraph">
-<p>Exports the displayed list of bookmarks to the hard disk.</p>
+<p>Exports the currently displayed list of bookmarks to the hard disk.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>export [FILENAME]</strong></p>
+<p>Format: <code>export [FILENAME]</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
 <p></p>
 <div class="paragraph">
-<p>FILENAME should not include the file extension. E.g. myBookmarks and not
-myBookmarks.json</p>
+<p><code>FILENAME</code> should not include the file extension. E.g. <code>myBookmarks</code> and not
+<code>myBookmarks.json</code></p>
 </div>
 </li>
 <li>
 <p>If no file name is specified, the default file name is the name of the
-first bookmark and “AndOtherBookmarks”. E.g.
-CS2103TWebsiteAndOtherBookmarks</p>
+first bookmark followed by “AndOtherBookmarks”. E.g.
+<code>CS2103TWebsiteAndOtherBookmarks.json</code></p>
 </li>
 <li>
-<p>FILENAME is overwritten if it already exists.</p>
+<p>The file <code>FILENAME</code> is overwritten if it already exists.</p>
 </li>
 <li>
-<p>Bookmarks are exported to the folder with relative path data/bookmarks/.</p>
+<p>Bookmarks are exported to the folder <code>[applicationHome]/data/bookmarks/</code>.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -495,23 +502,23 @@ CS2103TWebsiteAndOtherBookmarks</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>list</strong><br>
-<strong>export myBookmarks</strong><br>
+<p><code>list</code><br>
+<code>export myBookmarks</code><br>
 Exports all bookmarks in the bookmark manager to a file named
-myBookmarks.json.</p>
+<code>myBookmarks.json</code>.</p>
 </li>
 <li>
-<p><strong>find luminus</strong><br>
-(result of find command: cs2101Luminus, cs2103TLuminus, cs2105Luminus)<br>
-<strong>export</strong><br>
-Exports the results of the find command to a file named
-cs2101LuminusAndOtherBookmarks.json.</p>
+<p><code>find luminus</code><br>
+<code>export</code><br>
+Exports all bookmarks found using <code>find</code> (e.g. <code>cs2101Luminus</code>,
+<code>cs2103TLuminus</code>, <code>cs2105Luminus</code>) to a file named
+<code>cs2101LuminusAndOtherBookmarks.json</code>.</p>
 </li>
 <li>
-<p><strong>find t/favorite</strong><br>
- <strong>export favorites</strong><br>
-Exports all bookmarks tagged with favorite to a file named
-favorites.json</p>
+<p><code>find t/favorite</code><br>
+ <code>export favorites</code><br>
+Exports all bookmarks tagged with <code>favorite</code> to a file named
+<code>favorites.json</code>.</p>
 </li>
 </ul>
 </div>
@@ -522,26 +529,30 @@ favorites.json</p>
 <p>Imports bookmarks from files on the hard disk.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>import FILENAME [MORE_FILENAMES]&#8230;&#8203;</strong></p>
+<p>Format: <code>import FILENAME [MORE_FILENAMES]&#8230;&#8203;</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>FILENAME should not include the file extension. E.g. myBookmarks and not
-myBookmarks.json</p>
+<p><code>FILENAME</code> should not include the file extension. E.g. <code>myBookmarks</code> and not
+<code>myBookmarks.json</code></p>
 </li>
 <li>
-<p>FILENAME is case sensitive.</p>
+<p><code>FILENAME</code> is case sensitive.</p>
 </li>
 <li>
-<p>FILENAME should be a file stored in the folder data/bookmarks/ (relative
-to the application directory).</p>
+<p><code>FILENAME</code> should be a file stored in the folder
+<code>[applicationHome]/data/bookmarks/</code>.</p>
 </li>
 <li>
-<p>The file corresponding to FILENAME should have a valid format, identical
-to the JSON files produced by <strong>export</strong>.</p>
+<p>The file corresponding to <code>FILENAME</code> should have a valid format, identical
+to the JSON files produced by <code>export</code>.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -549,14 +560,14 @@ to the JSON files produced by <strong>export</strong>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>import myBookmarks</strong><br>
-Imports bookmarks from the file
-[applicationHome]/data/bookmarks/myBookmarks.json</p>
+<p><code>import myBookmarks</code><br>
+Assuming <code>mark.jar</code> is stored in the folder <code>mark</code>, imports bookmarks from the
+file <code>mark/data/bookmarks/myBookmarks.json</code></p>
 </li>
 <li>
-<p><strong>import myBookmarks nusBookmarks youtubeBookmarks</strong><br>
-Imports bookmarks from the files myBookmarks.json, nusBookmarks.json,
-and youtubeBookmarks.json.</p>
+<p><code>import myBookmarks nusBookmarks youtubeBookmarks</code><br>
+Imports bookmarks from the files <code>myBookmarks.json</code>, <code>nusBookmarks.json</code>,
+and <code>youtubeBookmarks.json</code>.</p>
 </li>
 </ul>
 </div>
@@ -564,45 +575,47 @@ and youtubeBookmarks.json.</p>
 <div class="sect2">
 <h3 id="creating-automatic-tags-code-autotag-code"><a class="link" href="#creating-automatic-tags-code-autotag-code">3.16. Creating automatic tags: <code>autotag</code></a></h3>
 <div class="paragraph">
-<p>Creates a tag that will be automatically applied to bookmarks that match
+<p>Creates a tag that will be automatically applied to bookmarks which match
 the given conditions.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>autotag NAME [u/PARTIAL_URL] [nu/NOT_PARTIAL_URL] [f/FOLDER]
-[nf/NOT_FOLDER]&#8230;&#8203; [t/TAG]&#8230;&#8203; [nt/NOT_TAG]&#8230;&#8203;</strong></p>
+<p>Format: <code>autotag NAME [u/PARTIAL_URL] [nu/NOT_PARTIAL_URL] [f/FOLDER]
+[nf/NOT_FOLDER]&#8230;&#8203; [t/TAG]&#8230;&#8203; [nt/NOT_TAG]&#8230;&#8203;</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>If an autotag with name NAME already exists, the user is prompted
-whether the conditions for NAME should be overwritten.</p>
+<p>At least one condition (<code>u/</code>,
+<code>nu/</code>, <code>f/</code>, <code>nf/</code>, <code>t/</code>, or <code>nt/</code>) must be specified.</p>
 </li>
 <li>
-<p>An autotag is applied when a bookmark matches all of its conditions (u/,
-nu/, f/, nf/, t/, and nt/). Hence, if conditions contradict each other,
-this autotag will not be automatically applied to any bookmark. E.g.
-u/github.com/bookmarker nu/github.com/bookmarker</p>
+<p>If an autotag with name <code>NAME</code> already exists, the user is asked
+whether conditions for <code>NAME</code> should be overwritten.</p>
 </li>
 <li>
-<p>PARTIAL_URL and NOT_PARTIAL_URL can be any part of a URL. E.g. youtube,
-.nus.edu.sg, or github.com/bookmarker.</p>
+<p>An autotag is applied when a bookmark matches all of its conditions.
+Hence, if conditions are contradictory, no bookmarks will be tagged by
+this autotag. E.g. no bookmarks will match the conditions <code>u/github.com/mark
+nu/github.com/mark</code></p>
 </li>
 <li>
-<p>NOT_PARTIAL_URL, NOT_FOLDER, and NOT_TAG are partial URLs, folders, or
-tags that bookmarks to be tagged should <em>not</em> match.</p>
+<p><code>PARTIAL_URL</code> and <code>NOT_PARTIAL_URL</code> can be any part of a URL. E.g.
+<code>youtube</code>, <code>.nus.edu.sg</code>, or <code>github.com/mark</code>.</p>
 </li>
 <li>
-<p>Bookmarks can also be tagged with NAME using regular tags, i.e. if an
-autotag YouTube matches bookmarks with URL youtube.com, it is possible
-for the user to tag bookmarks with URLs not containing youtube.com with
-the tag YouTube.</p>
+<p><code>NOT_PARTIAL_URL</code>, <code>NOT_FOLDER</code>, and <code>NOT_TAG</code> are partial URLs, folders,
+or tags that bookmarks to be tagged should <strong>not</strong> match.</p>
 </li>
 <li>
-<p>If none of the optional fields are specified, the given tag will not be
-automatically applied to any bookmark. However, NAME can still be used
-as a regular tag.</p>
+<p>The tag <code>NAME</code> is still a normal tag. E.g. if an autotag <code>YouTube</code> matches
+bookmarks with URLs containing <code>youtube.com</code>, other bookmarks can still be
+tagged with the tag <code>YouTube</code>.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -610,14 +623,14 @@ as a regular tag.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>autotag Miscellaneous f/NUS nt/academic nt/admin</strong><br>
- Creates an autotag named Miscellaneous that tags all bookmarks in the
-folder <em>NUS</em> but not tagged as <em>academic</em> or <em>admin</em>.</p>
+<p><code>autotag Miscellaneous f/NUS nt/academic nt/admin</code><br>
+ Creates an autotag that adds the tag <code>Miscellaneous</code> to all bookmarks that are
+in the folder <code>NUS</code> but are not tagged with <code>academic</code> or <code>admin</code>.</p>
 </li>
 <li>
-<p><strong>autotag Luminus u/luminus</strong><br>
- Creates an autotag that adds the tag Luminus to all bookmarks with URLs
-containing <em>luminus</em>.</p>
+<p><code>autotag Luminus u/luminus</code><br>
+ Creates an autotag that adds the tag <code>Luminus</code> to all bookmarks with URLs
+containing <code>luminus</code>.</p>
 </li>
 </ul>
 </div>
@@ -691,68 +704,35 @@ otherwise notes are automatically copied over.]</p>
 <div class="sect2">
 <h3 id="making-annotations-on-offline-copy-of-bookmarked-website-code-annotate-code"><a class="link" href="#making-annotations-on-offline-copy-of-bookmarked-website-code-annotate-code">3.18. Making annotations on offline copy of bookmarked website: <code>annotate</code></a></h3>
 <div class="paragraph">
-<p>Makes annotations on locally saved, offline version of the bookmarked
-website. You can have various options, including:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Highlight paragraph on local copy and attach a note to said paragraph.<br>
-When a paragraph is chosen to be highlighted, it is optional to add a
-supplementary note (Notes can be added to justify the highlight or as
-content-relevant notes for future reference to bookmark).</p>
-</li>
-<li>
-<p>Modify and update notes of paragraph by changing note content.<br>
-If a highlight is removed but had a note attached to it, the note will
-be moved to a “lost notes” section of the copy.</p>
-</li>
-<li>
-<p>Delete notes or clear annotations<br>
-Notes of a certain paragraph, “lost notes” section, or entire document
-can be wiped out. If you choose to clear annotations, all notes and
-highlights will be removed and the offline copy will be reverted to
-clean slate.</p>
-</li>
-</ol>
+<p>Adds new annotations on locally saved, offline version of the bookmarked
+website. When this command is given, the UI will switch to the offline tab showing the results of your command.
+With this command, you can highlight a paragraph on the offline document and optionally attach a supplementary
+note to said paragraph. (Notes can be added to justify the highlight or as
+content-relevant notes for future reference to bookmark).
+++
+Overwriting an existing note is possible with this command.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>annotate INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</strong></p>
+<p>Format: <code>annotate INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>INDEX is the bookmark that you want to annotate offline version of</p>
+<p>INDEX is the bookmark that you want to annotate offline version of.
+If INDEX is invalid, a warning message will be displayed.</p>
 </li>
 <li>
-<p>DELETE is either <strong>all</strong>, <strong>lost</strong> or <strong>one</strong>. If <strong>one</strong>, then a/<strong>P_NUM</strong> must
-be present.</p>
+<p>P_NUM is the number of the paragraph to be marked.
+If P_NUM is invalid, a warning message will be displayed.</p>
 </li>
 <li>
-<p>P_NUM is the number of the paragraph to be marked or deleted.</p>
+<p>NOTES is the content of notes to add.</p>
 </li>
 <li>
-<p>NOTES is the content of notes to add. If this field is included
-alongside the delete field, then the notes of the paragraph will be
-removed.</p>
-</li>
-<li>
-<p>HCOLOUR is either <strong>orange</strong>, <strong>pink</strong>, <strong>green</strong> or <strong>yellow</strong>. This selects
+<p>HIGHLIGHT_COLOUR is either <code>orange</code>, <code>pink</code>, <code>green</code> or <code>yellow</code>. This selects
 the highlight colour to mark out paragraphs. If no colour is specified,
-yellow is the default colour. If this field is included alongside the
-delete field, then highlight of the paragraph will be removed.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Format: <strong>annotate edit P_NUM [p/NEW_P_NUM] [n/NOTES]
-[h/HIGHLIGHT_COLOUR]</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If HIGHLIGHT_COLOUR is specified with a lost note index, nothing
-happens.</p>
+yellow is the default colour.
+If colour provided is invalid, a warning message will be displayed.</p>
 </li>
 </ul>
 </div>
@@ -762,93 +742,179 @@ happens.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Annotate edit 1 p/2 - Move notes from para 1 to para 2</p>
-</li>
-<li>
-<p>Annotate edit 1 n/new notes - Edit the notes for para 1</p>
-</li>
-<li>
-<p>Annotate edit 1 h/yellow - Change the highlight color for para 1</p>
-</li>
-<li>
-<p>Annotate edit L1 p/1 - Move lost notes L1 to para 1</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Format: *annotate delete P_NUM *</p>
-</div>
-<div class="paragraph">
-<p>Deletes notes associated with the specified paragraphs.</p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Annotate delete 1</strong></p>
-</li>
-<li>
-<p><strong>Annotate delete L1</strong></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>annotate 1 a/2 n/summary of paragraph h/yellow</strong><br>
+<p><code>annotate 1 p/2 n/summary of paragraph h/yellow</code><br>
 In offline copy of bookmark 1, highlights paragraph 2 yellow and
 attaches note with content “summary of paragraph” to the paragraph.</p>
 </li>
 <li>
-<p><strong>annotate 1 a/2 h/pink</strong><br>
+<p><code>annotate 1 p/2 h/pink</code><br>
 In offline copy of bookmark 1, overwrites any existing highlight and
 highlights paragraph 2 with pink. Any notes attached remain attached.</p>
 </li>
 <li>
-<p><strong>annotate 1 a/2 n/change note content</strong><br>
-In offline copy of bookmark 1, changes note attached to paragraph 2 to
-note with content “change note content”.</p>
-</li>
-<li>
-<p><strong>annotate 1 d/one a/2 n/ h/</strong><br>
-In offline copy of bookmark 1, delete all annotations on paragraph 2.
-Highlights and notes are removed altogether for paragraph 2.</p>
-</li>
-<li>
-<p><strong>annotate 1 d/one a/2 n/</strong><br>
-In offline copy of bookmark 1, removes the note on paragraph 2 but
-leaves the highlight on paragraph 2.</p>
-</li>
-<li>
-<p><strong>annotate 1 d/one a/2 h/</strong><br>
-In offline copy of bookmark 1, removes the highlight on paragraph 2.
-Notes on paragraph 2 are moved to “lost notes” section.</p>
-</li>
-<li>
-<p><strong>annotate 1 d/lost</strong><br>
-In offline copy of bookmark 1, deletes all notes in the “lost notes”
-section.</p>
-</li>
-<li>
-<p><strong>annotate 1 d/all</strong><br>
-Removes all annotations in the offline copy of bookmark 1.</p>
+<p><code>annotate 1 p/2 n/change or add note content</code><br>
+In offline copy of bookmark 1, if paragraph 2 had pre-existing note,
+changes note attached to paragraph 2 to note with content “change or add note content”. Highlight
+colour remains the same. Otherwise, paragraph 2 will be highlighted yellow and
+a new note with content "change or add note content" will be added to the paragraph.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-annotated-bookmarked-website-code-offline-code"><a class="link" href="#viewing-annotated-bookmarked-website-code-offline-code">3.19. Viewing annotated bookmarked website: <code>offline</code></a></h3>
+<h3 id="deleting-annotations-on-offline-copy-of-bookmarked-website-code-annotate-delete-code"><a class="link" href="#deleting-annotations-on-offline-copy-of-bookmarked-website-code-annotate-delete-code">3.19. Deleting annotations on offline copy of bookmarked website: <code>annotate delete</code></a></h3>
 <div class="paragraph">
-<p>Shows offline copy of a selected bookmark. The offline view tab will
+<p>Deletes selected highlights or notes from the offline copy of the given bookmarked website.
+When this command is given, the UI will switch to the offline tab showing the results of your command.
+You can choose to remove just the notes and/or highlight of a paragraph, or clear all annotations
+on an offline copy to revert it to clean slate. You can also choose to remove a note from the
+<em>Stray Notes Section</em> (see Glossary). If given paragraph does not have any notes to remove, nothing is performed.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>annotate delete INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the bookmark that you want to remove annotations of.
+If INDEX is invalid, a warning message will be displayed.</p>
+</li>
+<li>
+<p>P_NUM is the paragraph number or identifier of stray notes to remove. If P_NUM is not provided, all annotations
+will be cleared, reverting the offline document to a clean slate.
+ In the event that an identifier to a stray note is given, the remaining optional fields will be ignored,
+ i.e. that stray note will be deleted.
+ If P_NUM is invalid, a warning message will be displayed.</p>
+</li>
+<li>
+<p>KEEP_NOTES is either <code>true</code> or <code>false</code>. If <code>true</code>, the notes of the paragraph will not be deleted (but
+if the paragraph&#8217;s highlight is removed, the notes will be moved to the <em>Stray Notes Section</em>). Otherwise,
+the notes will be removed. KEEP_NOTES is false by default.
+ If KEEP_NOTES is invalid, KEEP_NOTES will be set to <code>true</code>.</p>
+</li>
+<li>
+<p>KEEP_HIGHLIGHT is either <code>true</code> or <code>false</code>. If <code>true</code>, the highlight of the paragraph will not be deleted
+(if the paragraph&#8217;s note is not removed, the notes will be moved to the <em>Stray Notes Section</em>). Otherwise,
+the highlight will be removed. KEEP_HIGHLIGHT is false by default.
+ If KEEP_HIGHLIGHT is invalid, KEEP_HIGHLIGHT will be set to <code>true</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>annotate delete 1 p/2</code><br>
+In the offline copy of bookmark 1, removes both the note and highlight from paragraph 2.</p>
+</li>
+<li>
+<p><code>annotate delete 1 p/2 n/true</code><br>
+In the offline copy of bookmark 1, removes the highlight of paragraph 2 and moves the note to <em>Stray Note Section</em>.</p>
+</li>
+<li>
+<p><code>annotate delete 1 p/2 h/true</code><br>
+In the offline copy of bookmark 1, removes the note of paragraph 2, leaving the highlight untouched.</p>
+</li>
+<li>
+<p><code>annotate delete 1 p/2 n/true h/true</code><br>
+Nothing happens as both the note and highlight are left alone.</p>
+</li>
+<li>
+<p><code>annotate delete 2 p/S1</code><br>
+Deletes stray note S1 from the offline copy of bookmark 2.</p>
+</li>
+<li>
+<p><code>annotate delete 1</code><br>
+Removes all annotations of the offline copy of bookmark 1.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="modifying-annotations-on-offline-copy-of-bookmarked-website-code-annotate-edit-code"><a class="link" href="#modifying-annotations-on-offline-copy-of-bookmarked-website-code-annotate-edit-code">3.20. Modifying annotations on offline copy of bookmarked website: <code>annotate edit</code></a></h3>
+<div class="paragraph">
+<p>Modifies existing annotations on the offline version of the bookmarked
+website. When this command is given, the UI will switch to the offline tab showing the results of your command.
+With this command, you can choose to overwrite the existing notes to a particular paragraph with another note, or
+choose to move notes from a paragraph to another paragraph. This command also supports moving
+a stray note (see Glossary) back to the main text by specifying which paragraph to move it to.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>annotate edit INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the bookmark that you want to annotate offline version of.
+If INDEX is invalid, a warning message will be displayed.</p>
+</li>
+<li>
+<p>P_NUM is the number of the paragraph or stray note identifier whose annotation is to be edited.
+If P_NUM is invalid, a warning message will be displayed.</p>
+</li>
+<li>
+<p>NEW_P_NUM is the number of the paragraph to move any annotation to.
+If NEW_P_NUM is invalid, a warning message will be displayed.</p>
+</li>
+<li>
+<p>NOTES is the content of notes to change to. Whenever notes is given, it
+replaces any pre-existing note to paragraph P_NUM, if applicable.</p>
+</li>
+<li>
+<p>HIGHLIGHT_COLOUR is either <code>orange</code>, <code>pink</code>, <code>green</code> or <code>yellow</code>. This selects
+the highlight colour to mark out paragraphs. When no colour is specified, if source paragraph is
+already highlighted, the highlight stays the same colour; otherwise the default colour yellow will be used.
+If colour provided is invalid, a warning message will be displayed.
+If HIGHLIGHT_COLOUR is specified with a stray note identifier, nothing happens.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>annotate edit 1 p/2 to/3</code><br>
+In the offline copy of bookmark 1, moves both highlight and notes from paragraph 2 to paragraph 3. Highlight of paragraph 2
+will be removed.</p>
+</li>
+<li>
+<p><code>annotate edit 1 p/2 to/3 h/orange</code><br>
+In the offline copy of bookmark 1, moves note from paragraph 2 to paragraph 3. Highlight of paragraph 2
+will be removed and paragraph 3 will be highlighted with orange.</p>
+</li>
+<li>
+<p><code>annotate edit 1 p/1 n/new notes</code><br>
+In the offline copy of bookmark 1, replaces the content of the note for paragraph 1 with "new notes".</p>
+</li>
+<li>
+<p><code>annotate edit 1 p/1 h/yellow</code><br>
+In the offline copy of bookmark 1, changes the highlight colour to yellow for paragraph 1.</p>
+</li>
+<li>
+<p><code>annotate edit 1 S2 p/1</code><br>
+In the offline copy of bookmark 1, moves stray notes S2 to paragraph 1. If paragraph 1 had a highlight, highlight
+remains and overwrite any existing note with S2 note content. If not default highlight colour yellow is used.</p>
+</li>
+<li>
+<p><code>annotate edit 1 p/2 to/3 n/changing and moving notes</code><br>
+In the offline copy of bookmark 1, paragraph 3 is annotated with the highlight of paragraph 2 and
+note with content "changing and moving notes". Annotation on paragraph 2 is removed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-annotated-bookmarked-website-code-offline-code"><a class="link" href="#viewing-annotated-bookmarked-website-code-offline-code">3.21. Viewing annotated bookmarked website: <code>offline</code></a></h3>
+<div class="paragraph">
+<p>Switches to offline tab and shows offline copy of a selected bookmark. The offline view tab will
 show the latest offline copy with annotations by default.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>offline INDEX [v/VERSION = current]</strong></p>
+<p>Format: <code>offline INDEX [v/VERSION = current]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -867,11 +933,11 @@ current version</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>offline 1</strong><br>
+<p><code>offline 1</code><br>
 Shows annotated offline copy of bookmark 1.</p>
 </li>
 <li>
-<p><strong>offline 1 v/2</strong><br>
+<p><code>offline 1 v/2</code><br>
 Shows the 2nd version of offline copy of bookmark 1. If it is annotated,
 then annotations are shown as well.</p>
 </li>
@@ -879,7 +945,7 @@ then annotations are shown as well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-reminder-code-reminder-code"><a class="link" href="#adding-reminder-code-reminder-code">3.20. Adding reminder: <code>reminder</code></a></h3>
+<h3 id="adding-reminder-code-reminder-code"><a class="link" href="#adding-reminder-code-reminder-code">3.22. Adding reminder: <code>reminder</code></a></h3>
 <div class="paragraph">
 <p>Adds a reminder to visit a bookmark. You can set the deadline (when you
 want the reminder remind you) and the start time is optional. The app
@@ -918,13 +984,13 @@ remind you at these two timings.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-reminder-code-reminder-edit-code"><a class="link" href="#editing-reminder-code-reminder-edit-code">3.21. Editing reminder: <code>reminder edit</code></a></h3>
+<h3 id="editing-reminder-code-reminder-edit-code"><a class="link" href="#editing-reminder-code-reminder-edit-code">3.23. Editing reminder: <code>reminder edit</code></a></h3>
 <div class="paragraph">
 <p>Format: <strong>reminder edit INDEX [t/TIME_DATE] [n/NOTE]</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-reminder-code-reminder-delete-code"><a class="link" href="#deleting-reminder-code-reminder-delete-code">3.22. Deleting reminder: <code>reminder delete</code></a></h3>
+<h3 id="deleting-reminder-code-reminder-delete-code"><a class="link" href="#deleting-reminder-code-reminder-delete-code">3.24. Deleting reminder: <code>reminder delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the the specified reminder.</p>
 </div>
@@ -933,7 +999,7 @@ remind you at these two timings.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-bookmarks-code-sort-code"><a class="link" href="#sorting-bookmarks-code-sort-code">3.23. Sorting bookmarks: <code>sort</code></a></h3>
+<h3 id="sorting-bookmarks-code-sort-code"><a class="link" href="#sorting-bookmarks-code-sort-code">3.25. Sorting bookmarks: <code>sort</code></a></h3>
 <div class="paragraph">
 <p>Sorts the displayed bookmarks according to different criteria (name,
 order added) and displays them as a list.</p>
@@ -970,7 +1036,7 @@ Sort all the bookmarks based on the order they were added.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="expanding-folder-hierarchy-code-expand-code"><a class="link" href="#expanding-folder-hierarchy-code-expand-code">3.24. Expanding folder hierarchy: <code>expand</code></a></h3>
+<h3 id="expanding-folder-hierarchy-code-expand-code"><a class="link" href="#expanding-folder-hierarchy-code-expand-code">3.26. Expanding folder hierarchy: <code>expand</code></a></h3>
 <div class="paragraph">
 <p>Expands the folder hierarchy by the specified number of levels.</p>
 </div>
@@ -1010,7 +1076,7 @@ specified number of levels</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="collapsing-folder-hierarchy-code-collapse-code"><a class="link" href="#collapsing-folder-hierarchy-code-collapse-code">3.25. Collapsing folder hierarchy: <code>collapse</code></a></h3>
+<h3 id="collapsing-folder-hierarchy-code-collapse-code"><a class="link" href="#collapsing-folder-hierarchy-code-collapse-code">3.27. Collapsing folder hierarchy: <code>collapse</code></a></h3>
 <div class="paragraph">
 <p>Collapses the folder hierarchy by the specified number of levels.</p>
 </div>
@@ -1050,7 +1116,7 @@ specified number of levels</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code"><a class="link" href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.26. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></h3>
+<h3 id="switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code"><a class="link" href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.28. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></h3>
 <div class="paragraph">
 <p>Switches the current app view to the tab that corresponds to the given
 index.</p>
@@ -1101,8 +1167,27 @@ Goes to the Offline tab which shows the offline copy of bookmarks</p>
 (web browser), and offline view (caches and notes).</pre>
 </div>
 </div>
+<div id="imgId-dashboard" class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/uimockup1_dashboard.png" alt="@Dashboard Tab View" width="600" height="400">
+</div>
+<div class="title">Figure 1. Mark&#8217;s Dashboard Tab View</div>
+</div>
+<div id="imgId-online" class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/uimockup1_online.png" alt="@Online Tab View" width="600" height="400">
+</div>
+<div class="title">Figure 2. Mark&#8217;s Online Tab View</div>
+</div>
+<div id="imgId-offline" class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/uimockup1_offline.png" alt="@Offline Tab View" width="600" height="400">
+</div>
+<div class="title">Figure 3. Mark&#8217;s Offline Tab View</div>
+</div>
 <div class="paragraph">
-<p><strong>What is the Dashboard?</strong></p>
+<p>++
+<strong>What is the Dashboard?</strong></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1123,4 +1208,22 @@ reminders, and a view of the folder hierarchy for bookmarks.</pre>
 <p>&lt;coming soon&gt;</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-30 08:44:37 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This glossary aims to provide a definition for the special vocabulary used in this user guide.</p>
+</div>
+<div class="paragraph">
+<p><strong>offline</strong> Refers to files stored locally on the computer.</p>
+</div>
+<div class="paragraph">
+<p><strong>online</strong> Refers to having web access, namely to browse the internet.</p>
+</div>
+<div class="paragraph">
+<p><strong>stray</strong> Annotated notes that are not attached to an existing paragraph are described as stray.
+Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <em>Notes</em> column on the offline, annotated copy.</p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-30 16:01:27 UTC</div></div></div></body></html>
