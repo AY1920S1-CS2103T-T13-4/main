@@ -686,8 +686,8 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bookmark the currently viewing website</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">do not need to copy paste the URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bookmark the current website being viewed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save the page without having to copy-and-paste the URL</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -705,7 +705,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit a bookmark</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make changes in case I type something wrongly or change my mind</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -723,7 +723,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add multiple tags to a bookmark</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see what type of bookmark it is at a glance</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -753,7 +753,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view an offline copy of the content of a bookmark</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">still access the bookmark when there is no internet access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">still access the bookmarked page when there is no internet access</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -964,9 +964,6 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 <h3 id="use-case-edit-bookmark" class="discrete">Use case: Edit bookmark</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1009,6 +1006,98 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>3a1. Mark shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-export-bookmarks" class="discrete">Use case: Export bookmarks</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list bookmarks.</p>
+</li>
+<li>
+<p>Mark shows a list of bookmarks.</p>
+</li>
+<li>
+<p>User requests to export all the bookmarks in this list.</p>
+</li>
+<li>
+<p>Mark creates a file containing the bookmarks on the hard disk.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. User specifies a file name to be written to.</p>
+<div class="paragraph">
+<p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-import-bookmarks" class="discrete">Use case: Import bookmarks</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to import bookmarks from a given file.</p>
+</li>
+<li>
+<p>Mark imports bookmarks from the specified file and displays the final list of bookmarks.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No file with the specified file name is found.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mark shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. The file format is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Mark shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1062,6 +1151,9 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><em>{More to be added}</em></p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1078,6 +1170,9 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
+<li>
+<p>The project is expected to adhere to a schedule that delivers features in increments every two weeks.</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -1093,6 +1188,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
 <dd>
 <p>Windows, Linux, Unix, OS-X</p>
+</dd>
+<dt class="hdlist1"><a id="cache"></a> Cache</dt>
+<dd>
+<p>The collection of offline copies of a specific bookmark</p>
 </dd>
 </dl>
 </div>
@@ -1244,4 +1343,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-30 16:04:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-30 17:50:51 UTC</div></div></div></body></html>
