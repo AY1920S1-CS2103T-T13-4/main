@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Mark - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Mark - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Mark</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T13-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Mark - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team CS2103T-T13-4</code>      Since: <code>Sept 2019</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -40,12 +40,12 @@
 <li><a href="#sorting-bookmarks-code-sort-code">3.25. Sorting bookmarks: <code>sort</code></a></li>
 <li><a href="#expanding-folder-hierarchy-code-expand-code">3.26. Expanding folder hierarchy: <code>expand</code></a></li>
 <li><a href="#collapsing-folder-hierarchy-code-collapse-code">3.27. Collapsing folder hierarchy: <code>collapse</code></a></li>
-<li><a href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.28. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></li>
+<li><a href="#switching-a-href-tabs-tabs-a-code-tab-code">3.28. Switching <a href="#Tabs">tabs</a>: <code>tab</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
-<li><a href="#glossary">6. Glossary</a></li>
+<li><a href="#glossary">5. Glossary</a></li>
+<li><a href="#command-summary">6. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -53,13 +53,13 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mark is for those who prefer to use a <strong>desktop app for managing
-bookmarks.</strong> More importantly, it is optimized for those who prefer to
-work with a <strong>Command Line Interface (CLI)</strong> while still having the
+<p>Mark is for those who <strong>prefer to use a desktop app for managing
+bookmarks</strong>. More importantly, it is <strong>optimized for those who prefer to
+work with a Command Line Interface</strong> (CLI) while still having the
 benefits of a Graphical User Interface (GUI). If you can type fast, Mark
 can get your bookmark organisation and note-taking done faster than
 traditional GUI apps. Interested? Jump to
-<a href="#quick-start"><span class="underline">Section 2, “Quick Start”</span></a> to get
+<a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get
 started. Enjoy!</p>
 </div>
 </div>
@@ -70,44 +70,42 @@ started. Enjoy!</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java 11 or above installed in your Computer.</p>
+<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest mark.jar here.</p>
+<p>Download the latest <code>mark.jar</code> <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Bookmark Manager.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few
-seconds.</p>
-</li>
-<li>
-<p>Type the command in the command box and press Enter to execute it.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>e.g. typing help and pressing Enter will open the help window.</p>
-</li>
-</ul>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
 </div>
+</div>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
 </li>
 <li>
 <p>Some example commands you can try:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>list</strong> : lists all bookmarks</p>
+<p><strong><code>list</code></strong> : lists all bookmarks</p>
 </li>
 <li>
-<p><strong>add u/git-scm.com/book/en/v2 n/Pro Git f/Tutorials</strong> : adds a bookmark
-named Pro Git to the Bookmark Manager.</p>
+<p><strong><code>add u/git-scm.com/book/en/v2 n/Pro Git f/Tutorials</code></strong> : adds a bookmark
+named <code>Pro Git</code> to the Bookmark Manager.</p>
 </li>
 <li>
-<p><strong>delete 3</strong> : deletes the 3rd bookmark shown in the current list</p>
+<p><strong><code>delete 3</code></strong> : deletes the 3rd bookmark shown in the current list</p>
 </li>
 <li>
-<p><strong>exit</strong> : exits the app</p>
+<p><strong><code>exit</code></strong> : exits the app</p>
 </li>
 </ul>
 </div>
@@ -123,39 +121,38 @@ of each command.</p>
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
 <p><strong>Command Format</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in UPPER_CASE are the parameters to be supplied by the user e.g.
-in add u/URL, URL is a parameter which can be used as add
-u/luminus.nus.edu.sg.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g.
+in <code>add u/URL</code>, <code>URL</code> is a parameter which can be used as <code>add u/luminus.nus.edu.sg</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g u/URL [t/TAG] can be used as
-u/luminus.nus.edu.sg t/NUS or as u/luminus.nus.edu.sg.</p>
-<div class="ulist">
-<ul>
+<p>Items in square brackets are optional e.g <code>u/URL [t/TAG]</code> can be used as
+<code>u/luminus.nus.edu.sg t/NUS</code> or as <code>u/luminus.nus.edu.sg</code>.</p>
+</li>
 <li>
-<p>Default values for optional items are specified with an = symbol. E.g.
-u/URL [t/TAG=CS2103T]the default value for the tag is CS2103T if not
+<p>Default values for optional items are specified with an <code>=</code> symbol. E.g.
+<code>u/URL [t/TAG=CS2103T]</code>, the default value for the tag is <code>CS2103T</code> if not
 specified.</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times
+e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/module</code>,
+<code>t/module t/read-later</code> etc.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g. if the command specifies
+<code>u/URL n/NAME</code>, <code>n/NAME u/URL</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Items with …​ after them can be used multiple times including zero times
-e.g. [t/TAG]…​ can be used as (i.e. 0 times), t/module, t/module
-t/read-later etc.</p>
-</li>
-<li>
-<p>Parameters can be in any order e.g. if the command specifies n/NAME
-u/URL, u/URL n/NAME is also acceptable.</p>
-</li>
-</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help: <code>help</code></a></h3>
@@ -180,19 +177,29 @@ u/URL, u/URL n/NAME is also acceptable.</p>
 </li>
 <li>
 <p>Use the keyword <code>this</code> in place of URL to bookmark the current page,
-e.g.</p>
+e.g. <code>add u/this n/Homepage</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>add u/this n/Homepage</code><br>
-Bookmarks the current place and names it Homepage.
-Only valid if a web-page is currently being viewed.
-* <code>add u/nus-cs2103-ay1920s1.github.io n/Module Website f/CS2103T</code>
-* <code>add u/www.youtube.com/watch?v=9AMcN-wkspU n/IntelliJ Tips and Tricks t/video t/watch-later</code></p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add u/this n/Homepage</code><br>
+Bookmarks the current place and names it <code>Homepage</code>.
+Only valid if a web-page is currently being viewed.</p>
+</li>
+<li>
+<p><code>add u/nus-cs2103-ay1920s1.github.io n/Module Website f/CS2103T</code></p>
+</li>
+<li>
+<p><code>add u/www.youtube.com/watch?v=9AMcN-wkspU n/IntelliJ Tips and Tricks t/video t/watch-later</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -363,17 +370,22 @@ Deletes the 1st bookmark in the results of the find command.</p>
 <p>Opens the specified version of the bookmark from the bookmark manager.</p>
 </div>
 <div class="paragraph">
-<p>Fomat: <strong>goto INDEX [v/VERSION]</strong></p>
+<p>Format: <code>goto INDEX [v/VERSION]</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>If the flag v/ is not present, go to the online version</p>
+<p>If the flag <code>v/</code> is not present, go to the online version.</p>
 </li>
 <li>
-<p>v/ with no VERSION: Go to the most current version</p>
+<p>If <code>v/</code> is present but <code>VERSION</code>  is not specified:
+the most current version of the bookmark will be opened.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -381,7 +393,14 @@ Deletes the 1st bookmark in the results of the find command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Goto 1</p>
+<p><code>list</code><br>
+<code>goto 1</code><br>
+Opens the first bookmark in the bookmark manager.</p>
+</li>
+<li>
+<p><code>list</code><br>
+<code>goto 1 v/1</code><br>
+Opens the first version of the first bookmark in the bookmark manager.</p>
 </li>
 </ul>
 </div>
@@ -389,17 +408,24 @@ Deletes the 1st bookmark in the results of the find command.</p>
 <div class="sect2">
 <h3 id="opening-a-bookmark-from-a-reminder-code-goto-reminder-code"><a class="link" href="#opening-a-bookmark-from-a-reminder-code-goto-reminder-code">3.8. Opening a bookmark from a reminder: <code>goto reminder</code></a></h3>
 <div class="paragraph">
-<p>Opens the specified version of the bookmark from the bookmark manager.</p>
+<p>Opens the related bookmark of the specified reminder from the bookmark manager.</p>
 </div>
 <div class="paragraph">
-<p>Fomat: <strong>goto reminder INDEX</strong></p>
+<p>Format: <code>goto reminder INDEX</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>INDEX is the index of the reminder as viewed on the dashboard</p>
+<p>INDEX is the index of the reminder as viewed on the dashboard.</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …​</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -407,9 +433,9 @@ Deletes the 1st bookmark in the results of the find command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>goto reminder 1</strong><br>
-If reminder 1 points to bookmark 5, this command is equivalent to <strong>goto
-5</strong>. I.e. opens bookmark 5.</p>
+<p><code>goto reminder 1</code><br>
+If reminder 1 points to bookmark 5, this command is equivalent to
+<code>goto 5</code>. (i.e. opens the 5th bookmark in the bookmark manager.)</p>
 </li>
 </ul>
 </div>
@@ -420,7 +446,7 @@ If reminder 1 points to bookmark 5, this command is equivalent to <strong>goto
 <p>Clears all entries from the bookmark manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>clear</strong></p>
+<p>Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -430,12 +456,20 @@ If reminder 1 points to bookmark 5, this command is equivalent to <strong>goto
 executed.</p>
 </div>
 <div class="paragraph">
-<p>Undoable commands include commands that modify the bookmark list or
-reminders (add, edit, delete, clear, reminder, reminder edit, reminder
-delete etc).</p>
+<p>Format: <code>undo</code></p>
 </div>
-<div class="paragraph">
-<p>Format: <strong>undo</strong></p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Undoable commands include commands that modify the bookmark list or
+reminders, which includes <code>add</code>, <code>edit</code>, <code>delete</code>, <code>clear</code>, <code>reminder</code>,
+<code>reminder edit</code>, <code>reminder delete</code>, etc).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -444,7 +478,7 @@ delete etc).</p>
 <p>Reverses the most recent ‘undo’ command.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>redo</strong></p>
+<p>Format: <code>redo</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -762,7 +796,7 @@ a new note with content "change or add note content" will be added to the paragr
 When this command is given, the UI will switch to the offline tab showing the results of your command.
 You can choose to remove just the notes and/or highlight of a paragraph, or clear all annotations
 on an offline copy to revert it to clean slate. You can also choose to remove a note from the
-<em>Stray Notes Section</em> (see Glossary). If given paragraph does not have any notes to remove, nothing is performed.</p>
+<a href="#stray-notes">Stray Notes Section</a>. If given paragraph does not have any notes to remove, nothing is performed.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>annotate delete INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p>
@@ -1066,8 +1100,10 @@ Sort all the bookmarks based on the order they were added.</p>
 <p>Expands the folder hierarchy by the specified number of levels.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>expand [LEVEL]</strong></p>
+<p>Format: <code>expand [LEVEL]</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1078,24 +1114,23 @@ is zero, nothing happens.</p>
 </li>
 <li>
 <p>Current level of display + LEVEL must be positive and less than or equal
-to the maximum number of levels</p>
-</li>
-<li>
-<p>If LEVEL is negative, the folder hierarchy will be collapsed by the
-specified number of levels</p>
+to the maximum number of levels.</p>
 </li>
 <li>
 <p>If LEVEL is not specified, expand to the maximum number of levels.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
 <div class="paragraph">
-<p>Examples</p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>expand 3</strong></p>
+<p><code>expand 3</code><br>
+Expands the folder hierarchy by 3 levels.</p>
 </li>
 </ul>
 </div>
@@ -1106,8 +1141,10 @@ specified number of levels</p>
 <p>Collapses the folder hierarchy by the specified number of levels.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>collapse [LEVEL]</strong></p>
+<p>Format: <code>collapse [LEVEL]</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1118,62 +1155,64 @@ zero, nothing happens.</p>
 </li>
 <li>
 <p>Current level of display + LEVEL must be positive and less than or equal
-to the maximum number of levels of the folder hierarchy</p>
-</li>
-<li>
-<p>If LEVEL is negative, the folder hierarchy will be collapsed by the
-specified number of levels</p>
+to the maximum number of levels of the folder hierarchy.</p>
 </li>
 <li>
 <p>If LEVEL is not specified, collapse to show only one level of folders.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
 <div class="paragraph">
-<p>Examples</p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>collapse 1</strong></p>
+<p><code>collapse 1</code><br>
+Collapses the folder hierarchy by 1 level.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code"><a class="link" href="#switching-a-href-faq-span-class-underline-tabs-span-a-code-tab-code">3.28. Switching <a href="#faq"><span class="underline">tabs</span></a>: <code>tab</code></a></h3>
+<h3 id="switching-a-href-tabs-tabs-a-code-tab-code"><a class="link" href="#switching-a-href-tabs-tabs-a-code-tab-code">3.28. Switching <a href="#Tabs">tabs</a>: <code>tab</code></a></h3>
 <div class="paragraph">
 <p>Switches the current app view to the tab that corresponds to the given
 index.</p>
 </div>
 <div class="paragraph">
-<p>Format: <strong>tab INDEX</strong></p>
+<p>Format: <code>tab INDEX</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
 <p>INDEX is 1, 2 or 3, which correspond to the
-<a href="#faq"><span class="underline">Dashboard</span></a>, Online, and Offline tabs
-respectively.</p>
+<a href="#Dashboard">Dashboard</a>, Online, and Offline tabs respectively.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
 <div class="paragraph">
-<p>Examples</p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>tab 1</strong><br>
-Goes to the Dashboard tab</p>
+<p><code>tab 1</code><br>
+Goes to the <a href="#Dashboard">Dashboard</a> tab.</p>
 </li>
 <li>
-<p><strong>tab 2</strong><br>
-Goes to the Online tab which is a web view</p>
+<p><code>tab 2</code><br>
+Goes to the Online tab which is a web view.</p>
 </li>
 <li>
-<p><strong>tab 3</strong><br>
-Goes to the Offline tab which shows the offline copy of bookmarks</p>
+<p><code>tab 3</code><br>
+Goes to the Offline tab which shows the offline copy of bookmarks.</p>
 </li>
 </ul>
 </div>
@@ -1184,12 +1223,25 @@ Goes to the Offline tab which shows the offline copy of bookmarks</p>
 <h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>What are Tabs?</strong></p>
+<p><strong>How do I transfer my data to another Computer?</strong></p>
 </div>
-<div class="literalblock">
+<div class="sidebarblock">
 <div class="content">
-<pre> Different user displays. There are three tabs: dashboard, online view
-(web browser), and offline view (caches and notes).</pre>
+<div class="paragraph">
+<p>Install the app in the other computer and overwrite the empty data file it creates with the file that contains
+the data of your previous Mark folder.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>What are <a id="Tabs"></a> Tabs?</strong></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Different user displays. There are three tabs: dashboard, online view
+(web browser), and offline view (caches and notes).</p>
+</div>
 </div>
 </div>
 <div id="imgId-dashboard" class="imageblock">
@@ -1211,44 +1263,52 @@ Goes to the Offline tab which shows the offline copy of bookmarks</p>
 <div class="title">Figure 3. Mark&#8217;s Offline Tab View</div>
 </div>
 <div class="paragraph">
-<p>++
-<strong>What is the Dashboard?</strong></p>
+<p><strong>What is the <a id="Dashboard"></a> Dashboard?</strong></p>
 </div>
-<div class="literalblock">
+<div class="sidebarblock">
 <div class="content">
-<pre> The default tab in view when the application starts. The dashboard
+<div class="paragraph">
+<p>The default tab in view when the application starts. The dashboard
 contains a help section (command summary), favorite tags, current
-reminders, and a view of the folder hierarchy for bookmarks.</pre>
+reminders, and a view of the folder hierarchy for bookmarks.</p>
+</div>
 </div>
 </div>
 <div class="paragraph">
-<p>&lt;more coming soon&gt;</p>
+<p><em>{ more coming soon }</em></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&lt;coming soon&gt;</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
+<h2 id="glossary"><a class="link" href="#glossary">5. Glossary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This glossary aims to provide a definition for the special vocabulary used in this user guide.</p>
 </div>
-<div class="paragraph">
-<p><strong>offline</strong> Refers to files stored locally on the computer.</p>
-</div>
-<div class="paragraph">
-<p><strong>online</strong> Refers to having web access, namely to browse the internet.</p>
-</div>
-<div class="paragraph">
-<p><strong>stray</strong> Annotated notes that are not attached to an existing paragraph are described as stray.
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="offline"></a> Offline</dt>
+<dd>
+<p>Refers to files stored locally on the computer.</p>
+</dd>
+<dt class="hdlist1"><a id="oneline"></a> Online</dt>
+<dd>
+<p>Refers to having web access, namely to browse the internet.</p>
+</dd>
+<dt class="hdlist1"><a id="stray-notes"></a> Stray notes</dt>
+<dd>
+<p>Annotated notes that are not attached to an existing paragraph are described as stray.
 Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <em>Notes</em> column on the offline, annotated copy.</p>
+</dd>
+</dl>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-01 03:37:58 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>{ coming soon }</em></p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-01 04:21:06 UTC</div></div></div></body></html>

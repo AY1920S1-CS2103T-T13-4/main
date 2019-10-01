@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Mark - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Mark - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Mark</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T13-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Mark - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team CS2103T-T13-4</code>      Since: <code>Sept 2019</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -771,7 +771,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remove an specific offline copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove cache that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove <a href="#cache">cache</a> that I no longer need</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -858,7 +858,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Mark</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-list-bookmarks" class="discrete">Use case: List bookmarks</h3>
+<h3 id="use-case-01-list-bookmarks" class="discrete">Use case 01: List bookmarks</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -875,7 +875,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ol>
 </div>
-<h3 id="use-case-add-bookmark" class="discrete">Use case: Add bookmark</h3>
+<h3 id="use-case-02-add-bookmark" class="discrete">Use case 02: Add bookmark</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -901,7 +901,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>2a. The user provided an incorrect or wrong url</p>
+<p>2a. The given URL is invalid.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -915,7 +915,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-delete-bookmark" class="discrete">Use case: Delete bookmark</h3>
+<h3 id="use-case-03-delete-bookmark" class="discrete">Use case 03: Delete bookmark</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -964,14 +964,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-edit-bookmark" class="discrete">Use case: Edit bookmark</h3>
+<h3 id="use-case-04-edit-bookmark" class="discrete">Use case 04: Edit bookmark</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to edit bookmarks</p>
+<p>User requests to list bookmarks</p>
 </li>
 <li>
 <p>Mark shows a list of bookmarks</p>
@@ -1013,7 +1013,56 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-export-bookmarks" class="discrete">Use case: Export bookmarks</h3>
+<h3 id="use-case-05-open-bookmark" class="discrete">Use case 05: Open bookmark</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list bookmarks</p>
+</li>
+<li>
+<p>Mark shows a list of bookmarks</p>
+</li>
+<li>
+<p>User requests to open a specific bookmark in the list</p>
+</li>
+<li>
+<p>Mark opens the bookmark</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Mark shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-06-export-bookmarks" class="discrete">Use case 06: Export bookmarks</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1055,7 +1104,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-import-bookmarks" class="discrete">Use case: Import bookmarks</h3>
+<h3 id="use-case-07-import-bookmarks" class="discrete">Use case 07: Import bookmarks</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1105,7 +1154,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-make-a-webpage-available-offline" class="discrete">Use case: Make a webpage available offline</h3>
+<h3 id="use-case-08-make-a-bookmark-available-offline" class="discrete">Use case 08: Make a bookmark available offline</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1130,7 +1179,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <li>
 <p>2a. The bookmark&#8217;s url is not available</p>
 <div class="paragraph">
-<p>Mark displays an error.</p>
+<p>Mark shows an error message.</p>
 </div>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
@@ -1343,4 +1392,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-01 03:37:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-01 04:21:06 UTC</div></div></div></body></html>
