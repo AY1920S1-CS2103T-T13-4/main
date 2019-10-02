@@ -370,7 +370,7 @@ _{More to be added}_
 
 (For all use cases below, the *System* is the `Mark` and the *Actor* is the `user`, unless specified otherwise)
 
-[#UC01]
+[[UC01]]
 [discrete]
 === Use case: UC01 - List bookmarks
 
@@ -381,7 +381,7 @@ _{More to be added}_
 +
 Use case ends.
 
-[#UC02]
+[[UC02]]
 [discrete]
 === Use case: UC02 - Add bookmark
 
@@ -403,7 +403,7 @@ Use case ends.
 +
 Use case resumes at step 2.
 
-[#UC03]
+[[UC03]]
 [discrete]
 === Use case: UC03 - Delete bookmark
 
@@ -430,7 +430,7 @@ Use case ends.
 +
 Use case resumes at step 2.
 
-[#UC04]
+[[UC04]]
 [discrete]
 === Use case: UC04 - Edit bookmark
 
@@ -457,7 +457,7 @@ Use case ends.
 +
 Use case resumes at step 2.
 
-[#UC05]
+[[UC05]]
 [discrete]
 === Use case: UC05 - Open bookmark
 
@@ -484,7 +484,7 @@ Use case ends.
 +
 Use case resumes at step 2.
 
-[#UC06]
+[[UC06]]
 [discrete]
 === Use case: UC06 - Export bookmarks
 
@@ -508,7 +508,7 @@ Use case ends.
 +
 Use case resumes at step 4.
 
-[#UC07]
+[[UC07]]
 [discrete]
 === Use case: UC07 - Import bookmarks
 
@@ -536,7 +536,7 @@ Use case resumes at step 1.
 +
 Use case ends.
 
-[#UC08]
+[[UC08]]
 [discrete]
 === Use case: UC08 - Make a bookmark available offline
 
@@ -563,7 +563,7 @@ Use case resumes at step 1.
 +
 Use case resumes at step 1.
 
-[#UC09]
+[[UC09]]
 [discrete]
 === Use case: UC09 - Undo previous <<undoable-commands,undoable commands>>
 
@@ -584,7 +584,7 @@ Mark shows an error message.
 +
 Use case ends.
 
-[#UC10]
+[[UC10]]
 [discrete]
 === Use case: UC10 - Redo previously undone commands
 
@@ -624,7 +624,7 @@ Use case ends.
 +
 Use case ends.
 
-[#UC12]
+[[UC12]]
 [discrete]
 === Use case: UC12 - Add bookmarks from web browser
 
