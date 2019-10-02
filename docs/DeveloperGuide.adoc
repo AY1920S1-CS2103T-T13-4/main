@@ -619,6 +619,7 @@ Use case ends.
 *Extensions*
 [none]
 * 1a. Mark does not have internet access.
+[none]
 ** 1a1. Mark tells user that there is no internet access and suggests that user sees cache.
 +
 Use case ends.
