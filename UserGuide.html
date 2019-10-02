@@ -34,13 +34,15 @@
 <li><a href="#deleting-annotations-on-offline-copy-of-bookmarked-website-code-annotate-delete-code">3.19. Deleting annotations on offline copy of bookmarked website: <code>annotate delete</code></a></li>
 <li><a href="#modifying-annotations-on-offline-copy-of-bookmarked-website-code-annotate-edit-code">3.20. Modifying annotations on offline copy of bookmarked website: <code>annotate edit</code></a></li>
 <li><a href="#viewing-annotated-bookmarked-website-code-offline-code">3.21. Viewing annotated bookmarked website: <code>offline</code></a></li>
-<li><a href="#adding-reminder-code-reminder-code">3.22. Adding reminder: <code>reminder</code></a></li>
-<li><a href="#editing-reminder-code-reminder-edit-code">3.23. Editing reminder: <code>reminder edit</code></a></li>
-<li><a href="#deleting-reminder-code-reminder-delete-code">3.24. Deleting reminder: <code>reminder delete</code></a></li>
+<li><a href="#adding-a-reminder-code-reminder-code">3.22. Adding a reminder: <code>reminder</code></a></li>
+<li><a href="#editing-a-reminder-code-reminder-edit-code">3.23. Editing a reminder: <code>reminder edit</code></a></li>
+<li><a href="#deleting-a-reminder-code-reminder-delete-code">3.24. Deleting a reminder: <code>reminder delete</code></a></li>
 <li><a href="#sorting-bookmarks-code-sort-code">3.25. Sorting bookmarks: <code>sort</code></a></li>
 <li><a href="#expanding-folder-hierarchy-code-expand-code">3.26. Expanding folder hierarchy: <code>expand</code></a></li>
 <li><a href="#collapsing-folder-hierarchy-code-collapse-code">3.27. Collapsing folder hierarchy: <code>collapse</code></a></li>
 <li><a href="#switching-a-href-tabs-tabs-a-code-tab-code">3.28. Switching <a href="#Tabs">tabs</a>: <code>tab</code></a></li>
+<li><a href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.29. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></li>
+<li><a href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.30. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -973,15 +975,15 @@ then annotations are shown as well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-reminder-code-reminder-code"><a class="link" href="#adding-reminder-code-reminder-code">3.22. Adding reminder: <code>reminder</code></a></h3>
+<h3 id="adding-a-reminder-code-reminder-code"><a class="link" href="#adding-a-reminder-code-reminder-code">3.22. Adding a reminder: <code>reminder</code></a></h3>
 <div class="paragraph">
-<p>Adds a reminder to visit a bookmark. You can set the time for the reminder. The app
-will inform you at that time. You can also choose whether to open the bookmark.
-The default setting is open.</p>
+<p>Adds a reminder of a specified bookmark. You can set the time for the reminder.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>reminder INDEX t/TIME_DATE [n/NOTE=Open]</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -991,9 +993,11 @@ The default setting is open.</p>
 <p>TIME_DATE follows HHMM dd/mm/yyyy format.</p>
 </li>
 <li>
-<p>NOTE is the setting of whether you want to open the bookmark.</p>
+<p>NOTE is the description of the reminder, the default value is Open.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1002,57 +1006,86 @@ The default setting is open.</p>
 <ul>
 <li>
 <p><code>reminder 1 t/2359 02/07/2019</code><br>
-Adds a reminder for bookmark 1, and set the time at 02/07/2019. The
-reminder will remind you at 23:59 on 2nd July, 2019.
-It will also open the bookmark for you.</p>
+Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
+It reminds you to open the bookmark.</p>
 </li>
 <li>
-<p><code>reminder 1 t/2359 02/07/2019 n/Close</code><br>
-Adds a reminder for bookmark 1, and set the time at 23:59 of 02/07/2019. The reminder will
-remind you at the time and would not open the bookmark for you.</p>
+<p><code>reminder 1 t/2359 02/07/2019 n/Read announcements</code><br>
+Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
+The reminder reminds you to read announcements.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-reminder-code-reminder-edit-code"><a class="link" href="#editing-reminder-code-reminder-edit-code">3.23. Editing reminder: <code>reminder edit</code></a></h3>
+<h3 id="editing-a-reminder-code-reminder-edit-code"><a class="link" href="#editing-a-reminder-code-reminder-edit-code">3.23. Editing a reminder: <code>reminder edit</code></a></h3>
 <div class="paragraph">
-<p>Edit a reminder at the reminder&#8217;s index. You can edit either time or whether to open it.</p>
+<p>Edits the reminder at the specified index. You can edit either the time or the note of the reminder.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>reminder edit INDEX [t/TIME_DATE] [n/NOTE]</code>
-* INDEX is the index of the reminder that you want to edit.
-* TIME_DATE is the time you want to edit. The time follows HHMM dd/mm/yyyy format.
-* NOTE is the setting that you want to edit. It is whether you want to open the bookmark.</p>
+<p>Format: <code>reminder edit INDEX [t/TIME_DATE] [n/NOTE]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the index of the reminder you want to edit on the dashboard.</p>
+</li>
+<li>
+<p>TIME_DATE is the time you want to edit. The time follows HHMM dd/mm/yyyy format.</p>
+</li>
+<li>
+<p>NOTE is the description of the reminder that you want to edit.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code>reminder edit 1 t/2359 02/07/2019</code><br>
-Edit reminder in index 1. Reset the time of the reminder to 23:59 of 02/07/2019.</p>
+Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.</p>
 </li>
 <li>
-<p><code>reminder 1 t/2359 02/07/2019 n/Close</code><br>
-Edit reminder in index 1. Reset the time of the reminder to 23:59 of 02/07/2019.
-Reset to not to open the bookmark.</p>
+<p><code>reminder 1 t/2359 02/07/2019 n/Check daily news</code><br>
+Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.
+Reset the note to check daily news.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-reminder-code-reminder-delete-code"><a class="link" href="#deleting-reminder-code-reminder-delete-code">3.24. Deleting reminder: <code>reminder delete</code></a></h3>
+<h3 id="deleting-a-reminder-code-reminder-delete-code"><a class="link" href="#deleting-a-reminder-code-reminder-delete-code">3.24. Deleting a reminder: <code>reminder delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the the specified reminder.</p>
+<p>Deletes the the reminder at the specified index.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>reminder delete INDEX</code>
-* INDEX is the index of the reminder that you want to delete.</p>
+<p>Format: <code>reminder delete INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the index of the reminder you want to delete on the dashboard.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code>reminder delete 1</code><br>
-Delete the reminder at index 1.</p>
+Delete the reminder of index 1.</p>
 </li>
 </ul>
 </div>
@@ -1066,6 +1099,8 @@ order added) and displays them as a list.</p>
 <div class="paragraph">
 <p>Format: <code>sort [CRITERIA]</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1077,6 +1112,8 @@ are: <strong>name</strong> and <strong>default</strong>. <strong>default</strong
 criteria.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1215,6 +1252,18 @@ Goes to the Online tab which is a web view.</p>
 Goes to the Offline tab which shows the offline copy of bookmarks.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="automatically-completing-partially-typed-commands-code-coming-in-v2-0-code"><a class="link" href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.29. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Automatically fills in partially typed commands if the command is unique.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code"><a class="link" href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.30. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Shares your bookmarks and notes with your friends via Email or Telegram.</p>
 </div>
 </div>
 </div>
@@ -1393,4 +1442,4 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-02 07:52:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-02 09:15:27 UTC</div></div></div></body></html>
