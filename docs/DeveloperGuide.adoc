@@ -636,7 +636,7 @@ Use case ends.
 +
 Use case ends.
 
-[#UC13]
+[[UC13]]
 [discrete]
 === Use case: UC13 - Annotate offline documents
 
@@ -675,7 +675,7 @@ Use case resumes from step 4.
 +
 Use case resumes from step 4.
 
-[#UC14]
+[[UC14]]
 [discrete]
 === Use case: UC14 - Add a reminder
 
@@ -712,7 +712,7 @@ Use case resumes from step 2.
 +
 Use case resumes from step 2.
 
-[#UC15]
+[[UC15]]
 [discrete]
 === Use case: UC15 - Edit a reminder
 
@@ -742,7 +742,7 @@ Use case resumes at step 1.
 +
 Use case resumes from step 1.
 
-[#UC16]
+[[UC16]]
 [discrete]
 === Use case: UC16 - Delete a reminder
 
@@ -766,7 +766,7 @@ Use case ends.
 +
 Use case resumes at step 1.
 
-[#UC17]
+[[UC17]]
 [discrete]
 === Use case: UC17 - Sort the bookmark list
 
