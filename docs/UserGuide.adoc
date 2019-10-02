@@ -262,7 +262,6 @@ specific bookmarks with a different file name using the command `*export*`
 (see <<exporting-bookmarks>>).
 
 [[exporting-bookmarks]]
-
 === Exporting bookmarks: *`export`*
 
 Exports the currently displayed list of bookmarks to the hard disk.
