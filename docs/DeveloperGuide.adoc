@@ -604,7 +604,7 @@ Mark shows an error message.
 +
 Use case ends.
 
-[UC11]
+[[UC11]]
 [discrete]
 === Use case: UC11 - Browse the web
 
