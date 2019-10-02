@@ -70,22 +70,31 @@ started. Enjoy!</p>
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here are a few steps to get you started on Mark:<br>
-.  Ensure you have Java <code>11</code> or above installed in your Computer.
-.  Download the latest <code>mark.jar</code> <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/releases">here</a>.
-.  Copy the file to the folder you want to use as the home folder for your Bookmark Manager.
-.  Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<p>Here are a few steps to get you started on Mark:<br></p>
 </div>
-<div class="paragraph">
-<p>+
-image::Ui.png[width="790"]</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest <code>mark.jar</code> <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/releases">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for your Bookmark Manager.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
 </div>
-<div class="paragraph">
-<p>+
-.  Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+</div>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
 e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.
 ++ Some example commands you can try:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -100,16 +109,15 @@ named <code>Pro Git</code> to the Bookmark Manager.</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details
 of each command.</p>
 </li>
 </ol>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -124,26 +132,27 @@ of each command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user. +E.g.
-In the command format <code><strong>add</strong> u/URL</code>, <code>URL</code> is a parameter which can be used as <code><strong>add</strong> u/luminus.nus.edu.sg</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.<br>
+E.g. In the command format <code><strong>add</strong> u/URL</code>, <code>URL</code> is a parameter which can be used as <code><strong>add</strong> u/luminus.nus.edu.sg</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional. +E.g <code>u/URL [t/TAG]</code> can be used as
+<p>Items in square brackets are optional.<br>
+E.g <code>u/URL [t/TAG]</code> can be used as
 <code>u/luminus.nus.edu.sg t/NUS</code> or as <code>u/luminus.nus.edu.sg</code>.</p>
 </li>
 <li>
-<p>Default values for optional items are specified with an <code>=</code> symbol. +E.g.
-When <code>u/URL [t/TAG=CS2103T]</code> is specified in the command format, the default value for the tag is <code>CS2103T</code> if not
+<p>Default values for optional items are specified with an <code>=</code> symbol.<br>
+E.g. When <code>u/URL [t/TAG=CS2103T]</code> is specified in the command format, the default value for the tag is <code>CS2103T</code> if not
 it is not provided.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times, including zero times.
-+E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/module</code>,
+<p>Items with <code>…</code>​ after them can be used multiple times, including zero times.<br>
+E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/module</code>,
 <code>t/module t/read-later</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order. +E.g. if the command specifies
-<code>u/URL n/NAME</code>, <code>n/NAME u/URL</code> is also acceptable.</p>
+<p>Parameters can be in any order.<br>
+E.g. if the command specifies <code>u/URL n/NAME</code>, <code>n/NAME u/URL</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
@@ -734,9 +743,10 @@ Manually save a new copy of the site.</p>
 website. When this command is given, the UI will switch to the offline tab showing the results of your command.
 With this command, you can highlight a paragraph on the offline document and optionally attach a supplementary
 note to said paragraph. (Notes can be added to justify the highlight or as
-content-relevant notes for future reference to bookmark).
-++
-Overwriting an existing note is possible with this command.</p>
+content-relevant notes for future reference to bookmark).</p>
+</div>
+<div class="paragraph">
+<p>Overwriting an existing note is possible with this command.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>annotate</strong> INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</code></p>
@@ -1454,4 +1464,4 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-02 15:26:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-02 16:00:14 UTC</div></div></div></body></html>
