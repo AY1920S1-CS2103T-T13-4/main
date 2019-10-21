@@ -19,7 +19,7 @@
 <li><a href="#deleting-a-folder-strong-code-folder-delete-code-strong">3.4. Deleting a folder <strong><code>folder delete</code></strong></a></li>
 <li><a href="#listing-all-bookmarks-strong-code-list-code-strong">3.5. Listing all bookmarks: <strong><code>list</code></strong></a></li>
 <li><a href="#editing-a-bookmark-strong-code-edit-code-strong">3.6. Editing a bookmark: <strong><code>edit</code></strong></a></li>
-<li><a href="#locating-bookmarks-by-name-url-or-tag-strong-code-find-code-strong">3.7. Locating bookmarks by name, URL, or tag: <strong><code>find</code></strong></a></li>
+<li><a href="#locating-bookmarks">3.7. Locating bookmarks by name, URL, or tag: <strong><code>find</code></strong></a></li>
 <li><a href="#deleting-a-bookmark-strong-code-delete-code-strong">3.8. Deleting a bookmark: <strong><code>delete</code></strong></a></li>
 <li><a href="#opening-a-bookmark-strong-code-goto-code-strong">3.9. Opening a bookmark: <strong><code>goto</code></strong></a></li>
 <li><a href="#opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong">3.10. Opening a bookmark from a reminder: <strong><code>goto reminder</code></strong></a></li>
@@ -350,7 +350,7 @@ Clears all existing tags from the 2nd bookmark.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-bookmarks-by-name-url-or-tag-strong-code-find-code-strong"><a class="link" href="#locating-bookmarks-by-name-url-or-tag-strong-code-find-code-strong">3.7. Locating bookmarks by name, URL, or tag: <strong><code>find</code></strong></a></h3>
+<h3 id="locating-bookmarks"><a class="link" href="#locating-bookmarks">3.7. Locating bookmarks by name, URL, or tag: <strong><code>find</code></strong></a></h3>
 <div class="paragraph">
 <p>Finds bookmarks that contain any of the given keywords in their name or
 URL, or that are tagged with the given tag(s).</p>
@@ -706,20 +706,21 @@ and <code>youtubeBookmarks.json</code>.</p>
 the given conditions.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>autotag</strong> NAME [u/PARTIAL_URL] [nu/NOT_PARTIAL_URL] [f/FOLDER]
-[nf/NOT_FOLDER]&#8230;&#8203; [t/TAG]&#8230;&#8203; [nt/NOT_TAG]&#8230;&#8203;</code></p>
+<p>Format: <code><strong>autotag</strong> TAG_NAME [n/NAME_KEYWORD]&#8230;&#8203; [nn/NOT_NAME_KEYWORD]&#8230;&#8203;
+[u/URL_KEYWORD]&#8230;&#8203; [nu/NOT_URL_KEYWORD]&#8230;&#8203; [f/FOLDER] [nf/NOT_FOLDER]&#8230;&#8203;
+[t/TAG]&#8230;&#8203; [nt/NOT_TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>At least one condition (<code>u/</code>,
+<p>At least one condition (<code>n/</code>, <code>nn/</code>, <code>u/</code>,
 <code>nu/</code>, <code>f/</code>, <code>nf/</code>, <code>t/</code>, or <code>nt/</code>) must be specified.</p>
 </li>
 <li>
-<p>If an autotag with name <code>NAME</code> already exists, the user is asked
-whether conditions for <code>NAME</code> should be overwritten.</p>
+<p>If an autotag with name <code>TAG_NAME</code> already exists, the user is asked
+whether conditions for <code>TAG_NAME</code> should be overwritten.</p>
 </li>
 <li>
 <p>An autotag is applied when a bookmark matches all of its conditions.
@@ -728,15 +729,15 @@ this autotag. E.g. no bookmarks will match the conditions <code>u/github.com/mar
 nu/github.com/mark</code></p>
 </li>
 <li>
-<p><code>PARTIAL_URL</code> and <code>NOT_PARTIAL_URL</code> can be any part of a URL. E.g.
-<code>youtube</code>, <code>.nus.edu.sg</code>, or <code>github.com/mark</code>.</p>
+<p><code>NAME_KEYWORD</code> and <code>URL_KEYWORD</code> are used to match bookmarks in the same way
+as the keywords in <code><strong>find</strong></code> (see <a href="#locating-bookmarks">Section 3.7, &#8220;Locating bookmarks by name, URL, or tag: <strong><code>find</code></strong>&#8221;</a>). E.g. <code>.nus.edu.sg</code>.</p>
 </li>
 <li>
-<p><code>NOT_PARTIAL_URL</code>, <code>NOT_FOLDER</code>, and <code>NOT_TAG</code> are partial URLs, folders,
-or tags that bookmarks to be tagged should <strong>not</strong> match.</p>
+<p><code>NOT_NAME_KEYWORD</code>, <code>NOT_URL_KEYWORD</code>, <code>NOT_FOLDER</code>, and <code>NOT_TAG</code> are name keywords,
+URL keywords, folders, or tags that bookmarks to be tagged should <strong>not</strong> match.</p>
 </li>
 <li>
-<p>The tag <code>NAME</code> is still a normal tag. E.g. if an autotag <code>YouTube</code> matches
+<p>The tag <code>TAG_NAME</code> is still a normal tag. E.g. if an autotag <code>YouTube</code> matches
 bookmarks with URLs containing <code>youtube.com</code>, other bookmarks can still be
 tagged with the tag <code>YouTube</code>.</p>
 </li>
@@ -1507,7 +1508,8 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 <p><strong>Import</strong>: <code><strong>import</strong> FILENAME [MORE_FILENAMES]&#8230;&#8203;</code></p>
 </li>
 <li>
-<p><strong>Autotag</strong>: <code><strong>autotag</strong> NAME [u/PARTIAL_URL] [nu/NOT_PARTIAL_URL] [f/FOLDER]</code></p>
+<p><strong>Autotag</strong>: <code><strong>autotag</strong> TAG_NAME [n/NAME_KEYWORD] [nn/NOT_NAME_KEYWORD] [u/URL_KEYWORD]
+[nu/NOT_URL_KEYWORD] [f/FOLDER] [nf/NOT_FOLDER]&#8230;&#8203; [t/TAG]&#8230;&#8203; [nt/NOT_TAG]&#8230;&#8203;</code></p>
 </li>
 <li>
 <p><strong>Cache</strong>: <code><strong>cache</strong> INDEX [s/SAVE_NOW] [u/AUTO_UPDATE] [d/VERSION]</code></p>
@@ -1548,4 +1550,4 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-16 14:40:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-21 03:17:19 UTC</div></div></div></body></html>
