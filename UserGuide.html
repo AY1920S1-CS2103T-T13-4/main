@@ -15,7 +15,7 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-strong-code-help-code-strong">3.1. Viewing help: <strong><code>help</code></strong></a></li>
 <li><a href="#adding-a-bookmark-strong-code-add-code-strong">3.2. Adding a bookmark: <strong><code>add</code></strong></a></li>
-<li><a href="#adding-a-new-folder-strong-code-folder-code-strong">3.3. Adding a new folder <strong><code>folder</code></strong></a></li>
+<li><a href="#folder">3.3. Adding a new folder <strong><code>folder</code></strong></a></li>
 <li><a href="#deleting-a-folder-strong-code-folder-delete-code-strong">3.4. Deleting a folder <strong><code>folder delete</code></strong></a></li>
 <li><a href="#listing-all-bookmarks-strong-code-list-code-strong">3.5. Listing all bookmarks: <strong><code>list</code></strong></a></li>
 <li><a href="#editing-a-bookmark-strong-code-edit-code-strong">3.6. Editing a bookmark: <strong><code>edit</code></strong></a></li>
@@ -83,7 +83,7 @@ started. Enjoy!</p>
 <p>Download the latest <code>mark.jar</code> <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Bookmark Manager.</p>
+<p>Copy the file to the folder you want to use as the home folder for your Mark.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -105,8 +105,8 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all bookmarks</p>
 </li>
 <li>
-<p><strong><code>add u/git-scm.com/book/en/v2 n/Pro Git f/Tutorials</code></strong> : adds a bookmark
-named <code>Pro Git</code> to the Bookmark Manager.</p>
+<p><strong><code>add u/https://git-scm.com/book/en/v2 n/Pro Git f/Tutorials</code></strong> : adds a bookmark
+named <code>Pro Git</code> to Mark.</p>
 </li>
 <li>
 <p><strong><code>delete 3</code></strong> : deletes the 3rd bookmark shown in the current list</p>
@@ -137,12 +137,12 @@ of each command.</p>
 <ul>
 <li>
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.<br>
-E.g. In the command format <code><strong>add</strong> u/URL</code>, <code>URL</code> is a parameter which can be used as <code><strong>add</strong> u/luminus.nus.edu.sg</code>.</p>
+E.g. In the command format <code><strong>add</strong> u/URL</code>, <code>URL</code> is a parameter which can be used as <code><strong>add</strong> u/https://luminus.nus.edu.sg</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional.<br>
 E.g <code>u/URL [t/TAG]</code> can be used as
-<code>u/luminus.nus.edu.sg t/NUS</code> or as <code>u/luminus.nus.edu.sg</code>.</p>
+<code>u/https://luminus.nus.edu.sg t/NUS</code> or as <code>u/https://luminus.nus.edu.sg</code>.</p>
 </li>
 <li>
 <p>Default values for optional items are specified with an <code>=</code> symbol.<br>
@@ -150,7 +150,7 @@ E.g. When <code>u/URL [t/TAG=CS2103T]</code> is specified in the command format,
 it is not provided.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times, including zero times.<br>
+<p>Items with <code>&#8230;&#8203;</code>​ after them can be used multiple times, including zero times.<br>
 E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/module</code>,
 <code>t/module t/read-later</code> etc.</p>
 </li>
@@ -177,7 +177,7 @@ E.g. if the command specifies <code>u/URL n/NAME</code>, <code>n/NAME u/URL</cod
 <p>Adds a bookmark to the bookmark manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>add</strong> u/URL n/NAME [f/FOLDER] [t/TAG]…​ [r/REMARK]</code></p>
+<p>Format: <code><strong>add</strong> u/URL n/NAME [r/REMARK] [f/FOLDER] [t/TAG]&#8230;&#8203;​</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -187,7 +187,7 @@ E.g. if the command specifies <code>u/URL n/NAME</code>, <code>n/NAME u/URL</cod
 <p>A bookmark can have any number of tags (including 0).</p>
 </li>
 <li>
-<p><code>FOLDER</code> must be an existing folder (see <a href="#folder">[folder]</a>).</p>
+<p><code>FOLDER</code> must be an existing folder (see <a href="#folder">Section 3.3, &#8220;Adding a new folder <strong><code>folder</code></strong>&#8221;</a>).</p>
 </li>
 <li>
 <p>Use the keyword <code>this</code> in place of URL to bookmark the current page,
@@ -204,22 +204,26 @@ e.g. <code><strong>add</strong> u/this n/Homepage</code></p>
 <ul>
 <li>
 <p><code><strong>add</strong> u/this n/Homepage</code><br>
-Bookmarks the current place and names it <code>Homepage</code>.
-Only valid if a web-page is currently being viewed.</p>
+Bookmarks the current page and names it <code>Homepage</code>. The new bookmark contains
+a default remark of "-" and is added to the root folder since they are not
+specified.</p>
 </li>
 <li>
-<p><code><strong>add</strong> u/nus-cs2103-ay1920s1.github.io n/Module Website f/CS2103T r/Contains textbook &amp; important deadlines</code><br>
+<p><code><strong>add</strong> u/https://nus-cs2103-ay1920s1.github.io/website/ n/Module Website
+f/CS2103T r/Contains textbook &amp; important deadlines</code><br>
 Bookmarks the given website, names it <code>Module Website</code>, and adds it to the folder <code>CS2103T</code>.
 The new bookmark&#8217;s remark is "Contains textbook &amp; important deadlines".</p>
 </li>
 <li>
-<p><code><strong>add</strong> u/www.youtube.com/watch?v=9AMcN-wkspU n/IntelliJ Tips and Tricks t/video t/watch-later</code></p>
+<p><code><strong>add</strong> u/www.youtube.com/watch?v=9AMcN-wkspU n/IntelliJ Tips and Tricks t/video t/watch-later</code>
+Bookmarks the given website, names it <code>IntelliJ Tips and Tricks</code>. The new bookmark&#8217;s tags include
+"video" and "watch-later".</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-new-folder-strong-code-folder-code-strong"><a class="link" href="#adding-a-new-folder-strong-code-folder-code-strong">3.3. Adding a new folder <strong><code>folder</code></strong></a></h3>
+<h3 id="folder"><a class="link" href="#folder">3.3. Adding a new folder <strong><code>folder</code></strong></a></h3>
 <div class="paragraph">
 <p>Creates a new folder for organizing bookmarks into.</p>
 </div>
@@ -249,8 +253,8 @@ The new bookmark&#8217;s remark is "Contains textbook &amp; important deadlines"
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>folder</strong> CS2103 p/NUS<br>
-Creates a new folder named `CS2103</code> under the parent folder <code>NUS</code>.</p>
+<p><code><strong>folder</strong> CS2103 p/NUS</code><br>
+Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS</code>.</p>
 </li>
 </ul>
 </div>
@@ -258,7 +262,7 @@ Creates a new folder named `CS2103</code> under the parent folder <code>NUS</cod
 <div class="sect2">
 <h3 id="deleting-a-folder-strong-code-folder-delete-code-strong"><a class="link" href="#deleting-a-folder-strong-code-folder-delete-code-strong">3.4. Deleting a folder <strong><code>folder delete</code></strong></a></h3>
 <div class="paragraph">
-<p>Creates a new folder for organizing bookmarks into.</p>
+<p>Deletes the specified folder and its subfolders.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>folder delete</strong> FOLDER_NAME</code></p>
@@ -283,8 +287,8 @@ Creates a new folder named `CS2103</code> under the parent folder <code>NUS</cod
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>folder delete</strong> CS2103<br>
-Deletes the folder named `CS2103</code> and all of its subfolders.</p>
+<p><code><strong>folder delete</strong> CS2103</code><br>
+Deletes the folder named <code>CS2103</code> and all of its subfolders.</p>
 </li>
 </ul>
 </div>
@@ -304,7 +308,7 @@ Deletes the folder named `CS2103</code> and all of its subfolders.</p>
 <p>Edits an existing bookmark in the bookmark manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>edit</strong> INDEX [u/URL] [n/NAME] [f/FOLDER] [t/TAG]…​ [r/REMARK]</code></p>
+<p>Format: <code><strong>edit</strong> INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1469,13 +1473,13 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 <p><strong>Help</strong>: <code><strong>help</strong></code></p>
 </li>
 <li>
-<p><strong>Add</strong>: <code><strong>add</strong> u/URL n/NAME [f/FOLDER] [t/TAG]…​</code></p>
+<p><strong>Add</strong>: <code><strong>add</strong> u/URL n/NAME [r/REMARK] [f/FOLDER] [t/TAG]…​</code></p>
 </li>
 <li>
 <p><strong>List</strong>: <code><strong>list</strong></code></p>
 </li>
 <li>
-<p><strong>Edit</strong>: <code><strong>edit</strong> INDEX [u/URL] [n/NAME] [f/FOLDER] [t/TAG]…​ [r/REMARK]</code></p>
+<p><strong>Edit</strong>: <code><strong>edit</strong> INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]…​</code></p>
 </li>
 <li>
 <p><strong>Find</strong>: <code><strong>find</strong> [KEYWORD]&#8230;&#8203; [t/TAG]&#8230;&#8203;</code></p>
@@ -1550,4 +1554,4 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 10:53:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 11:57:17 UTC</div></div></div></body></html>
