@@ -23,9 +23,10 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#folders-feature">3.2. Folders feature</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#annotation-feature">3.2. Annotation feature</a></li>
+<li><a href="#folders-feature">3.3. Folders feature</a></li>
+<li><a href="#logging">3.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -165,6 +166,9 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<div class="paragraph">
+<p>The following diagram illustrates the structure of the UI component:</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -172,16 +176,25 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/mark/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code> and 'TabView' components (not shown in the above figure), inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The structure of the <code>TabView</code> is depicted here:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UiTabViewClassDiagram.png" alt="UiTabViewClassDiagram">
+</div>
+<div class="title">Figure 5. Structure of the TabView Component, which is a part of the UI component</div>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component,</p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/mark/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component does the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -203,7 +216,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 6. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -225,7 +238,7 @@ within the <code>Logic</code> component for the <code>execute("delete 1")</code>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -262,7 +275,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 8. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -310,7 +323,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 9. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/mark/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -582,9 +595,136 @@ undo stack and pushing it into the redo stack. There is no way to pop multiple s
 </div>
 </div>
 <div class="sect2">
-<h3 id="folders-feature"><a class="link" href="#folders-feature">3.2. Folders feature</a></h3>
+<h3 id="annotation-feature"><a class="link" href="#annotation-feature">3.2. Annotation feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The annotation feature builds upon the structure of an offline document used to represent a <em>Readability-derived cache</em>.
+Such an offline document is represented by <code>OfflineDocument</code>, which contains at least one <code>Paragraph</code>. As each annotation is targeted to an entire paragraph,
+we can simply add an annotation to a <code>Paragraph</code>. The annotation will be internally stored as an <code>annotation</code>.
+You can view the class structure of the annotation feature in the Figure above.</p>
+</div>
+<div class="paragraph">
+<p>There are three parts to the annotation feature:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add an annotation (executed by <code>AddAnnotationCommand#execute()</code>).</p>
+</li>
+<li>
+<p>Delete an annotation (executed by <code>DeleteAnnotationCommand#execute()</code>).</p>
+</li>
+<li>
+<p>Edit an annotation (executed by <code>EditAnnotationCommand#execute()</code>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These executions are triggered by <code>annotation</code> command inputs entered into the <code>CommandBox</code>, which calls the respective command parser to create the command.
+Subsequently, the appropriate <code>Paragraph</code>(s) is retrieved and the annotation is handled according to the command.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram illustrates how the adding annotation operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddAnnotationSequenceDiagram.png" alt="AddAnnotationSequenceDiagram">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>AddAnnotationCommandParser</code> and <code>AddAnnotationCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For the delete operation, instead of creating and adding an <code>Annotation</code> to the retrieved <code>Paragraph</code>, the part or the entire pre-existing <code>Annotation</code> of the <code>Paragraph</code> will be dereferenced from the <code>Paragraph</code>.
+If the user requests to remove the entire annotation of the <code>Paragraph</code>, the <code>Annotation</code> is simply dereferenced and an <code>OfflineCommandResult</code> is returned.
+If the user requests to remove only the annotation note, the <code>AnnotationNote</code> of <code>Annotation</code> is dereferenced.
+Otherwise, if the user requests to remove only the highlight, the entire annotation is dereferenced from the <code>Paragraph</code> and added to a newly created <code>PhantomParagraph</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A <code>TrueParagraph</code>, whose content is from the <code>cache</code>, must be highlighted in order to have a note attached. <code>PhantomParagraph</code> is a temporary holding place for a <code>stray note</code> and does not contain content from the <code>cache</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The edit operation can modify the content of the <code>AnnotationNote</code>, colour of <code>Highlight</code> and re-link a <code>stray note</code> to a <code>TrueParagraph</code>.
+The former two is simply done by changing the fields in <code>Annotation</code> of the <code>Paragraph</code> in query.
+To re-link a <code>stray note</code> from a <code>PhantomParagraph</code> to a <code>TrueParagraph</code>, the <code>Annotation</code> replaces any <code>Annotation</code> present in the <code>TrueParagraph</code> and the <code>PhantomParagraph</code> is destroyed.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user attempts to annotate their offline document:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AnnotationActivityDiagram.png" alt="AnnotationActivityDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p>The following are a few design considerations made in deciding how to implement the annotation feature:</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-structure-the-offline-components-to-store-annotations"><a class="link" href="#aspect-how-to-structure-the-offline-components-to-store-annotations">Aspect: How to structure the offline components to store annotations</a></h5>
+<div class="paragraph">
+<p>Each annotation is tagged to a paragraph and an offline document is composed of multiple paragraphs.
+A cached copy has the original cache of the website.
+There are hence a few alternatives in which we can combine these elements and store them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Let each <code>CachedCopy</code> have an <code>OfflineDocument</code> that consists of paragraphs with content parsed from the original cache. Each paragraph contains a annotation, if any.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage and overheads from layers of abstraction.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Let each cache keep only the original cache of the website. Use another class to store the annotations with the respective paragraph identifiers.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will use less memory since the content of the website is not duplicated.</p>
+</li>
+<li>
+<p>Cons: Not straightforward to implement. Stray notes will need a different implementation to order and store them. Objects not well abstracted.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="folders-feature"><a class="link" href="#folders-feature">3.3. Folders feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>A bookmark can be in a folder, and a folder can be nested within other folders for traditional directory organization.</p>
 </div>
@@ -601,7 +741,7 @@ undo stack and pushing it into the redo stack. There is no way to pop multiple s
 <div class="content">
 <img src="images/FolderStructureClassDiagram.png" alt="FolderStructureClassDiagram">
 </div>
-<div class="title">Figure 9. Class Diagram of the Folders component</div>
+<div class="title">Figure 10. Class Diagram of the Folders component</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the folder structure behaves at each step.</p>
@@ -659,7 +799,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>The following are a few design considerations made in deciding how to implement the folders feature:</p>
 </div>
@@ -699,14 +839,14 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -737,7 +877,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1969,4 +2109,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 09:22:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 10:53:38 UTC</div></div></div></body></html>
