@@ -9,29 +9,31 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#setting-up">2. Setting up</a></li>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#annotation-feature">3.2. Annotation feature</a></li>
-<li><a href="#folders-feature">3.3. Folders feature</a></li>
-<li><a href="#logging">3.4. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
+<li><a href="#undo-redo-feature">4.1. Undo/Redo feature</a></li>
+<li><a href="#autotag-feature">4.2. Autotag feature</a></li>
+<li><a href="#annotation-feature">4.3. Annotation feature</a></li>
+<li><a href="#folders-feature">4.4. Folders feature</a></li>
+<li><a href="#logging">4.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#documentation">5. Documentation</a></li>
+<li><a href="#testing">6. Testing</a></li>
+<li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
@@ -48,7 +50,22 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to Mark. This developer guide aims to introduce potential developers to the structure and implementation of Mark,
+so that you can contribute too!</p>
+</div>
+<div class="paragraph">
+<p>The guide first covers the high-level design of Mark, and then discusses the implementation of key features and the
+rationale behind certain design decisions. Next, it provides links to guides for the tools used in Documentation, Testing,
+and DevOps. Finally, the appendices of this guide specify the product scope, requirements, a glossary, and instructions for
+manual testing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -56,13 +73,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section shows the design of AddressBook Level 3, which Mark is adapted from. It will be updated in a future release.</p>
 </div>
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -165,7 +182,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
 <div class="paragraph">
 <p>The following diagram illustrates the structure of the UI component:</p>
 </div>
@@ -208,7 +225,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div class="paragraph">
 <p>The following class diagram illustrates the structure of the <code>Logic</code> component:</p>
 </div>
@@ -270,7 +287,20 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
+<div class="paragraph">
+<p>The <code>Model</code> component:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Stores the data of Mark.</p>
+</li>
+<li>
+<p>Does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -278,44 +308,53 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="title">Figure 8. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/mark/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code>,</p>
+<p>The <code>Model</code> consists of the following:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+<p><code>VersionedMark</code> - contains Mark data</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p><code>UserPrefs</code> - represents the user&#8217;s preferences</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p><code>OfflineDocument</code> - represents the current document being displayed in the offline tab</p>
 </li>
 <li>
-<p>does not depend on any of the other three components.</p>
+<p><code>Url</code> - represents the current URL being displayed in the offline tab</p>
 </li>
-</ul>
+</ol>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>It also exposes an unmodifiable <code>ObservableList&lt;Bookmark&gt;</code> that
+can be 'observed', e.g. the UI can be bound to this list so that the UI automatically updates
+when the list data are changed.</p>
+</div>
+<div class="paragraph">
+<p><code>VersionedMark</code> contains a list of <code>ReadOnlyMark</code> objects that represent past or future states of
+Mark. Each <code>Mark</code>, in turn, comprises a <code>UniqueBookmarkList</code>, a <code>ReminderAssociation</code> object, an
+<code>AutotagController</code>, and a <code>FolderStructure</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AnnotationPackageClassDiagram.png" alt="AnnotationPackageClassDiagram">
+</div>
+<div class="title">Figure 9. Structure of the Annotation package</div>
+</div>
+<div class="paragraph">
+<p>The above diagram shows the structure of the Annotation package, which is accessed by <code>ModelManager</code> via <code>OfflineDocument</code>.
+An <code>OfflineDocument</code> consists of zero or more <code>Paragraph</code> objects. A <code>Paragraph</code> can be either a <code>PhantomParagraph</code>, which
+contains only an <code>AnnotationNote</code> and a <code>ParagraphIdentifier</code>, or a <code>TrueParagraph</code>, which contains <code>AnnotationNote</code>,
+<code>ParagraphIdentifier</code>, <code>Highlight</code>, and <code>ParagraphContent</code>. <code>AnnotationNote</code> and <code>Highlight</code> are optional fields
+whenever they are used, i.e. in <code>PhantomParagraph</code> and/or <code>TrueParagraph</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="paragraph">
 <p>The following diagram illustrates the structure of the Storage component:</p>
 </div>
@@ -323,7 +362,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 9. Structure of the Storage Component</div>
+<div class="title">Figure 10. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/mark/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -343,7 +382,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.mark.commons</code> package.</p>
 </div>
@@ -351,15 +390,15 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo/Redo feature</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo/Redo feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.1. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedMark</code>.
 It extends <code>Mark</code> with an undo/redo history, stored internally as a list of <code>markStateRecord</code> and <code>currentPointer</code>.
@@ -524,7 +563,7 @@ behavior that most modern desktop applications follow.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -595,9 +634,185 @@ undo stack and pushing it into the redo stack. There is no way to pop multiple s
 </div>
 </div>
 <div class="sect2">
-<h3 id="annotation-feature"><a class="link" href="#annotation-feature">3.2. Annotation feature</a></h3>
+<h3 id="autotag-feature"><a class="link" href="#autotag-feature">4.2. Autotag feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.1. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The autotag mechanism is facilitated by <code>AutotagController</code>. It stores and manages a list of <code>SelectiveBookmarkTaggers</code> which apply tags to
+bookmarks if they match specific criteria. It also implements the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AutotagController#hasTagger(SelectiveBookmarkTagger)</code>&#8201;&#8212;&#8201;Checks whether the controller contains the given tagger.</p>
+</li>
+<li>
+<p><code>AutotagController#addTagger(SelectiveBookmarkTagger)</code>&#8201;&#8212;&#8201;Starts managing the given tagger.</p>
+</li>
+<li>
+<p><code>AutotagController#applyTaggersToList(List&lt;Bookmark&gt;)</code>&#8201;&#8212;&#8201;Tags the bookmarks in the list using all relevant taggers.</p>
+</li>
+<li>
+<p><code>AutotagController#applyTaggers(Bookmark)</code>&#8201;&#8212;&#8201;Tags the bookmark using all relevant taggers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first three operations are exposed in the <code>Model</code> interface as <code>Model#hasTagger(SelectiveBookmarkTagger)</code>, <code>Model#addTagger(SelectiveBookmarkTagger)</code>,
+and <code>Model#applyAllTaggers()</code> respectively.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the autotag mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user opens the application with an existing list of bookmarks and no autotags.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagState0.png" alt="AutotagState0">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes the command <code>autotag Help u/stackoverflow.com/questions</code> to add an autotag that tags all bookmarks
+from StackOverflow with the tag ProgrammingHelp. A <code>SelectiveBookmarkTagger</code> is created with a <code>UrlContainsKeywordsPredicate</code> and the tag
+<code>Help</code>. <code>b2</code>, which matches the <code>UrlContainsKeywordsPredicate</code>, is replaced by a copy of itself that also contains the tag
+<code>Help</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagState1.png" alt="AutotagState1">
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <code>autotag</code> command works.
+<em>(The sequence diagram will be improved in future versions of the Developer Guide.)</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagSequenceDiagram.png" alt="AutotagSequenceDiagram">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>AutotagCommand</code> should end at the destroy marker (X), but due to a limitation of PlantUML, it reaches the end of this diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now, autotags will be applied whenever a bookmark is added or modified.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The user then executes the command <code>add n/JavaFX new scene u/https://stackoverflow.com/questions/29080759/</code> to bookmark
+a question on StackOverflow. This bookmark matches the conditions for the autotag <code>Help</code>, so it is tagged.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagState2.png" alt="AutotagState2">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a <code><strong>autotag</strong></code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagActivityDiagram.png" alt="AutotagActivityDiagram">
+</div>
+<div class="title">Figure 11. The activity diagram has not been created yet</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-autotags-are-applied"><a class="link" href="#aspect-how-autotags-are-applied">Aspect: How autotags are applied</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Iterate through each autotag and bookmark, then apply tags to all bookmarks that match.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of runtime, as bookmarks may be checked multiple times.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Check for changes in the bookmark list then edit tags accordingly.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will be faster if most bookmarks are unchanged.</p>
+</li>
+<li>
+<p>Cons: More complicated to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-apply-taggers-to-a-bookmark-list-in-mark"><a class="link" href="#aspect-how-to-apply-taggers-to-a-bookmark-list-in-mark">Aspect: How to apply taggers to a bookmark list in Mark</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Modify individual bookmarks when adding tags.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Eliminates the need to reset Mark&#8217;s bookmark list whenever taggers are applied.</p>
+</li>
+<li>
+<p>Cons: Can cause unanticipated changes in other parts of the Model.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (current choice):</strong> Replace the whole bookmark list with a new list of bookmarks, some of which have been tagged.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simple to implement, ensures immutability of bookmarks.</p>
+</li>
+<li>
+<p>Cons: Inefficient to construct a new list each time a single bookmark is tagged.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3:</strong> Replace only those bookmarks that were tagged.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Minimises performance issues from creating a new bookmark list.</p>
+</li>
+<li>
+<p>Cons: More complicated to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="annotation-feature"><a class="link" href="#annotation-feature">4.3. Annotation feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The annotation feature builds upon the structure of an offline document used to represent a <em>Readability-derived cache</em>.
 Such an offline document is represented by <code>OfflineDocument</code>, which contains at least one <code>Paragraph</code>. As each annotation is targeted to an entire paragraph,
@@ -677,7 +892,7 @@ To re-link a <code>stray note</code> from a <code>PhantomParagraph</code> to a <
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>The following are a few design considerations made in deciding how to implement the annotation feature:</p>
 </div>
@@ -722,9 +937,9 @@ There are hence a few alternatives in which we can combine these elements and st
 </div>
 </div>
 <div class="sect2">
-<h3 id="folders-feature"><a class="link" href="#folders-feature">3.3. Folders feature</a></h3>
+<h3 id="folders-feature"><a class="link" href="#folders-feature">4.4. Folders feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
 <div class="paragraph">
 <p>A bookmark can be in a folder, and a folder can be nested within other folders for traditional directory organization.</p>
 </div>
@@ -741,7 +956,7 @@ There are hence a few alternatives in which we can combine these elements and st
 <div class="content">
 <img src="images/FolderStructureClassDiagram.png" alt="FolderStructureClassDiagram">
 </div>
-<div class="title">Figure 10. Class Diagram of the Folders component</div>
+<div class="title">Figure 12. Class Diagram of the Folders component</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the folder structure behaves at each step.</p>
@@ -799,7 +1014,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>The following are a few design considerations made in deciding how to implement the folders feature:</p>
 </div>
@@ -839,14 +1054,14 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -877,7 +1092,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -885,7 +1100,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -893,7 +1108,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -901,7 +1116,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -2109,4 +2324,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 11:57:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:22:49 UTC</div></div></div></body></html>
