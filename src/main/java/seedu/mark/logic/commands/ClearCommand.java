@@ -20,7 +20,11 @@ public class ClearCommand extends Command {
         requireAllNonNull(model, storage);
 
         model.setMark(new Mark());
-        model.saveMark(MESSAGE_SUCCESS);
         return new CommandResult(MESSAGE_SUCCESS);
+    }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
     }
 }

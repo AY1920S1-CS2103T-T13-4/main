@@ -55,11 +55,13 @@ public class AddFolderCommand extends Command {
         }
 
         model.addFolder(folder, parentFolder);
-        model.saveMark(String.format(MESSAGE_SUCCESS, folder));
-
         return new CommandResult(String.format(MESSAGE_SUCCESS, folder));
     }
 
+    @Override
+    public boolean isUndoable() {
+        return true;
+    }
 
     @Override
     public boolean equals(Object other) {

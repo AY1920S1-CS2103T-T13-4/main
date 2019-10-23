@@ -86,7 +86,6 @@ public class EditCommand extends Command {
 
         model.setBookmark(bookmarkToEdit, editedBookmark);
         model.applyAllTaggers();
-        model.saveMark(String.format(MESSAGE_EDIT_BOOKMARK_SUCCESS, editedBookmark));
         model.updateFilteredBookmarkList(PREDICATE_SHOW_ALL_BOOKMARKS);
         return new CommandResult(String.format(MESSAGE_EDIT_BOOKMARK_SUCCESS, editedBookmark));
     }
@@ -106,6 +105,11 @@ public class EditCommand extends Command {
         Folder updatedFolder = editBookmarkDescriptor.getFolder().orElse(bookmarkToEdit.getFolder());
 
         return new Bookmark(updatedName, updatedUrl, updatedRemark, updatedFolder, updatedTags);
+    }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
     }
 
     @Override

@@ -34,7 +34,6 @@ public class AddCommandIntegrationTest {
         Model expectedModel = new ModelManager(model.getMark(), new UserPrefs());
         String expectedMessage = String.format(AddCommand.MESSAGE_SUCCESS, validBookmark);
         expectedModel.addBookmark(validBookmark);
-        expectedModel.saveMark(expectedMessage);
 
         assertCommandSuccess(addCommand, model, new StorageStub(), expectedMessage, expectedModel);
     }

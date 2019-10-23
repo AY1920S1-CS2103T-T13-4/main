@@ -71,8 +71,12 @@ public class AddReminderCommand extends Command {
         }
 
         model.addReminder(bookmarkToOpen, reminderToAdd);
-        model.saveMark(String.format(MESSAGE_SUCCESS, reminderToAdd));
         return new CommandResult(String.format(MESSAGE_SUCCESS, reminderToAdd));
+    }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
     }
 
     @Override

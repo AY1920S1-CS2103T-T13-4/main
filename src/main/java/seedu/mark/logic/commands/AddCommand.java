@@ -56,8 +56,12 @@ public class AddCommand extends Command {
 
         model.addBookmark(toAdd);
         model.applyAllTaggers();
-        model.saveMark(String.format(MESSAGE_SUCCESS, toAdd));
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
+    }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
     }
 
     @Override

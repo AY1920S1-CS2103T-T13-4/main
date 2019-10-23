@@ -110,8 +110,12 @@ public class ImportCommand extends Command {
                     importer.getExistingBookmarksAsString())
                 : String.format(MESSAGE_IMPORT_SUCCESS, filePath);
 
-        model.saveMark(message);
         return new CommandResult(message);
+    }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
     }
 
     /**

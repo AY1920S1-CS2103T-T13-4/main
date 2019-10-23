@@ -47,6 +47,10 @@ public class LogicManager implements Logic {
         Command command = markParser.parseCommand(commandText);
         commandResult = command.execute(model, storage);
 
+        if (command.isUndoable()) {
+            model.saveMark(commandText);
+        }
+
         try {
             storage.saveMark(model.getMark());
         } catch (IOException ioe) {
