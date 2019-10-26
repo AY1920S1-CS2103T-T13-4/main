@@ -27,7 +27,7 @@
 <li><a href="#autotag-feature">4.2. Autotag feature</a></li>
 <li><a href="#annotation-feature">4.3. Annotation feature</a></li>
 <li><a href="#folders-feature">4.4. Folders feature</a></li>
-<li><a href="#reminder-feature">4.5. Reminder Feature</a></li>
+<li><a href="#reminder-feature">4.5. Reminder feature</a></li>
 <li><a href="#logging">4.6. Logging</a></li>
 <li><a href="#Implementation-Configuration">4.7. Configuration</a></li>
 </ul>
@@ -43,7 +43,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
+<li><a href="#deleting-a-bookmark">F.2. Deleting a bookmark</a></li>
 <li><a href="#saving-data">F.3. Saving data</a></li>
 </ul>
 </li>
@@ -189,7 +189,7 @@ For example, <code>LogsCenter</code> plays an important role at the architecture
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/tree/master/src/main/java/seedu/mark/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code> and 'TabView' components (not shown in the above figure), inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>BookmarkListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code> and 'TabView' components (not shown in the above figure), inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The structure of the <code>TabView</code> is depicted here:</p>
@@ -518,8 +518,8 @@ pointing to the previously undone state record, and restores the Mark to that st
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentPointer</code> is at index <code>markStateRecords.size() - 1</code>, pointing to the latest address book state, then there
-are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is
+If the <code>currentPointer</code> is at index <code>markStateRecords.size() - 1</code>, pointing to the latest Mark state, then there
+are no undone Mark states to restore. The <code>redo</code> command uses <code>Model#canRedoMark()</code> to check if this is
 the case. If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
@@ -1047,7 +1047,7 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 </div>
 </div>
 <div class="sect2">
-<h3 id="reminder-feature"><a class="link" href="#reminder-feature">4.5. Reminder Feature</a></h3>
+<h3 id="reminder-feature"><a class="link" href="#reminder-feature">4.5. Reminder feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
 <div class="paragraph">
@@ -2324,23 +2324,23 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
+<h3 id="deleting-a-bookmark"><a class="link" href="#deleting-a-bookmark">F.2. Deleting a bookmark</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Deleting a bookmark while all bookmarks are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. Multiple bookmarks in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First bookmark is deleted from the list. Details of the deleted bookmark shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No bookmark is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
@@ -2376,4 +2376,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-25 00:05:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-26 13:08:13 UTC</div></div></div></body></html>
