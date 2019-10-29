@@ -659,24 +659,24 @@ Exports all bookmarks tagged with <code>favorite</code> to a file named
 <div class="sect2">
 <h3 id="importing-bookmarks-strong-code-import-code-strong"><a class="link" href="#importing-bookmarks-strong-code-import-code-strong">3.17. Importing bookmarks: <strong><code>import</code></strong></a></h3>
 <div class="paragraph">
-<p>Imports bookmarks from files on the hard disk.</p>
+<p>Imports bookmarks from files on the hard disk. A bookmark is, by default, imported
+into a folder with the same name as its original folder (even if the folder
+structure is different). If no such folder is found, the bookmark will be imported
+into the folder <code>ImportedBookmarks</code>.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>import</strong> FILENAME [MORE_FILENAMES]&#8230;&#8203;</code></p>
+<p>Format: <code><strong>import</strong> FILENAME</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>FILENAME</code> should not include the file extension. E.g. <code>myBookmarks</code> and not
-<code>myBookmarks.json</code></p>
+<p><code>FILENAME</code> is case sensitive and should not include the file extension. E.g.
+<code>myBookmarks</code> and not <code>myBookmarks.json</code></p>
 </li>
 <li>
-<p><code>FILENAME</code> is case sensitive.</p>
-</li>
-<li>
-<p><code>FILENAME</code> should be a file stored in the folder
+<p><code>FILENAME.json</code> should be a file stored in the folder
 <code>[applicationHome]/data/bookmarks/</code>.</p>
 </li>
 <li>
@@ -696,11 +696,6 @@ to the JSON files produced by <code><strong>export</strong></code>.</p>
 <p><code><strong>import</strong> myBookmarks</code><br>
 Assuming <code>mark.jar</code> is stored in the folder <code>mark</code>, imports bookmarks from the
 file <code>mark/data/bookmarks/myBookmarks.json</code></p>
-</li>
-<li>
-<p><code><strong>import</strong> myBookmarks nusBookmarks youtubeBookmarks</code><br>
-Imports bookmarks from the files <code>myBookmarks.json</code>, <code>nusBookmarks.json</code>,
-and <code>youtubeBookmarks.json</code>.</p>
 </li>
 </ul>
 </div>
@@ -1555,4 +1550,4 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 16:21:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 16:38:07 UTC</div></div></div></body></html>
