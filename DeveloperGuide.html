@@ -666,10 +666,20 @@ and <code>Model#applyAllTaggers()</code> respectively.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes the command <code>autotag Help u/stackoverflow.com/questions</code> to add an autotag that tags all bookmarks
-from StackOverflow with the tag ProgrammingHelp. A <code>SelectiveBookmarkTagger</code> is created with a <code>UrlContainsKeywordsPredicate</code> and the tag
-<code>Help</code>. <code>b2</code>, which matches the <code>UrlContainsKeywordsPredicate</code>, is replaced by a copy of itself that also contains the tag
-<code>Help</code>.</p>
+<p>Step 2. The user executes the command <code><strong>autotag</strong> Help u/stackoverflow.com/questions</code> to add an autotag that tags all
+bookmarks from <strong>stackoverflow.com/questions</strong> with the tag <strong>Help</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <code>SelectiveBookmarkTagger</code> is created with a <code>UrlContainsKeywordsPredicate</code> and a <code>Tag</code> named <strong>Help</strong>.
+The predicate&#8217;s keyword is <strong>stackoverflow.com/questions</strong>.</p>
+</li>
+<li>
+<p><code>b2</code>, which matches <code>UrlContainsKeywordsPredicate</code>, is replaced by a copy of itself that
+also contains the tag <code>Help</code>.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -692,17 +702,25 @@ from StackOverflow with the tag ProgrammingHelp. A <code>SelectiveBookmarkTagger
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>AutotagCommand</code> should end at the destroy marker (X), but due to a limitation of PlantUML, it reaches the end of this diagram.
+The lifeline for <code>AutotagCommand</code> should end at the destroy marker (X), but due to a limitation of PlantUML, it
+reaches the end of this diagram.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Now, autotags will be applied whenever a bookmark is added or modified.</p>
+<p><strong>Autotags will now be applied whenever a bookmark is added or modified.</strong></p>
 </div>
 <div class="paragraph">
-<p>Step 3. The user then executes the command <code>add n/JavaFX new scene u/https://stackoverflow.com/questions/29080759/</code> to bookmark
-a question on StackOverflow. This bookmark matches the conditions for the autotag <code>Help</code>, so it is tagged.</p>
+<p>Step 3. The user then executes the command <code><strong>add</strong> n/JavaFX new scene u/https://stackoverflow.com/questions/29080759/</code>
+to bookmark a question on StackOverflow.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This bookmark matches the conditions for the previously added autotag, so it is tagged <strong>Help</strong>.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -710,13 +728,14 @@ a question on StackOverflow. This bookmark matches the conditions for the autota
 </div>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a <code><strong>autotag</strong></code> command:</p>
+<p>The following activity diagram (<a href="#autotag-activity-diagram">Figure 11, &#8220;Activity diagram showing how an autotag is added&#8221;</a>) summarizes what happens when an autotag is added.
+A similar mechanism is used to tag bookmarks when a bookmark is added or modified.</p>
 </div>
-<div class="imageblock">
+<div id="autotag-activity-diagram" class="imageblock">
 <div class="content">
 <img src="images/AutotagActivityDiagram.png" alt="AutotagActivityDiagram">
 </div>
-<div class="title">Figure 11. The activity diagram has not been created yet</div>
+<div class="title">Figure 11. Activity diagram showing how an autotag is added</div>
 </div>
 </div>
 <div class="sect3">
@@ -2376,4 +2395,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:05:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:15:42 UTC</div></div></div></body></html>
