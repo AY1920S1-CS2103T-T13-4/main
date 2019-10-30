@@ -31,21 +31,22 @@
 <li><a href="#saving-the-data">3.16. Saving the data</a></li>
 <li><a href="#exporting-bookmarks">3.17. Exporting bookmarks: <strong><code>export</code></strong></a></li>
 <li><a href="#importing-bookmarks-strong-code-import-code-strong">3.18. Importing bookmarks: <strong><code>import</code></strong></a></li>
-<li><a href="#creating-an-automatic-tag-strong-code-autotag-code-strong">3.19. Creating an automatic tag: <strong><code>autotag</code></strong></a></li>
-<li><a href="#saving-an-offline-copy-strong-code-cache-code-strong">3.20. Saving an offline copy: <strong><code>cache</code></strong></a></li>
-<li><a href="#making-annotations-on-an-offline-copy-strong-code-annotate-code-strong">3.21. Making annotations on an offline copy: <strong><code>annotate</code></strong></a></li>
-<li><a href="#deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong">3.22. Deleting annotations on an offline copy: <strong><code>annotate delete</code></strong></a></li>
-<li><a href="#modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong">3.23. Modifying annotations on an offline copy: <strong><code>annotate edit</code></strong></a></li>
-<li><a href="#viewing-an-annotated-offline-copy-strong-code-offline-code-strong">3.24. Viewing an annotated offline copy: <strong><code>offline</code></strong></a></li>
-<li><a href="#adding-a-reminder-strong-code-reminder-code-strong">3.25. Adding a reminder: <strong><code>reminder</code></strong></a></li>
-<li><a href="#editing-a-reminder-strong-code-reminder-edit-code-strong">3.26. Editing a reminder: <strong><code>reminder edit</code></strong></a></li>
-<li><a href="#deleting-a-reminder-strong-code-reminder-delete-code-strong">3.27. Deleting a reminder: <strong><code>reminder delete</code></strong></a></li>
-<li><a href="#expanding-the-folder-hierarchy-strong-code-expand-code-strong">3.28. Expanding the folder hierarchy: <strong><code>expand</code></strong></a></li>
-<li><a href="#collapsing-the-folder-hierarchy-strong-code-collapse-code-strong">3.29. Collapsing the folder hierarchy: <strong><code>collapse</code></strong></a></li>
-<li><a href="#switching-a-href-tabs-tabs-a-strong-code-tab-code-strong">3.30. Switching <a href="#Tabs">tabs</a>: <strong><code>tab</code></strong></a></li>
-<li><a href="#sorting-bookmarks-code-coming-in-v2-0-code">3.31. Sorting bookmarks: <code>[coming in v2.0]</code></a></li>
-<li><a href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.32. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></li>
-<li><a href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.33. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></li>
+<li><a href="#Autotag-Command">3.19. Creating an automatic tag: <strong><code>autotag</code></strong></a></li>
+<li><a href="#deleting-automatic-tags-strong-code-autotag-delete-code-strong">3.20. Deleting automatic tags: <strong><code>autotag-delete</code></strong></a></li>
+<li><a href="#saving-an-offline-copy-strong-code-cache-code-strong">3.21. Saving an offline copy: <strong><code>cache</code></strong></a></li>
+<li><a href="#making-annotations-on-an-offline-copy-strong-code-annotate-code-strong">3.22. Making annotations on an offline copy: <strong><code>annotate</code></strong></a></li>
+<li><a href="#deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong">3.23. Deleting annotations on an offline copy: <strong><code>annotate delete</code></strong></a></li>
+<li><a href="#modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong">3.24. Modifying annotations on an offline copy: <strong><code>annotate edit</code></strong></a></li>
+<li><a href="#viewing-an-annotated-offline-copy-strong-code-offline-code-strong">3.25. Viewing an annotated offline copy: <strong><code>offline</code></strong></a></li>
+<li><a href="#adding-a-reminder-strong-code-reminder-code-strong">3.26. Adding a reminder: <strong><code>reminder</code></strong></a></li>
+<li><a href="#editing-a-reminder-strong-code-reminder-edit-code-strong">3.27. Editing a reminder: <strong><code>reminder edit</code></strong></a></li>
+<li><a href="#deleting-a-reminder-strong-code-reminder-delete-code-strong">3.28. Deleting a reminder: <strong><code>reminder delete</code></strong></a></li>
+<li><a href="#expanding-the-folder-hierarchy-strong-code-expand-code-strong">3.29. Expanding the folder hierarchy: <strong><code>expand</code></strong></a></li>
+<li><a href="#collapsing-the-folder-hierarchy-strong-code-collapse-code-strong">3.30. Collapsing the folder hierarchy: <strong><code>collapse</code></strong></a></li>
+<li><a href="#switching-a-href-tabs-tabs-a-strong-code-tab-code-strong">3.31. Switching <a href="#Tabs">tabs</a>: <strong><code>tab</code></strong></a></li>
+<li><a href="#sorting-bookmarks-code-coming-in-v2-0-code">3.32. Sorting bookmarks: <code>[coming in v2.0]</code></a></li>
+<li><a href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.33. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></li>
+<li><a href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.34. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -778,7 +779,7 @@ file <code>mark/data/bookmarks/myBookmarks.json</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-an-automatic-tag-strong-code-autotag-code-strong"><a class="link" href="#creating-an-automatic-tag-strong-code-autotag-code-strong">3.19. Creating an automatic tag: <strong><code>autotag</code></strong></a></h3>
+<h3 id="Autotag-Command"><a class="link" href="#Autotag-Command">3.19. Creating an automatic tag: <strong><code>autotag</code></strong></a></h3>
 <div class="paragraph">
 <p>Creates a tag that will be automatically applied to bookmarks which match
 the given conditions.</p>
@@ -842,7 +843,40 @@ containing <code>luminus</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-an-offline-copy-strong-code-cache-code-strong"><a class="link" href="#saving-an-offline-copy-strong-code-cache-code-strong">3.20. Saving an offline copy: <strong><code>cache</code></strong></a></h3>
+<h3 id="deleting-automatic-tags-strong-code-autotag-delete-code-strong"><a class="link" href="#deleting-automatic-tags-strong-code-autotag-delete-code-strong">3.20. Deleting automatic tags: <strong><code>autotag-delete</code></strong></a></h3>
+<div class="paragraph">
+<p>Deletes a previously created <a href="#autotag">autotag</a>.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>autotag-delete</strong> TAG_NAME</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>TAG_NAME</code> should be the name of an existing autotag.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>autotag-delete</strong> Quiz</code><br>
+ Deletes the autotag that would have tagged bookmarks that match its conditions
+with the tag <code>Quiz</code>. No existing tags are removed, but new and edited bookmarks
+will no longer be automatically tagged with <code>Quiz</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-an-offline-copy-strong-code-cache-code-strong"><a class="link" href="#saving-an-offline-copy-strong-code-cache-code-strong">3.21. Saving an offline copy: <strong><code>cache</code></strong></a></h3>
 <div class="paragraph">
 <p>Saves the bookmarked website locally for offline viewing.</p>
 </div>
@@ -896,7 +930,7 @@ Manually save a new copy of the site.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="making-annotations-on-an-offline-copy-strong-code-annotate-code-strong"><a class="link" href="#making-annotations-on-an-offline-copy-strong-code-annotate-code-strong">3.21. Making annotations on an offline copy: <strong><code>annotate</code></strong></a></h3>
+<h3 id="making-annotations-on-an-offline-copy-strong-code-annotate-code-strong"><a class="link" href="#making-annotations-on-an-offline-copy-strong-code-annotate-code-strong">3.22. Making annotations on an offline copy: <strong><code>annotate</code></strong></a></h3>
 <div class="paragraph">
 <p>Adds new annotations on locally saved, offline version of the bookmarked
 website. When this command is given, the UI will switch to the offline tab showing the results of your command.
@@ -961,7 +995,7 @@ a new note with content "change or add note content" will be added to the paragr
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong"><a class="link" href="#deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong">3.22. Deleting annotations on an offline copy: <strong><code>annotate delete</code></strong></a></h3>
+<h3 id="deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong"><a class="link" href="#deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong">3.23. Deleting annotations on an offline copy: <strong><code>annotate delete</code></strong></a></h3>
 <div class="paragraph">
 <p>Deletes selected highlights or notes from the offline copy of the given bookmarked website.
 When this command is given, the UI will switch to the offline tab showing the results of your command.
@@ -1036,7 +1070,7 @@ Removes all annotations of the offline copy of bookmark 1.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong"><a class="link" href="#modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong">3.23. Modifying annotations on an offline copy: <strong><code>annotate edit</code></strong></a></h3>
+<h3 id="modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong"><a class="link" href="#modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong">3.24. Modifying annotations on an offline copy: <strong><code>annotate edit</code></strong></a></h3>
 <div class="paragraph">
 <p>Modifies existing annotations on the offline version of the bookmarked
 website. When this command is given, the UI will switch to the offline tab showing the results of your command.
@@ -1115,7 +1149,7 @@ note with content "changing and moving notes". Annotation on paragraph 2 is remo
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-an-annotated-offline-copy-strong-code-offline-code-strong"><a class="link" href="#viewing-an-annotated-offline-copy-strong-code-offline-code-strong">3.24. Viewing an annotated offline copy: <strong><code>offline</code></strong></a></h3>
+<h3 id="viewing-an-annotated-offline-copy-strong-code-offline-code-strong"><a class="link" href="#viewing-an-annotated-offline-copy-strong-code-offline-code-strong">3.25. Viewing an annotated offline copy: <strong><code>offline</code></strong></a></h3>
 <div class="paragraph">
 <p>Switches to offline tab and shows offline copy of a selected bookmark. The offline view tab will
 show the latest offline copy with annotations by default.</p>
@@ -1156,7 +1190,7 @@ then annotations are shown as well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-reminder-strong-code-reminder-code-strong"><a class="link" href="#adding-a-reminder-strong-code-reminder-code-strong">3.25. Adding a reminder: <strong><code>reminder</code></strong></a></h3>
+<h3 id="adding-a-reminder-strong-code-reminder-code-strong"><a class="link" href="#adding-a-reminder-strong-code-reminder-code-strong">3.26. Adding a reminder: <strong><code>reminder</code></strong></a></h3>
 <div class="paragraph">
 <p>Adds a reminder of a specified bookmark. You can set the time for the reminder.</p>
 </div>
@@ -1199,7 +1233,7 @@ The reminder reminds you to read announcements.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-reminder-strong-code-reminder-edit-code-strong"><a class="link" href="#editing-a-reminder-strong-code-reminder-edit-code-strong">3.26. Editing a reminder: <strong><code>reminder edit</code></strong></a></h3>
+<h3 id="editing-a-reminder-strong-code-reminder-edit-code-strong"><a class="link" href="#editing-a-reminder-strong-code-reminder-edit-code-strong">3.27. Editing a reminder: <strong><code>reminder edit</code></strong></a></h3>
 <div class="paragraph">
 <p>Edits the reminder at the specified index. You can edit either the time or the note of the reminder.</p>
 </div>
@@ -1241,7 +1275,7 @@ Reset the note to Check daily news.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-reminder-strong-code-reminder-delete-code-strong"><a class="link" href="#deleting-a-reminder-strong-code-reminder-delete-code-strong">3.27. Deleting a reminder: <strong><code>reminder delete</code></strong></a></h3>
+<h3 id="deleting-a-reminder-strong-code-reminder-delete-code-strong"><a class="link" href="#deleting-a-reminder-strong-code-reminder-delete-code-strong">3.28. Deleting a reminder: <strong><code>reminder delete</code></strong></a></h3>
 <div class="paragraph">
 <p>Deletes the the reminder at the specified index.</p>
 </div>
@@ -1272,7 +1306,7 @@ Delete the reminder of index 1.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="expanding-the-folder-hierarchy-strong-code-expand-code-strong"><a class="link" href="#expanding-the-folder-hierarchy-strong-code-expand-code-strong">3.28. Expanding the folder hierarchy: <strong><code>expand</code></strong></a></h3>
+<h3 id="expanding-the-folder-hierarchy-strong-code-expand-code-strong"><a class="link" href="#expanding-the-folder-hierarchy-strong-code-expand-code-strong">3.29. Expanding the folder hierarchy: <strong><code>expand</code></strong></a></h3>
 <div class="paragraph">
 <p>Expands the folder hierarchy by the specified number of levels.</p>
 </div>
@@ -1313,7 +1347,7 @@ Expands the folder hierarchy by 3 levels.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="collapsing-the-folder-hierarchy-strong-code-collapse-code-strong"><a class="link" href="#collapsing-the-folder-hierarchy-strong-code-collapse-code-strong">3.29. Collapsing the folder hierarchy: <strong><code>collapse</code></strong></a></h3>
+<h3 id="collapsing-the-folder-hierarchy-strong-code-collapse-code-strong"><a class="link" href="#collapsing-the-folder-hierarchy-strong-code-collapse-code-strong">3.30. Collapsing the folder hierarchy: <strong><code>collapse</code></strong></a></h3>
 <div class="paragraph">
 <p>Collapses the folder hierarchy by the specified number of levels.</p>
 </div>
@@ -1354,7 +1388,7 @@ Collapses the folder hierarchy by 1 level.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="switching-a-href-tabs-tabs-a-strong-code-tab-code-strong"><a class="link" href="#switching-a-href-tabs-tabs-a-strong-code-tab-code-strong">3.30. Switching <a href="#Tabs">tabs</a>: <strong><code>tab</code></strong></a></h3>
+<h3 id="switching-a-href-tabs-tabs-a-strong-code-tab-code-strong"><a class="link" href="#switching-a-href-tabs-tabs-a-strong-code-tab-code-strong">3.31. Switching <a href="#Tabs">tabs</a>: <strong><code>tab</code></strong></a></h3>
 <div class="paragraph">
 <p>Switches the current app view to the tab that corresponds to the given
 index. For your convenience, you can use keywords <code>dash</code>, <code>on</code> or <code>off</code> instead of an index.</p>
@@ -1399,7 +1433,7 @@ Goes to the Offline tab which shows the offline copy of bookmarks.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-bookmarks-code-coming-in-v2-0-code"><a class="link" href="#sorting-bookmarks-code-coming-in-v2-0-code">3.31. Sorting bookmarks: <code>[coming in v2.0]</code></a></h3>
+<h3 id="sorting-bookmarks-code-coming-in-v2-0-code"><a class="link" href="#sorting-bookmarks-code-coming-in-v2-0-code">3.32. Sorting bookmarks: <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Sorts the displayed bookmarks according to different criterion (name,
 order added) and displays them as a list.</p>
@@ -1440,13 +1474,13 @@ Sort all the bookmarks based on the order they were added.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="automatically-completing-partially-typed-commands-code-coming-in-v2-0-code"><a class="link" href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.32. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></h3>
+<h3 id="automatically-completing-partially-typed-commands-code-coming-in-v2-0-code"><a class="link" href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.33. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Automatically fills in partially typed commands if the command is unique.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code"><a class="link" href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.33. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></h3>
+<h3 id="sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code"><a class="link" href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.34. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Shares your bookmarks and notes with your friends via Email or Telegram.</p>
 </div>
@@ -1508,6 +1542,11 @@ the data of your previous Mark folder.</p>
 <dt class="hdlist1"><a id="annotation"></a> Annotation</dt>
 <dd>
 <p>A note or highlight that is made on an <a href="#offline-copy">offline copy</a> of a bookmark.</p>
+</dd>
+<dt class="hdlist1"><a id="autotag"></a> Autotag</dt>
+<dd>
+<p>A tag that is automatically applied to bookmarks based on certain conditions. These conditions
+are specified when the autotag is created. Refer to <a href="#Autotag-Command">Section 3.19, &#8220;Creating an automatic tag: <strong><code>autotag</code></strong>&#8221;</a> for details about how to use autotags.</p>
 </dd>
 <dt class="hdlist1"><a id="bookmark"></a> Bookmark</dt>
 <dd>
@@ -1630,4 +1669,4 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:02:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:05:49 UTC</div></div></div></body></html>
