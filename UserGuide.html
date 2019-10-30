@@ -931,9 +931,7 @@ Deletes the offline copy of the second bookmark.</p>
 website. When you give this command, the UI will switch to the offline tab showing the results of your command.
 With this command, you can highlight a paragraph on the offline document and optionally attach a supplementary
 note to said paragraph. (Notes can be added to justify the highlight or as
-content-relevant notes for future reference to bookmark).
-You can also add a general note not pertaining to any specific paragraph to the <em>General notes section</em>
-located at the bottom of the document.</p>
+content-relevant notes for future reference to bookmark).</p>
 </div>
 <div class="paragraph">
 <p>Overwriting an existing note is possible with this command.</p>
@@ -964,8 +962,9 @@ If <code>INDEX</code> is invalid, a warning message will be displayed.</p>
 </li>
 <li>
 <p><code>PARA_NUM</code> is the numbered identifier of the paragraph to be marked.
-<code>PARA_NUM</code> must be <code>NULL</code> or it must begin with <code>P</code> or <code>S</code> (e.g. <code>P3</code>).
-If <code>PARA_NUM</code> is invalid, a warning message will be displayed.</p>
+ <code>PARA_NUM</code> must
+begin with <code>P</code> or <code>S</code> (e.g. <code>P3</code>).
+ If <code>PARA_NUM</code> is invalid, a warning message will be displayed.</p>
 </li>
 <li>
 <p><code>NOTES</code> is the content of notes to add.</p>
@@ -1001,11 +1000,6 @@ This changes the note attached to paragraph 2 to a note with content “change o
 in the offline copy of bookmark 1 if paragraph 2 had pre-existing note, and highlight
 colour remains the same. Otherwise, paragraph 2 will be highlighted yellow and
 a new note with content "change or add note content" will be added to the paragraph.</p>
-</li>
-<li>
-<p><code><strong>annotate</strong> 1 n/adding a general note</code><br>
-This adds a note with content "adding a general note" to the <em>General notes section</em> in the
- offline copy of bookmark 1.</p>
 </li>
 </ul>
 </div>
@@ -1105,7 +1099,7 @@ choose to move notes from a paragraph to another paragraph. This command also su
 <a href="#phantom-paragraph">phantom paragraph</a> back to the main text by specifying which true paragraph to move it to.</p>
 </div>
 <div class="paragraph">
-<p>At v1.4, moving of notes to the  <a href="#stray-notes"><em>General notes section</em></a> is not supported.</p>
+<p>At v1.3, moving of notes to the  <a href="#stray-notes"><em>General notes section</em></a> is not supported.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>annotate-edit</strong> INDEX p/PARA_NUM [to/NEW_PARA_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p>
@@ -1699,10 +1693,10 @@ displayed in the document).</p>
 <p><strong>Annotate (add)</strong>: <code><strong>annotate</strong> INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</code></p>
 </li>
 <li>
-<p><strong>Annotate (delete)</strong>: <code><strong>annotate delete</strong> INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p>
+<p><strong>Annotate (delete)</strong>: <code><strong>annotate-delete</strong> INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p>
 </li>
 <li>
-<p><strong>Annotate (edit)</strong>: <code><strong>annotate edit</strong> INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p>
+<p><strong>Annotate (edit)</strong>: <code><strong>annotate-edit</strong> INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p>
 </li>
 <li>
 <p><strong>Offline</strong>: <code><strong>offline</strong> INDEX [v/VERSION=current]</code></p>
@@ -1734,4 +1728,4 @@ displayed in the document).</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 15:55:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 15:57:45 UTC</div></div></div></body></html>
