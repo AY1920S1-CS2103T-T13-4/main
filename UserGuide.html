@@ -233,20 +233,23 @@ Bookmarks the given website, names it <code>IntelliJ Tips and Tricks</code>. The
 <p>Creates a new folder for organizing bookmarks into.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER]</code></p>
+<p>Format: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER=ROOT]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>FOLDER_NAME</code> must not already exist.</p>
+<p><code>ROOT</code> is the topmost folder already created by Mark, and all folders will be descendants of this folder.</p>
+</li>
+<li>
+<p><code>FOLDER_NAME</code> cannot be the name of an existing folder. (Note that it can&#8217;t be <code>ROOT</code> also, since it already exists.)</p>
 </li>
 <li>
 <p><code>PARENT_FOLDER</code> must be an existing folder.</p>
 </li>
 <li>
-<p>If <code>PARENT_FOLDER</code> is not specified, <code>FOLDER_NAME</code> will have no parent and will be placed at the root.</p>
+<p>If <code>PARENT_FOLDER</code> is not specified, <code>PARENT_FOLDER</code> will default to <code>ROOT</code>.</p>
 </li>
 </ul>
 </div>
@@ -1703,6 +1706,9 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 <p><strong>Sort</strong>: <code><strong>sort</strong> [CRITERION]</code></p>
 </li>
 <li>
+<p><strong>Folder</strong>: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER=ROOT]</code></p>
+</li>
+<li>
 <p><strong>Expand</strong>: <code><strong>expand</strong> [LEVEL=1]</code></p>
 </li>
 <li>
@@ -1714,4 +1720,4 @@ Stray notes are found in the <em>Stray Notes Section</em> at the bottom of the <
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 15:05:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 15:07:16 UTC</div></div></div></body></html>
