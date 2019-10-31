@@ -44,10 +44,10 @@
 <li><a href="#collapsing-the-folder-hierarchy-strong-code-collapse-code-strong">3.29. Collapsing the folder hierarchy: <strong><code>collapse</code></strong></a></li>
 <li><a href="#switching-a-href-tabs-tabs-a-strong-code-tab-code-strong">3.30. Switching <a href="#Tabs">tabs</a>: <strong><code>tab</code></strong></a></li>
 <li><a href="#deleting-a-folder-strong-code-folder-delete-code-strong-code-coming-in-v2-0-code">3.31. Deleting a folder: <strong><code>folder-delete</code></strong> <code>[coming in v2.0]</code></a></li>
-<li><a href="#sorting-bookmarks-code-coming-in-v2-0-code">3.32. Sorting bookmarks: <code>[coming in v2.0]</code></a></li>
-<li><a href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.33. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></li>
-<li><a href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.34. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></li>
-<li><a href="#opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code">3.35. Opening a bookmark from a reminder: <strong><code>goto reminder</code></strong> <code>[coming in v2.0]</code></a></li>
+<li><a href="#sorting-bookmarks-strong-code-sort-code-strong-code-coming-in-v2-0-code">3.32. Sorting bookmarks: <strong><code>sort</code></strong> <code>[coming in v2.0]</code></a></li>
+<li><a href="#opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code">3.33. Opening a bookmark from a reminder: <strong><code>goto-reminder</code></strong> <code>[coming in v2.0]</code></a></li>
+<li><a href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.34. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></li>
+<li><a href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.35. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -108,11 +108,14 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all bookmarks</p>
 </li>
 <li>
+<p><strong><code>folder Tutorials</code></strong> : create a folder named <code>Tutorials</code></p>
+</li>
+<li>
 <p><strong><code>add u/https://git-scm.com/book/en/v2 n/Pro Git f/Tutorials</code></strong> : adds a bookmark
 named <code>Pro Git</code> to Mark.</p>
 </li>
 <li>
-<p><strong><code>delete 3</code></strong> : deletes the 3rd bookmark shown in the current list</p>
+<p><strong><code>delete 3</code></strong> : deletes the 3rd bookmark shown in the current bookmark list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -217,12 +220,12 @@ specified.</p>
 <p><code><strong>add</strong> u/https://nus-cs2103-ay1920s1.github.io/website/ n/Module Website
 f/CS2103T r/Contains textbook &amp; important deadlines</code><br>
 Bookmarks the given website, names it <code>Module Website</code>, and adds it to the folder <code>CS2103T</code>.
-The new bookmark&#8217;s remark is "Contains textbook &amp; important deadlines".</p>
+The new bookmark&#8217;s remark is <code>Contains textbook &amp; important deadlines</code>.</p>
 </li>
 <li>
 <p><code><strong>add</strong> u/www.youtube.com/watch?v=9AMcN-wkspU n/IntelliJ Tips and Tricks t/video t/watch-later</code>
 Bookmarks the given website, names it <code>IntelliJ Tips and Tricks</code>. The new bookmark&#8217;s tags include
-"video" and "watch-later".</p>
+<code>video</code> and <code>watch-later</code>.</p>
 </li>
 </ul>
 </div>
@@ -1429,14 +1432,14 @@ Goes to the Offline tab which shows the offline copy of bookmarks.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>folder delete</strong> CS2103</code><br>
+<p><code><strong>folder-delete</strong> CS2103</code><br>
 Deletes the folder named <code>CS2103</code> and all of its subfolders.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-bookmarks-code-coming-in-v2-0-code"><a class="link" href="#sorting-bookmarks-code-coming-in-v2-0-code">3.32. Sorting bookmarks: <code>[coming in v2.0]</code></a></h3>
+<h3 id="sorting-bookmarks-strong-code-sort-code-strong-code-coming-in-v2-0-code"><a class="link" href="#sorting-bookmarks-strong-code-sort-code-strong-code-coming-in-v2-0-code">3.32. Sorting bookmarks: <strong><code>sort</code></strong> <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Sorts the displayed bookmarks according to different criterion (name,
 order added) and displays them as a list.</p>
@@ -1477,24 +1480,12 @@ Sort all the bookmarks based on the order they were added.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="automatically-completing-partially-typed-commands-code-coming-in-v2-0-code"><a class="link" href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.33. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p>Automatically fills in partially typed commands if the command is unique.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code"><a class="link" href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.34. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p>Shares your bookmarks and notes with your friends via Email or Telegram.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code"><a class="link" href="#opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code">3.35. Opening a bookmark from a reminder: <strong><code>goto reminder</code></strong> <code>[coming in v2.0]</code></a></h3>
+<h3 id="opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code"><a class="link" href="#opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code">3.33. Opening a bookmark from a reminder: <strong><code>goto-reminder</code></strong> <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Opens the related bookmark of the specified reminder from the bookmark manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>goto reminder</strong> INDEX</code></p>
+<p>Format: <code><strong>goto-reminder</strong> INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1516,11 +1507,23 @@ Sort all the bookmarks based on the order they were added.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>goto reminder</strong> 1</code><br>
+<p><code><strong>goto-reminder</strong> 1</code><br>
 If reminder 1 points to bookmark 5, this command is equivalent to
 <code><strong>goto</strong> 5</code>. (i.e. opens the 5th bookmark in the bookmark manager.)</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="automatically-completing-partially-typed-commands-code-coming-in-v2-0-code"><a class="link" href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.34. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Automatically fills in partially typed commands if the command is unique.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code"><a class="link" href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.35. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Shares your bookmarks and notes with your friends via Email or Telegram.</p>
 </div>
 </div>
 </div>
@@ -1653,9 +1656,6 @@ displayed in the document).</p>
 <p><strong>Goto</strong>: <code><strong>goto</strong> INDEX</code></p>
 </li>
 <li>
-<p><strong>Goto</strong>: <code><strong>goto reminder</strong> INDEX</code></p>
-</li>
-<li>
 <p><strong>Favorite</strong>: <code><strong>favorite|fav</strong> INDEX</code></p>
 </li>
 <li>
@@ -1690,16 +1690,16 @@ displayed in the document).</p>
 <p><strong>Cache (delete)</strong>: <code><strong>cache-delete</strong> INDEX</code></p>
 </li>
 <li>
-<p><strong>Annotate (add)</strong>: <code><strong>annotate</strong> INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</code></p>
+<p><strong>Offline</strong>: <code><strong>offline</strong> INDEX</code></p>
 </li>
 <li>
-<p><strong>Annotate (delete)</strong>: <code><strong>annotate-delete</strong> INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p>
+<p><strong>Annotate (add)</strong>: <code><strong>annotate</strong> INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</code></p>
 </li>
 <li>
 <p><strong>Annotate (edit)</strong>: <code><strong>annotate-edit</strong> INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p>
 </li>
 <li>
-<p><strong>Offline</strong>: <code><strong>offline</strong> INDEX [v/VERSION=current]</code></p>
+<p><strong>Annotate (delete)</strong>: <code><strong>annotate-delete</strong> INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p>
 </li>
 <li>
 <p><strong>Reminder (add)</strong>: <code><strong>reminder</strong> INDEX t/TIME_DATE [n/NOTE=Open]</code></p>
@@ -1711,7 +1711,7 @@ displayed in the document).</p>
 <p><strong>Reminder (delete)</strong>: <code><strong>reminder-delete</strong> INDEX</code></p>
 </li>
 <li>
-<p><strong>Folder</strong>: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER=ROOT]</code></p>
+<p><strong>Folder (add)</strong>: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER=ROOT]</code></p>
 </li>
 <li>
 <p><strong>Expand</strong>: <code><strong>expand</strong> [LEVEL=1]</code></p>
@@ -1725,4 +1725,4 @@ displayed in the document).</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 16:06:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 13:59:50 UTC</div></div></div></body></html>
