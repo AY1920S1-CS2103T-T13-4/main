@@ -1,9 +1,9 @@
-= John Doe - Project Portfolio
+= Yoke Kai Xin - Project Portfolio
 :site-section: AboutUs
 :imagesDir: ../images
 :stylesDir: ../stylesheets
 
-== PROJECT: AddressBook - Level 3
+== PROJECT: Mark (adapted from AddressBook - Level 3)
 
 ---
 
