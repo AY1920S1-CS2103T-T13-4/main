@@ -953,17 +953,17 @@ If colour provided is invalid, a warning message will be displayed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>annotate</strong> 1 p/2 n/summary of paragraph h/orange</code><br>
+<p><code><strong>annotate</strong> 1 p/p2 n/summary of paragraph h/orange</code><br>
 This highlights paragraph 2 orange and attaches note with content “summary of paragraph” to the paragraph
 in the offline copy of bookmark 1.</p>
 </li>
 <li>
-<p><code><strong>annotate</strong> 1 p/2 h/pink</code><br>
+<p><code><strong>annotate</strong> 1 p/p2 h/pink</code><br>
 This overwrites any existing highlight and highlights paragraph 2 with pink
 in the offline copy of bookmark 1. Any notes attached remain attached.</p>
 </li>
 <li>
-<p><code><strong>annotate</strong> 1 p/2 n/change or add note content</code><br>
+<p><code><strong>annotate</strong> 1 p/p2 n/change or add note content</code><br>
 This changes the note attached to paragraph 2 to a note with content “change or add note content”
 in the offline copy of bookmark 1 if paragraph 2 had pre-existing note, and highlight
 colour remains the same. Otherwise, paragraph 2 will be highlighted yellow and
@@ -1035,19 +1035,19 @@ the highlight will be removed. <code>KEEP_HIGHLIGHT</code> is <code>false</code>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>annotate-delete</strong> 1 p/2</code><br>
+<p><code><strong>annotate-delete</strong> 1 p/p2</code><br>
 This removes both the note and highlight from paragraph 2 in the offline copy of bookmark 1.</p>
 </li>
 <li>
-<p><code><strong>annotate-delete</strong> 1 p/2 n/true</code><br>
+<p><code><strong>annotate-delete</strong> 1 p/p2 n/true</code><br>
 This removes the highlight of paragraph 2 and moves the note to <em>General notes section</em> in the offline copy of bookmark 1.</p>
 </li>
 <li>
-<p><code><strong>annotate-delete</strong> 1 p/2 h/true</code><br>
+<p><code><strong>annotate-delete</strong> 1 p/p2 h/true</code><br>
 This removes the note of paragraph 2 in the offline copy of bookmark 1, leaving the highlight untouched.</p>
 </li>
 <li>
-<p><code><strong>annotate-delete</strong> 2 p/S1</code><br>
+<p><code><strong>annotate-delete</strong> 2 p/s1</code><br>
 This deletes the general note from phantom paragraph <code>S1</code> in the offline copy of bookmark 2.</p>
 </li>
 <li>
@@ -1108,29 +1108,29 @@ If colour provided is invalid, a warning message will be displayed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>annotate-edit</strong> 1 p/2 to/3</code><br>
+<p><code><strong>annotate-edit</strong> 1 p/p2 to/p3</code><br>
 This moves both the highlight and notes from paragraph 2 to paragraph 3 in the offline copy of bookmark 1.
 The highlight of paragraph 2 is removed.</p>
 </li>
 <li>
-<p><code><strong>annotate-edit</strong> 1 p/2 to/3 h/orange</code><br>
+<p><code><strong>annotate-edit</strong> 1 p/p2 to/p3 h/orange</code><br>
 This moves the note from paragraph 2 to paragraph 3 in the offline copy of bookmark 1. The highlight of paragraph 2
 is removed and paragraph 3 is highlighted with orange.</p>
 </li>
 <li>
-<p><code><strong>annotate-edit</strong> 1 p/1 n/new notes</code><br>
+<p><code><strong>annotate-edit</strong> 1 p/p1 n/new notes</code><br>
 This replaces the content of the note for paragraph 1 with "new notes" in the offline copy of bookmark 1.</p>
 </li>
 <li>
-<p><code><strong>annotate-edit</strong> 1 p/1 h/yellow</code><br>
+<p><code><strong>annotate-edit</strong> 1 p/p1 h/yellow</code><br>
 This changes the highlight colour to yellow for paragraph 1 in the offline copy of bookmark 1.</p>
 </li>
 <li>
-<p><code><strong>annotate-edit</strong> 1 S2 p/1</code><br>
+<p><code><strong>annotate-edit</strong> 1 p/s2 to/p1</code><br>
 This moves the general note of phantom paragraph <code>S2</code> to paragraph 1 in the offline copy of bookmark 1.</p>
 </li>
 <li>
-<p><code><strong>annotate-edit</strong> 1 p/2 to/3 n/changing and moving notes</code><br>
+<p><code><strong>annotate-edit</strong> 1 p/p2 to/p3 n/changing and moving notes</code><br>
 This annotates paragraph 3 with the highlight of paragraph 2 and
 a note with content "changing and moving notes". The annotation on paragraph 2 is removed.</p>
 </li>
@@ -1725,4 +1725,4 @@ displayed in the document).</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 14:42:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 15:31:48 UTC</div></div></div></body></html>
