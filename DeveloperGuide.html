@@ -1198,46 +1198,44 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Our target user</strong>:</p>
+<p>The following characteristics describe our <strong>target user</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>needs to manage a significant number of bookmarks</p>
+<p>Needs to manage a significant number of bookmarks</p>
 </li>
 <li>
-<p>needs to make notes on webpage content quite frequently</p>
+<p>Needs to make notes on webpage content quite frequently</p>
 </li>
 <li>
-<p>needs reminders to submit forms or visit websites</p>
+<p>Needs reminders to submit forms or visit websites</p>
 </li>
 <li>
-<p>prefers desktop apps over other types</p>
+<p>Prefers desktop apps over other types</p>
 </li>
 <li>
-<p>types fast and prefers typing over mouse input</p>
-</li>
-<li>
-<p>likes using CLI apps</p>
+<p>Types quickly and prefers typing over mouse input</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Our value proposition</strong>:</p>
+<p>This is our <strong>value proposition</strong> – how Mark can streamline current
+web browsing-related activities:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>manage bookmarks faster than a typical mouse/ GUI driven app</p>
+<p>Manage bookmarks faster than a typical mouse/ GUI driven app</p>
 </li>
 <li>
-<p>access and annotate webpage content without an Internet connection</p>
+<p>Allow webpage content to be accessed and annotated without an Internet connection</p>
 </li>
 <li>
-<p>set reminders to visit websites at specific times</p>
+<p>Remind users about websites they need to visit at specific times</p>
 </li>
 <li>
-<p>minimize the need to manually categorize bookmarks</p>
+<p>Eliminate the need for manual categorizing of bookmarks</p>
 </li>
 </ul>
 </div>
@@ -1412,6 +1410,12 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export and import bookmarks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share bookmarks with my friends</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">favorite a bookmark</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access it more easily in future</p></td>
 </tr>
@@ -1439,18 +1443,21 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <td class="tableblock halign-left valign-top"><p class="tableblock">sort the bookmarks according to name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate a specific bookmark</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export and import autotags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share my custom-made autotags with friends</p></td>
+</tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>Mark</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>Mark</code> and the <strong>Actor</strong> is the <code>user</code>, unless otherwise specified.)</p>
 </div>
 <h3 id="UC01" class="discrete">Use case: UC01 - List bookmarks</h3>
 <div class="paragraph">
@@ -1459,30 +1466,30 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list bookmarks</p>
+<p>User requests to list bookmarks.</p>
 </li>
 <li>
-<p>Mark shows a list of bookmarks</p>
+<p>Mark shows a list of bookmarks.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 </ol>
 </div>
-<h3 id="UC02" class="discrete">Use case: UC02 - Add bookmark</h3>
+<h3 id="UC02" class="discrete">Use case: UC02 - Add a bookmark</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to add a bookmark</p>
+<p>User requests to add a bookmark.</p>
 </li>
 <li>
-<p>User provides all the details of the bookmark to add</p>
+<p>User provides all the details of the bookmark to be added.</p>
 </li>
 <li>
-<p>Mark deletes the bookmark</p>
+<p>Mark deletes the bookmark.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1495,7 +1502,7 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given URL is invalid.</p>
+<p>2a. Not all compulsory fields are provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1509,23 +1516,37 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 </li>
 </ul>
 </div>
-<h3 id="UC03" class="discrete">Use case: UC03 - Delete bookmark</h3>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The given URL is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Mark shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="UC03" class="discrete">Use case: UC03 - Delete a bookmark</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list bookmarks</p>
+<p>User <a href="#UC01">lists bookmarks (UC01)</a>.</p>
 </li>
 <li>
-<p>Mark shows a list of bookmarks</p>
+<p>User requests to delete a specific bookmark in the list.</p>
 </li>
 <li>
-<p>User requests to delete a specific bookmark in the list</p>
-</li>
-<li>
-<p>Mark deletes the bookmark</p>
+<p>Mark deletes the bookmark.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1538,7 +1559,7 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>1a. The list is empty.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1565,16 +1586,13 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list bookmarks</p>
+<p>User <a href="#UC01">lists bookmarks (UC01)</a>.</p>
 </li>
 <li>
-<p>Mark shows a list of bookmarks</p>
+<p>User requests to edit a specific bookmark in the list.</p>
 </li>
 <li>
-<p>User requests to edit a specific bookmark in the list</p>
-</li>
-<li>
-<p>Mark edits the bookmark</p>
+<p>Mark edits the bookmark.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1587,17 +1605,28 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-<li>
-<p>3a. The given index is invalid.</p>
+<p>2a. The given index is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Mark shows an error message.</p>
+<p>2a1. Mark shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. No fields to edit are provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Mark shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1614,16 +1643,13 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list bookmarks</p>
+<p>User <a href="#UC01">lists bookmarks (UC01)</a>.</p>
 </li>
 <li>
-<p>Mark shows a list of bookmarks</p>
+<p>User requests to open a specific bookmark in the list.</p>
 </li>
 <li>
-<p>User requests to open a specific bookmark in the list</p>
-</li>
-<li>
-<p>Mark opens the bookmark</p>
+<p>Mark opens the bookmark.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1636,17 +1662,17 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>1a. The list is empty.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 <li>
-<p>3a. The given index is invalid.</p>
+<p>2a. The given index is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Mark shows an error message.</p>
+<p>2a1. Mark shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1663,10 +1689,7 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list bookmarks.</p>
-</li>
-<li>
-<p>Mark shows a list of bookmarks.</p>
+<p>User <a href="#UC01"><span class="underline">lists bookmarks (UC01)</span></a>.</p>
 </li>
 <li>
 <p>User requests to export all the bookmarks in this list.</p>
@@ -1691,9 +1714,16 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 </div>
 </li>
 <li>
-<p>3a. User specifies a file name to be written to.</p>
+<p>3a. User does not specify a file name to be written to.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Mark shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -1755,7 +1785,7 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to make a bookmark available offline</p>
+<p>User requests to make a bookmark available offline.</p>
 </li>
 <li>
 <p>Mark downloads the bookmark and converts it with Readability.</p>
@@ -1771,7 +1801,7 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The bookmark&#8217;s url is not available</p>
+<p>2a. The bookmark&#8217;s URL is not available.</p>
 <div class="paragraph">
 <p>Mark shows an error message.</p>
 </div>
@@ -1801,11 +1831,11 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to undo the previous undoable command</p>
+<p>User requests to undo the previous undoable command.</p>
 </li>
 <li>
 <p>Marks restores the list to the state before the previous
-undoable command was executed</p>
+undoable command was executed.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1835,10 +1865,10 @@ undoable command was executed</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to redo the previously undone command</p>
+<p>User requests to redo the previously undone command.</p>
 </li>
 <li>
-<p>Marks reverses the most recent ‘undo’ command</p>
+<p>Marks reverses the most recent ‘undo’ command.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1891,7 +1921,7 @@ undoable command was executed</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. Mark tells user that there is no internet access and suggests that user sees cache.</p>
+<p>1a1. Mark tells user that there is no internet access and suggests that user view offline copies instead.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2013,10 +2043,7 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list bookmarks.</p>
-</li>
-<li>
-<p>Mark shows a list of bookmarks.</p>
+<p>User <a href="#UC01">lists bookmarks (UC01)</a>.</p>
 </li>
 <li>
 <p>User requests to add a reminder for a specific bookmark in the list.</p>
@@ -2035,45 +2062,45 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>1a. The list is empty.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 <li>
-<p>3a. Mark detects invalid index.</p>
+<p>2a. Mark detects invalid index.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Mark shows an error message.</p>
+<p>2a1. Mark shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3b. Mark detects the specified bookmark already has a reminder.</p>
+<p>2b. Mark detects the specified bookmark already has a reminder.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b1. Mark shows an error message.</p>
+<p>2b1. Mark shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes from step 2.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3c. Mark detects the time format is wrong.</p>
+<p>2c. Mark detects the time format is wrong.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3c1. Mark shows an error message.</p>
+<p>2c1. Mark shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes from step 2.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2193,7 +2220,7 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Mark shows a list of bookmarks.</p>
+<p>User <a href="#UC01">lists bookmarks (UC01)</a>.</p>
 </li>
 <li>
 <p>User requests to sort the list in the specified criterion.</p>
@@ -2232,9 +2259,6 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2258,9 +2282,6 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 <p>The project is expected to adhere to a schedule that delivers features in increments every two weeks.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -2395,4 +2416,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 10:50:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 10:50:36 UTC</div></div></div></body></html>
