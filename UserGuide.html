@@ -34,8 +34,8 @@
 <li><a href="#saving-an-offline-copy-strong-code-cache-code-strong">3.19. Saving an offline copy: <strong><code>cache</code></strong></a></li>
 <li><a href="#deleting-an-offline-copy-strong-code-cache-delete-code-strong">3.20. Deleting an offline copy: <strong><code>cache-delete</code></strong></a></li>
 <li><a href="#making-annotations-on-an-offline-copy-strong-code-annotate-code-strong">3.21. Making annotations on an offline copy: <strong><code>annotate</code></strong></a></li>
-<li><a href="#deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong">3.22. Deleting annotations on an offline copy: <strong><code>annotate-delete</code></strong></a></li>
-<li><a href="#modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong">3.23. Modifying annotations on an offline copy: <strong><code>annotate-edit</code></strong></a></li>
+<li><a href="#annotatedelete">3.22. Deleting annotations on an offline copy: <strong><code>annotate-delete</code></strong></a></li>
+<li><a href="#annotate-edit">3.23. Modifying annotations on an offline copy: <strong><code>annotate-edit</code></strong></a></li>
 <li><a href="#viewing-an-annotated-offline-copy-strong-code-offline-code-strong">3.24. Viewing an annotated offline copy: <strong><code>offline</code></strong></a></li>
 <li><a href="#Reminder-Command">3.25. Adding a reminder: <strong><code>reminder</code></strong></a></li>
 <li><a href="#editing-a-reminder-strong-code-reminder-edit-code-strong">3.26. Editing a reminder: <strong><code>reminder-edit</code></strong></a></li>
@@ -907,11 +907,28 @@ Deletes the offline copy of the second bookmark.</p>
 <p>This adds a new annotation on the offline copy of the given bookmarked
 website. When you give this command, the UI will switch to the offline tab showing the results of your command.
 With this command, you can highlight a paragraph on the offline document and optionally attach a supplementary
-note to said paragraph. (Notes can be added to justify the highlight or as
-content-relevant notes for future reference to bookmark).</p>
+note to said paragraph. (You can add notes to justify the highlight or as
+content-relevant notes to refer to in future).
+You can also add a general note not pertaining to any specific paragraph to the bottom of the document,
+hereby known as the <em>General notes section</em>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A general note is known to attach to a <a href="#phantom-paragraph"><em>phantom paragraph</em></a>. As you can see in the offline
+copy, phantom paragraphs do not have any content displayed; they do not belong to the original web page.
+The phantom paragraphs altogether make up the <em>General notes section</em>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Overwriting an existing note is possible with this command.</p>
+<p>You can choose to use this command to overwrite any existing note. However, note that when you use this command to highlight
+a phantom paragraph, Mark remembers the hidden highlight colour, but no highlight is reflected on the application.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -922,6 +939,7 @@ content-relevant notes for future reference to bookmark).</p>
 <td class="content">
 Paragraphs are identified using a numbered identifier that starts with either <code>P</code> or <code>S</code>. You can refer to the
 numbered identifier in the leftmost column of the offline document to check out the respective identifier for each paragraph.
+Phantom paragraphs are identified using numbered identifiers that begin with <code>S</code>, as opposed to <a href="#true-paragraph"><em>true paragraphs</em></a>, whose identifiers begin with <code>P</code>.
 </td>
 </tr>
 </table>
@@ -939,9 +957,8 @@ If <code>INDEX</code> is invalid, a warning message will be displayed.</p>
 </li>
 <li>
 <p><code>PARA_NUM</code> is the numbered identifier of the paragraph to be marked.
- <code>PARA_NUM</code> must
-begin with <code>P</code> or <code>S</code> (e.g. <code>P3</code>).
- If <code>PARA_NUM</code> is invalid, a warning message will be displayed.</p>
+<code>PARA_NUM</code> must be <code>NULL</code> or it must begin with <code>P</code> or <code>S</code> (e.g. <code>P3</code>).
+If <code>PARA_NUM</code> is invalid, a warning message will be displayed.</p>
 </li>
 <li>
 <p><code>NOTES</code> is the content of notes to add.</p>
@@ -949,8 +966,8 @@ begin with <code>P</code> or <code>S</code> (e.g. <code>P3</code>).
 <li>
 <p><code>HIGHLIGHT_COLOUR</code> is either <code>orange</code>, <code>pink</code>, <code>green</code> or <code>yellow</code>. This selects
 the highlight colour to mark out paragraphs. If no colour is specified,
-yellow is the default colour.
-If colour provided is invalid, a warning message will be displayed.</p>
+the colour is set to yellow by default.
+If the colour provided is invalid, a warning message will be displayed.</p>
 </li>
 </ul>
 </div>
@@ -968,41 +985,32 @@ in the offline copy of bookmark 1.</p>
 </li>
 <li>
 <p><code><strong>annotate</strong> 1 p/p2 h/pink</code><br>
-This overwrites any existing highlight and highlights paragraph 2 with pink
+This overwrites any existing highlight of paragraph 2 with pink
 in the offline copy of bookmark 1. Any notes attached remain attached.</p>
 </li>
 <li>
 <p><code><strong>annotate</strong> 1 p/p2 n/change or add note content</code><br>
-This changes the note attached to paragraph 2 to a note with content “change or add note content”
-in the offline copy of bookmark 1 if paragraph 2 had pre-existing note, and highlight
+This overwrites any note attached to paragraph 2 to a note with content “change or add note content”
+in the offline copy of bookmark 1. Highlight
 colour remains the same. Otherwise, paragraph 2 will be highlighted yellow and
 a new note with content "change or add note content" will be added to the paragraph.</p>
+</li>
+<li>
+<p><code><strong>annotate</strong> 1 n/adding a general note</code><br>
+This adds a note with content "adding a general note" to the <em>General notes section</em> in the
+offline copy of bookmark 1.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong"><a class="link" href="#deleting-annotations-on-an-offline-copy-strong-code-annotate-delete-code-strong">3.22. Deleting annotations on an offline copy: <strong><code>annotate-delete</code></strong></a></h3>
+<h3 id="annotatedelete"><a class="link" href="#annotatedelete">3.22. Deleting annotations on an offline copy: <strong><code>annotate-delete</code></strong></a></h3>
 <div class="paragraph">
 <p>This deletes selected highlights or notes from the offline copy of the given bookmarked website.
 When you give this command, the UI will switch to the offline tab showing the results of your command.
 You can choose to remove just the notes and/or highlight of a paragraph, or clear all annotations
 on the offline copy to revert it to a clean slate. You can also choose to remove a note from the
 <a href="#stray-notes"><em>General notes section</em></a>. If the given paragraph does not have any annotations to remove, nothing is performed.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-A general note is known to attach to a <a href="#phantom-paragraph"><em>phantom paragraph</em></a>. As you can see in the offline
-copy, phantom paragraphs do not have any content displayed; they do not belong to the original web page. Phantom paragraphs are
-identified using numbered identifiers that begin with <code>S</code>, as opposed to <a href="#true-paragraph"><em>true paragraphs</em></a>, whose identifiers begin with <code>P</code>.
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>You are not allowed to remove only the highlight from a phantom paragraph since it does not display a highlight in the first place.</p>
@@ -1060,14 +1068,14 @@ This removes the note of paragraph 2 in the offline copy of bookmark 1, leaving 
 This deletes the general note from phantom paragraph <code>S1</code> in the offline copy of bookmark 2.</p>
 </li>
 <li>
-<p><code><strong>annotate-delete</strong> 1</code><br>
+<p><code><strong>annotate-delete</strong> 1 p/all</code><br>
 This removes all annotations of the offline copy of bookmark 1.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong"><a class="link" href="#modifying-annotations-on-an-offline-copy-strong-code-annotate-edit-code-strong">3.23. Modifying annotations on an offline copy: <strong><code>annotate-edit</code></strong></a></h3>
+<h3 id="annotate-edit"><a class="link" href="#annotate-edit">3.23. Modifying annotations on an offline copy: <strong><code>annotate-edit</code></strong></a></h3>
 <div class="paragraph">
 <p>This modifies existing annotations on the offline copy of the given bookmarked
 website. When you give this command, the UI will switch to the offline tab showing the results of your command.
@@ -1075,8 +1083,22 @@ With this command, you can choose to overwrite the existing notes to a particula
 choose to move notes from a paragraph to another paragraph. This command also supports moving notes of a
 <a href="#phantom-paragraph">phantom paragraph</a> back to the main text by specifying which true paragraph to move it to.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+While both <code><strong>annotate-edit</strong></code> and <code><strong>annotate</strong></code> can be used to change current annotation highlight and notes, <code><strong>annotate-edit</strong></code>
+allows you to shift your annotations from one paragraph to another in a single step.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>At v1.3, moving of notes to the  <a href="#stray-notes"><em>General notes section</em></a> is not supported.</p>
+<p>Moving of notes to the <a href="#stray-notes"><em>General notes section</em></a> is not supported. If you really want to shift them,
+use <a href="#annotatedelete"><code><strong>annotate-delete</strong></code></a> with  <code>n/true</code> as the only optional flag you include.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>annotate-edit</strong> INDEX p/PARA_NUM [to/NEW_PARA_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p>
@@ -1094,8 +1116,8 @@ If <code>INDEX</code> is invalid, a warning message will be displayed.</p>
 If <code>PARA_NUM</code> is invalid or the corresponding paragraph does not have existing annotations, a warning message will be displayed.</p>
 </li>
 <li>
-<p><code>NEW_PARA_NUM</code> is the numbered identifier of the paragraph to move the annotation to.
-If <code>NEW_PARA_NUM</code> is invalid, a warning message will be displayed.</p>
+<p><code>NEW_PARA_NUM</code> is the numbered identifier of the paragraph to move the annotation to. If <code>NEW_PARA_NUM</code> is the same as <code>PARA_NUM</code> or
+is invalid, a warning message will be displayed.</p>
 </li>
 <li>
 <p><code>NOTES</code> is the content of notes to change to. Whenever notes is given, it
@@ -1620,7 +1642,7 @@ reminders, and a view of the folder hierarchy for bookmarks.</p>
 <dt class="hdlist1"><a id="stray-notes"></a> General notes</dt>
 <dd>
 <p>Annotated notes that are not attached to an existing paragraph are described to be general.
-General notes are found in the <em>General notes section</em> at the bottom of the rightmost column on the offline copy.</p>
+General notes are found at the bottom of the rightmost column on the offline copy, known as the <em>General notes section</em>.</p>
 </dd>
 <dt class="hdlist1"><a id="phantom-paragraph"></a> Phantom paragraph</dt>
 <dd>
@@ -1734,4 +1756,4 @@ displayed in the document).</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 15:33:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 16:23:06 UTC</div></div></div></body></html>
