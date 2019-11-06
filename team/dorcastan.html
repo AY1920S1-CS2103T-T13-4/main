@@ -1,0 +1,585 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Dorcas Tan - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mark</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T13-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Dorcas Tan - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-mark-bookmark-manager"><a class="link" href="#project-mark-bookmark-manager">PROJECT: Mark – Bookmark Manager</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My team of 5 software engineering students was tasked with morphing an existing
+<a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3">desktop application</a> with a Command Line Interface (CLI)
+into a useful application for a specific target group. We chose to create a bookmark manager application
+known as Mark, which is intended for computing students. Mark was conceptualised and implemented over a period of
+8 weeks. It is written in Java and has a Graphical User Interface (GUI) that was created using JavaFX.</p>
+</div>
+<div class="paragraph">
+<p>This is what Mark looks like:</p>
+</div>
+<div class="paragraph">
+<div class="title">Mark&#8217;s user interface</div>
+<p><span class="image"><img src="../images/Ui.png" alt="Ui"></span></p>
+</div>
+<div class="paragraph">
+<p>My role as a developer was to design and implement the <code>autotag</code> feature. I also implemented the <code>import</code> and <code>export</code>
+features and contributed to various team tasks.</p>
+</div>
+<div class="paragraph">
+<p>The following sections illustrate these contributions in more detail and showcase documentation that I added to
+the User and Developer Guides in relation to the enhancements made.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides a summary of my contributions in terms of code, documentation and other team-related matters.</p>
+</div>
+<div class="sect2">
+<h3 id="enhancements-added"><a class="link" href="#enhancements-added">Enhancements added</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added the ability to <strong>tag bookmarks automatically</strong> based on specific conditions</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Description</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>autotag</code> mechanism applies autotags to bookmarks based on a set of criteria, known as autotag conditions.
+Mark contains a list of predeclared autotags, and the user can also create custom autotags if desired.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Justification</p>
+<div class="ulist">
+<ul>
+<li>
+<p>It is troublesome for users to have to manually add tags every time they add or edit a bookmark, especially when
+multiple bookmarks need to be tagged similarly.
+The autotag feature allows them to tag similar bookmarks in one command, as well as set up tagging system that will
+continue to categorise bookmarks automatically. This makes it easier to find important information at a glance when
+searching for tags.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Highlights</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Designing this feature required significant planning regarding the design of the automatic tagging mechanism and
+how autotags should be stored.</p>
+</li>
+<li>
+<p>Implementing this feature involved development in all components of the project: starting with
+creating the mechanism in the Model and Logic components, then enabling the saving of autotags in Storage,
+and finally making autotags visible in the UI component.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Credits</p>
+<div class="ulist">
+<ul>
+<li>
+<p>One of my team members contributed a more elegant solution to combine autotag conditions, which I adopted
+in my implementation.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added the ability to <strong>export</strong> data from and <strong>import</strong> bookmarks into Mark.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Description</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>export</code> command saves all of Mark&#8217;s data to a given file on the hard disk.</p>
+</li>
+<li>
+<p>The <code>import</code> command imports bookmarks from a specified file into Mark.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Justification</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Users may want to preserve old bookmarks without cluttering their current Mark dashboard. This can be
+done by exporting all current Mark data to a file on the hard disk. Bookmarks can then be imported from any
+previously-saved file whenever they are needed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Highlights</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>import</code> command required different elements in Mark to be considered, including folders. While the final
+choice of implementation only imports bookmarks, the handling of other components had to be considered when
+planning this enhancement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h3>
+<div class="paragraph">
+<p>Please click on the following links to see a sample of my code:<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Facilitated weekly team meetings to discuss the project&#8217;s progress</p>
+</li>
+<li>
+<p>Managed releases <code>v1.2.1</code> on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features and code-related contributions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Migrated code from AddressBook Level 3 to Mark (Pull requests
+<a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/14">#14</a> and <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/62">#62</a>)</p>
+</li>
+<li>
+<p>Created a custom URL validation to be used when no connection is available (Pull requests
+<a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/14">#14</a> and <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/117">#117</a>)</p>
+</li>
+<li>
+<p>Improved the search function to search URLs and partially matched keywords (Pull request
+<a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/64">#64</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Made cosmetic changes to contents of the (README page) and Developer Guide: (Pull request <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/42">#42</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed team members' Pull Requests and offered suggestions to increase clarity of messages and improve code quality</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (TBC)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Autotag-Command"><a class="link" href="#Autotag-Command">Creating an automatic tag: <strong><code>autotag</code></strong></a></h3>
+<div class="paragraph">
+<p>This command creates a tag that will be automatically applied to bookmarks which match
+the given conditions.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>autotag</strong> TAG_NAME [n/NAME_KEYWORD]&#8230;&#8203; [u/URL_KEYWORD]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;
+[nn/NOT_NAME_KEYWORD]&#8230;&#8203; [nu/NOT_URL_KEYWORD]&#8230;&#8203; [nf/NOT_FOLDER]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>TAG_NAME</code> should be a valid tag name. No existing autotag should have this tag name.</p>
+</li>
+<li>
+<p>At least one condition (<code>n/</code>, <code>nn/</code>, <code>u/</code>, <code>nu/</code>, <code>f/</code>, or <code>nf/</code>) must be specified.</p>
+</li>
+<li>
+<p><code>NAME_KEYWORD</code> and <code>URL_KEYWORD</code> are used to match bookmarks in a similar way
+as the keywords in <code><strong>find</strong></code> (see <a href="#locating-bookmarks">[locating-bookmarks]</a>). The only difference is that a single
+keyword parameter can contain multiple words. E.g. <code>n/Module W</code> will match names <code>CS2103T Module Website</code> and
+<code>module work to do</code> but not <code>Future modules</code>.</p>
+</li>
+<li>
+<p><code>FOLDER</code> should be the exact name of a folder (case insensitive). E.g. <code>wiki</code> will match
+<code>Wiki</code> but not <code>Wikipedia</code>.</p>
+</li>
+<li>
+<p><code>NOT_NAME_KEYWORD</code>, <code>NOT_URL_KEYWORD</code>, and <code>NOT_FOLDER</code> are name keywords,
+URL keywords, or folder names that bookmarks to be tagged should <strong>not</strong> match.</p>
+</li>
+<li>
+<p>The tag <code>TAG_NAME</code> is still a normal tag. E.g. if an autotag <code>YouTube</code> matches
+bookmarks with URLs containing <code>youtube.com</code>, other bookmarks can still be
+tagged with the tag <code>YouTube</code>.</p>
+</li>
+<li>
+<p>If multiple conditions are specified, bookmarks are matched in the following way:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For normal conditions (<code>n/</code>, <code>u/</code>, and <code>f/</code>), bookmarks that match at least one condition
+within the same condition type are matched (i.e. OR search). E.g. <code>n/wiki n/comput</code> will match
+names <code>WikiHow</code> and <code>Computer Science</code>.</p>
+</li>
+<li>
+<p>For negative conditions (<code>nn/</code>, <code>nu/</code>, and <code>nf/</code>), bookmarks that match all of the conditions
+within the same condition type are matched (i.e. AND search). E.g. <code>nf/Work nf/School</code> will
+match bookmarks that are not in the folder <code>Work</code> and not in the folder <code>School</code>.</p>
+</li>
+<li>
+<p>Bookmarks that match all conditions across different condition types are matched. E.g. <code>n/web
+n/mod f/NUS</code> will match bookmarks with [names that match <code>web</code> and/or <code>mod</code>] AND [are in the
+folder <code>NUS</code>].</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Note that no bookmarks will be tagged if conditions contradict each other.
+E.g. <code>u/github.com/mark nu/github.com/</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>autotag</strong> NUS n/NUS n/School n/Uni</code><br>
+ Creates an autotag that adds the tag <code>NUS</code> to all bookmarks that have names containing
+the keywords <code>NUS</code>, <code>School</code>, and/or <code>Uni</code>.</p>
+</li>
+<li>
+<p><code><strong>autotag</strong> LumiNUS u/luminus.nus.edu.sg nf/Miscellaneous</code><br>
+ Creates an autotag that adds the tag <code>LumiNUS</code> to all bookmarks with URLs
+containing <code>luminus.nus.edu.sg</code> that are not in the folder <code>Miscellaneous</code>.</p>
+</li>
+<li>
+<p><code><strong>autotag</strong> Quiz f/NUS f/Module nu/github nu/stackoverflow</code><br>
+ Creates an autotag that adds the tag <code>Quiz</code> to all bookmarks that are either in
+ the folder <code>NUS</code> or in the folder <code>Module</code>, and that do not contain any of the
+keywords <code>github</code> or <code>stackoverflow</code> in their URLs.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-bookmarks"><a class="link" href="#exporting-bookmarks">Exporting bookmarks: <strong><code>export</code></strong></a></h3>
+<div class="paragraph">
+<p>This command exports Mark data to a specified file on the hard disk. The saved file is
+identical in format to the data file <code>mark.json</code> and can be used to save back-up copies
+of Mark data.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>export</strong> [FILENAME]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p></p>
+<div class="paragraph">
+<p><code>FILENAME</code> should not include the file extension. E.g. <code>myBookmarks</code> and not
+<code>myBookmarks.json</code></p>
+</div>
+</li>
+<li>
+<p><code>FILENAME</code> should consist of only alphanumeric characters, hyphens, and/or underscores.</p>
+</li>
+<li>
+<p>The data file is saved at <code>[applicationHome]/data/bookmarks/FILENAME.json</code>.
+If the given file already exists, it is overwritten.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>export</strong> myBookmarks</code><br>
+Exports all bookmark manager data to a file named <code>mark/data/bookmarks/myBookmarks.json</code>
+(assuming <code>mark.jar</code> is stored in the folder <code>mark</code>). The content of <code>myBookmarks.json</code>
+is identical to the current content of <code>mark.json</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="autotag-feature"><a class="link" href="#autotag-feature">Autotag feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>The autotag mechanism is facilitated by <code>AutotagController</code>. It stores and manages a list of <code>SelectiveBookmarkTaggers</code> which apply tags to
+bookmarks if they match specific criteria. It also implements the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AutotagController#hasTagger(SelectiveBookmarkTagger)</code>&#8201;&#8212;&#8201;Checks whether the controller contains the given tagger.</p>
+</li>
+<li>
+<p><code>AutotagController#addTagger(SelectiveBookmarkTagger)</code>&#8201;&#8212;&#8201;Starts managing the given tagger.</p>
+</li>
+<li>
+<p><code>AutotagController#applyTaggersToList(List&lt;Bookmark&gt;)</code>&#8201;&#8212;&#8201;Tags the bookmarks in the list using all relevant taggers.</p>
+</li>
+<li>
+<p><code>AutotagController#applyTaggers(Bookmark)</code>&#8201;&#8212;&#8201;Tags the bookmark using all relevant taggers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first three operations are exposed in the <code>Model</code> interface as <code>Model#hasTagger(SelectiveBookmarkTagger)</code>, <code>Model#addTagger(SelectiveBookmarkTagger)</code>,
+and <code>Model#applyAllTaggers()</code> respectively.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the autotag mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user opens the application with an existing list of bookmarks and no autotags.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutotagState0.png" alt="AutotagState0">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes the command <code><strong>autotag</strong> Help u/stackoverflow.com/questions</code> to add an autotag that tags all
+bookmarks from <strong>stackoverflow.com/questions</strong> with the tag <strong>Help</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <code>SelectiveBookmarkTagger</code> is created with a <code>UrlContainsKeywordsPredicate</code> and a <code>Tag</code> named <strong>Help</strong>.
+The predicate&#8217;s keyword is <strong>stackoverflow.com/questions</strong>.</p>
+</li>
+<li>
+<p><code>b2</code>, which matches <code>UrlContainsKeywordsPredicate</code>, is replaced by a copy of itself that
+also contains the tag <code>Help</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutotagState1.png" alt="AutotagState1">
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <code>autotag</code> command works.
+<em>(The sequence diagram will be improved in future versions of the Developer Guide.)</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutotagSequenceDiagram.png" alt="AutotagSequenceDiagram">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>AutotagCommand</code> should end at the destroy marker (X), but due to a limitation of PlantUML, it
+reaches the end of this diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Autotags will now be applied whenever a bookmark is added or modified.</strong></p>
+</div>
+<div class="paragraph">
+<p>Step 3. The user then executes the command <code><strong>add</strong> n/JavaFX new scene u/https://stackoverflow.com/questions/29080759/</code>
+to bookmark a question on StackOverflow.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This bookmark matches the conditions for the previously added autotag, so it is tagged <strong>Help</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutotagState2.png" alt="AutotagState2">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram (<a href="#autotag-activity-diagram">Activity diagram showing how an autotag is added</a>) summarizes what happens when an autotag is added.
+A similar mechanism is used to tag bookmarks when a bookmark is added or modified.</p>
+</div>
+<div id="autotag-activity-diagram" class="imageblock">
+<div class="content">
+<img src="../images/AutotagActivityDiagram.png" alt="AutotagActivityDiagram">
+</div>
+<div class="title">Figure 1. Activity diagram showing how an autotag is added</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-autotags-are-applied"><a class="link" href="#aspect-how-autotags-are-applied">Aspect: How autotags are applied</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Iterate through each autotag and bookmark, then apply tags to all bookmarks that match.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of runtime, as bookmarks may be checked multiple times.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Check for changes in the bookmark list then edit tags accordingly.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will be faster if most bookmarks are unchanged.</p>
+</li>
+<li>
+<p>Cons: More complicated to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-apply-taggers-to-a-bookmark-list-in-mark"><a class="link" href="#aspect-how-to-apply-taggers-to-a-bookmark-list-in-mark">Aspect: How to apply taggers to a bookmark list in Mark</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Modify individual bookmarks when adding tags.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Eliminates the need to reset Mark&#8217;s bookmark list whenever taggers are applied.</p>
+</li>
+<li>
+<p>Cons: Can cause unanticipated changes in other parts of the Model.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (current choice):</strong> Replace the whole bookmark list with a new list of bookmarks, some of which have been tagged.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simple to implement, ensures immutability of bookmarks.</p>
+</li>
+<li>
+<p>Cons: Inefficient to construct a new list each time a single bookmark is tagged.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3:</strong> Replace only those bookmarks that were tagged.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Minimises performance issues from creating a new bookmark list.</p>
+</li>
+<li>
+<p>Cons: More complicated to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 14:23:43 UTC</div></div></div></body></html>
