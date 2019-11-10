@@ -24,7 +24,7 @@
 <li><a href="#autotags">3.4. Autotags</a></li>
 <li><a href="#offline-copies">3.5. Offline Copies</a></li>
 <li><a href="#reminders">3.6. Reminders</a></li>
-<li><a href="#coming-soon">3.7. Coming Soon</a></li>
+<li><a href="#upcoming-code-coming-in-v2-0-code">3.7. Upcoming <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a>
@@ -113,7 +113,7 @@ named <code>Pro Git</code> to Mark.</p>
 <div class="sect2">
 <h3 id="using-mark"><a class="link" href="#using-mark">2.2. Using Mark</a></h3>
 <div class="paragraph">
-<p>Here is an overview of Mark&#8217;s layout.</p>
+<p>This section offers an overview of Mark&#8217;s layout so that you can locate information more easily.</p>
 </div>
 <div class="paragraph">
 <p>There are three main areas in Mark:</p>
@@ -132,26 +132,26 @@ named <code>Pro Git</code> to Mark.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>The <em>command box</em> is the area for you to enter commands. The result of each command will be shown
+<p>The <strong><em>command box</em></strong> is the area for you to enter commands. The result of each command will be shown
 in the result display box, immediately below the command box.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ui-screenshots/CommandBox.png" alt="CommandBox">
 </div>
-<div class="title">Figure 1. Command box and result display box</div>
+<div class="title">Figure 1. The command box and result display box</div>
 </div>
 <div class="paragraph">
-<p>The <em>bookmark list</em> shows details about the bookmarks in Mark.</p>
+<p>The <strong><em>bookmark list</em></strong> shows details about the bookmarks in Mark.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ui-screenshots/BookmarkList.png" alt="BookmarkList">
 </div>
-<div class="title">Figure 2. Bookmark list</div>
+<div class="title">Figure 2. The bookmark list</div>
 </div>
 <div class="paragraph">
-<p>The <em>main viewing area</em> shows one of three available tabs at any point in time.
+<p>The <strong><em>main viewing area</em></strong> shows one of three available tabs at any point in time.
 Mark has three <a id="Tabs"></a> tabs: <strong>Dashboard</strong>, <strong>Online</strong> and <strong>Offline</strong>.</p>
 </div>
 <div class="ulist">
@@ -197,10 +197,42 @@ which you can browse and annotate directly.</p>
 <div class="paragraph">
 <p>This section describes the main features of Mark and how to use them.</p>
 </div>
+<div class="paragraph">
+<p>The features are grouped into six categories:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#general">General</a> features</p>
+</li>
+<li>
+<p><a href="#bookmarks">Bookmark</a> features</p>
+</li>
+<li>
+<p><a href="#folders">Folder</a> features</p>
+</li>
+<li>
+<p><a href="#autotags">Autotag</a> features</p>
+</li>
+<li>
+<p><a href="#offline-copies">Offline copy</a> features</p>
+</li>
+<li>
+<p><a href="#reminders">Reminder</a> features</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Additionally, the <a href="#Upcoming">upcoming</a> features section offers a
+preview of what you can expect in <strong>Mark v2.0</strong>.</p>
+</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
 <p><strong>Command Format</strong></p>
+</div>
+<div class="paragraph">
+<p>This document uses the following notation to describe command formats:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -224,45 +256,14 @@ E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e.
 <code>t/module t/read-later</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order.<br>
+<p>Parameters can be used in any order.<br>
 E.g. if the command specifies <code>u/URL n/NAME</code>, <code>n/NAME u/URL</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Constraints</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FILENAME</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FILENAME</code> should consist of only alphanumeric characters, hyphens, and/or underscores.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FOLDER_NAME</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FOLDER_NAME</code> must be alphanumeric</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL</code> should have the format: <code>scheme://authority[/path][?query][#fragment][/]</code> and adhere to the following
-constraints:<br>
-1. The scheme should be either 'http', 'https', 'ftp', or 'file', followed by '://'.<br>
-2. The authority should only contain alphanumeric characters and any of the characters <code>(.-_~!$&amp;'*+,;=:@)</code>.<br>
-3. This can be followed by zero or more path segments. Each path segment begins with a '/' followed by zero or more
-alphanumeric or special characters.<br>
-4. Next, a URL may contain a query string, which begins with a '?'.<br>
-5. It may also contain a fragment after the query string (if present), which begins with a '#'.<br>
-6. Finally, a URL can end with an optional slash '/'.</p></td>
-</tr>
-</tbody>
-</table>
+<hr>
 <div class="sect2">
 <h3 id="general"><a class="link" href="#general">3.1. General</a></h3>
 <div class="paragraph">
@@ -508,6 +509,7 @@ file <code>mark/data/bookmarks/myBookmarks.json</code>.</p>
 <div class="paragraph">
 <p>Format: <code><strong>exit</strong></code></p>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect2">
@@ -640,28 +642,31 @@ You can also use <code>add</code> to bookmark web pages using their URLs.</p>
 <p>While surfing the Internet in Mark, input <code>add u/this n/Homepage</code> into the command box.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddCommandUi1.png" alt="AddCommandUi1">
+<img src="images/ui-screenshots/AddCommandUi1.png" alt="AddCommandUi1">
 </div>
 </div>
 </li>
 <li>
-<p>Observe that a bookmark of the current page has been added and is visible in the bookmark list.
+<p>You can then check that a bookmark of the current page has been added and is visible in the bookmark list.
 The new bookmark has the name <code>Homepage</code>. Since the folder and remark are not specified,
 it is added to the root folder and has the default remark "-".</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddCommandUi2.png" alt="AddCommandUi2">
+<img src="images/ui-screenshots/AddCommandUi2.png" alt="AddCommandUi2">
 </div>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>A bookmark can have any number of tags (including 0).</p>
+<p>Any number of tags can be added using <code>t/</code> (including 0).</p>
 </li>
 <li>
 <p><code>FOLDER</code> must be an existing folder (see <a href="#folder">Section 3.3.3, &#8220;Adding a new folder: <strong><code>folder</code></strong>&#8221;</a>).</p>
@@ -682,26 +687,26 @@ e.g. <code><strong>add</strong> u/this n/Homepage</code></p>
 <li>
 <p><code><strong>add</strong> u/https://nus-cs2103-ay1920s1.github.io/website/ n/Module Website
 f/CS2103T r/Contains textbook &amp; important deadlines</code></p>
-<div class="paragraph">
-<p>Bookmarks the given website, names it <code>Module Website</code>, and adds it to the folder <code>CS2103T</code>.
-The new bookmark&#8217;s remark is <code>Contains textbook &amp; important deadlines</code>.</p>
-</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddCommandExample1.png" alt="AddCommandExample1">
+<img src="images/ui-screenshots/AddCommandExample1.png" alt="AddCommandExample1">
 </div>
+</div>
+<div class="paragraph">
+<p>Bookmarks the given website, names it <code>Module Website</code>, and adds it to the folder <code>CS2103T</code>.
+The new bookmark&#8217;s remark is <code>Contains textbook &amp; important deadlines</code>, as seen above.</p>
 </div>
 </li>
 <li>
 <p><code><strong>add</strong> u/https://www.youtube.com/watch?v=9AMcN-wkspU n/IntelliJ Tips and Tricks t/video t/watchLater</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AddCommandExample2.png" alt="AddCommandExample2">
+</div>
+</div>
 <div class="paragraph">
 <p>Bookmarks the given website, names it <code>IntelliJ Tips and Tricks</code>. The new bookmark&#8217;s tags include
 <code>video</code> and <code>watchLater</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddCommandExample2.png" alt="AddCommandExample2">
-</div>
 </div>
 </li>
 </ul>
@@ -844,6 +849,7 @@ Adds a Favorite tag to the second bookmark in the bookmark manager.</p>
 </li>
 </ul>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect2">
@@ -967,38 +973,108 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 </li>
 </ul>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect2">
 <h3 id="autotags"><a class="link" href="#autotags">3.4. Autotags</a></h3>
 <div class="paragraph">
-<p>The following commands carry out autotag-related operations in Mark.</p>
+<p><em>Autotags</em> are tags that will be automatically applied to bookmarks which match their
+respective autotag conditions.
+You can view the details of existing autotags in the autotag panel at the bottom-right of
+the <strong>Dashboard</strong> tab, as seen below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AutotagPanel.png" alt="AutotagPanel">
+</div>
+<div class="title">Figure 6. The autotag panel on the Dashboard tab</div>
+</div>
+<div class="paragraph">
+<p>The commands in this section provide a way to add and remove autotags in Mark.</p>
 </div>
 <div class="sect3">
 <h4 id="Autotag-Command"><a class="link" href="#Autotag-Command">3.4.1. Creating an automatic tag: <strong><code>autotag</code></strong></a></h4>
 <div class="paragraph">
-<p>This command creates a tag that will be automatically applied to bookmarks which match
-the given conditions.</p>
+<p>If you are looking to tag a group of similar bookmarks without manually editing each one, you
+can use the <code>autotag</code> command to create an autotag that will do that for you. You can define
+the group of bookmarks to be tagged using <em>conditions</em>, which describe the key characteristics
+of those bookmarks.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Conditions fall into two categories: <em>normal conditions</em>, which are characteristics that
+bookmarks to be tagged should match, and <em>not-conditions</em>, which are conditions that bookmarks
+should <strong>not</strong> match.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can specify conditions relating to the name, URL, and/or folder (also known as <em>attributes</em>)
+of a bookmark. It is also possible not to specify any condition for an attribute if the attribute
+is not relevant. However, an autotag must have at least one condition specified; otherwise, it
+would automatically tag all your bookmarks!</p>
+</div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
 <p>Format: <code><strong>autotag</strong> TAG_NAME [n/NAME_KEYWORD]&#8230;&#8203; [u/URL_KEYWORD]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;
 [nn/NOT_NAME_KEYWORD]&#8230;&#8203; [nu/NOT_URL_KEYWORD]&#8230;&#8203; [nf/NOT_FOLDER]&#8230;&#8203;</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To add a new autotag, input <code><strong>autotag</strong> NUS n/NUS n/School n/Uni</code> into the command box.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AutotagCommandUi1.png" alt="AutotagCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>You can then check that an autotag named <code>NUS</code> with three name conditions (<code>NUS</code>, <code>School</code>, and <code>Uni</code>)
+has been added to the autotag panel of the Dashboard. Also, notice that bookmarks with names
+that contain <code>NUS</code>, <code>School</code> or <code>Uni</code> now have the tag <code>NUS</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AutotagCommandUi2.png" alt="AutotagCommandUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>TAG_NAME</code> should be a valid tag name. No existing autotag should have this tag name.</p>
+<p>At least one condition (<code>n/</code>, <code>nn/</code>, <code>u/</code>, <code>nu/</code>, <code>f/</code>, or <code>nf/</code>) must be specified.</p>
 </li>
 <li>
-<p>At least one condition (<code>n/</code>, <code>nn/</code>, <code>u/</code>, <code>nu/</code>, <code>f/</code>, or <code>nf/</code>) must be specified.</p>
+<p><code>TAG_NAME</code> should be a valid tag name. No existing autotag should have this tag name.
+However, <code>TAG_NAME</code> can still be used as a normal tag. E.g. if an autotag <code>YouTube</code> matches
+bookmarks with URLs containing <code>youtube.com</code>, other bookmarks can still be
+tagged with the tag <code>YouTube</code>.</p>
 </li>
 <li>
 <p><code>NAME_KEYWORD</code> and <code>URL_KEYWORD</code> are used to match bookmarks in a similar way
 as the keywords in <code><strong>find</strong></code> (see <a href="#finding-bookmarks">Section 3.2.2, &#8220;Locating bookmarks by name, URL, tag or folder: <strong><code>find</code></strong>&#8221;</a>). The only difference is that a single
-keyword parameter can contain multiple words. E.g. <code>n/Module W</code> will match names <code>CS2103T Module Website</code> and
-<code>module work to do</code> but not <code>Future modules</code>.</p>
+keyword parameter can contain multiple words. E.g. <code>n/Module W</code> will match names
+<code>CS2103T Module Website</code> and <code>module work to do</code> but not <code>Future modules</code>.</p>
 </li>
 <li>
 <p><code>FOLDER</code> should be the exact name of a folder (case insensitive). E.g. <code>wiki</code> will match
@@ -1008,61 +1084,76 @@ keyword parameter can contain multiple words. E.g. <code>n/Module W</code> will 
 <p><code>NOT_NAME_KEYWORD</code>, <code>NOT_URL_KEYWORD</code>, and <code>NOT_FOLDER</code> are name keywords,
 URL keywords, or folder names that bookmarks to be tagged should <strong>not</strong> match.</p>
 </li>
-<li>
-<p>The tag <code>TAG_NAME</code> is still a normal tag. E.g. if an autotag <code>YouTube</code> matches
-bookmarks with URLs containing <code>youtube.com</code>, other bookmarks can still be
-tagged with the tag <code>YouTube</code>.</p>
-</li>
-<li>
-<p>If multiple conditions are specified, bookmarks are matched in the following way:</p>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If an autotag&#8217;s conditions contradict each other, no bookmarks will be tagged.
+E.g. an autotag with conditions <code>u/github.com/mark nu/github.com/</code> effectively does nothing as no
+bookmark can have a URL containing <code>github.com/mark</code> and not <code>github.com</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If multiple conditions are specified, bookmarks are matched in the following way:
+    * For normal conditions (<code>n/</code>, <code>u/</code>, and <code>f/</code>), bookmarks that match at least one condition
+    within the same attribute type will be matched (i.e. OR search). E.g. <code>n/wiki n/comput</code> will match
+    names <code>WikiHow</code> and <code>Computer Science</code>.
+    * For negative conditions (<code>nn/</code>, <code>nu/</code>, and <code>nf/</code>), bookmarks that match all of the conditions
+    within the same condition type are matched (i.e. AND search). E.g. <code>nf/Work nf/School</code> will
+    match bookmarks that are not in the folder <code>Work</code> and not in the folder <code>School</code>.
+    * Bookmarks that match all conditions across different condition types are matched. E.g. <code>n/web
+    n/mod f/NUS</code> will match bookmarks with [names that match <code>web</code> and/or <code>mod</code>] AND [are in the
+    folder <code>NUS</code>].</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>For normal conditions (<code>n/</code>, <code>u/</code>, and <code>f/</code>), bookmarks that match at least one condition
-within the same condition type are matched (i.e. OR search). E.g. <code>n/wiki n/comput</code> will match
-names <code>WikiHow</code> and <code>Computer Science</code>.</p>
-</li>
-<li>
-<p>For negative conditions (<code>nn/</code>, <code>nu/</code>, and <code>nf/</code>), bookmarks that match all of the conditions
-within the same condition type are matched (i.e. AND search). E.g. <code>nf/Work nf/School</code> will
-match bookmarks that are not in the folder <code>Work</code> and not in the folder <code>School</code>.</p>
-</li>
-<li>
-<p>Bookmarks that match all conditions across different condition types are matched. E.g. <code>n/web
-n/mod f/NUS</code> will match bookmarks with [names that match <code>web</code> and/or <code>mod</code>] AND [are in the
-folder <code>NUS</code>].</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Note that no bookmarks will be tagged if conditions contradict each other.
-E.g. <code>u/github.com/mark nu/github.com/</code></p>
-</li>
-</ul>
-</div>
+<p><code><strong>autotag</strong> LumiNUS u/luminus.nus.edu.sg nf/Miscellaneous</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AutotagCommandExample1.png" alt="AutotagCommandExample1">
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>autotag</strong> NUS n/NUS n/School n/Uni</code><br>
- Creates an autotag that adds the tag <code>NUS</code> to all bookmarks that have names containing
-the keywords <code>NUS</code>, <code>School</code>, and/or <code>Uni</code>.</p>
-</li>
-<li>
-<p><code><strong>autotag</strong> LumiNUS u/luminus.nus.edu.sg nf/Miscellaneous</code><br>
- Creates an autotag that adds the tag <code>LumiNUS</code> to all bookmarks with URLs
+<p>Creates an autotag named <code>LumiNUS</code> which tags all bookmarks with URLs
 containing <code>luminus.nus.edu.sg</code> that are not in the folder <code>Miscellaneous</code>.</p>
+</div>
 </li>
 <li>
-<p><code><strong>autotag</strong> Quiz f/NUS f/Module nu/github nu/stackoverflow</code><br>
- Creates an autotag that adds the tag <code>Quiz</code> to all bookmarks that are either in
- the folder <code>NUS</code> or in the folder <code>Module</code>, and that do not contain any of the
+<p><code><strong>autotag</strong> Quiz f/NUS f/Module nu/github nu/stackoverflow</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AutotagCommandExample2.png" alt="AutotagCommandExample2">
+</div>
+</div>
+<div class="paragraph">
+<p>Creates an autotag named <code>Quiz</code> which tags all bookmarks that are either in
+the folder <code>NUS</code> or in the folder <code>Module</code>, and that do not contain any of the
 keywords <code>github</code> or <code>stackoverflow</code> in their URLs.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -1070,20 +1161,45 @@ keywords <code>github</code> or <code>stackoverflow</code> in their URLs.</p>
 <div class="sect3">
 <h4 id="deleting-an-automatic-tag-strong-code-autotag-delete-code-strong"><a class="link" href="#deleting-an-automatic-tag-strong-code-autotag-delete-code-strong">3.4.2. Deleting an automatic tag: <strong><code>autotag-delete</code></strong></a></h4>
 <div class="paragraph">
-<p>This command deletes a previously created <a href="#autotag">autotag</a> from Mark. Tags that are already present will
-not be removed, but no bookmarks will be tagged by this autotag after it is deleted.</p>
+<p>If you no longer need an autotag, you can delete it from Mark using the <code>autotag-delete</code>
+command. None of your existing tags are affected when an autotag is deleted.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>autotag-delete</strong> TAG_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you want to delete the autotag <code>NUS</code>, input <code><strong>autotag-delete</strong> NUS</code> into the command box.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AutotagDeleteCommandUi1.png" alt="AutotagDeleteCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>You can then check that the autotag named <code>NUS</code> has been deleted from the autotag panel of the Dashboard.
+In addition, no bookmarks have been modified.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AutotagDeleteCommandUi2.png" alt="AutotagDeleteCommandUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>TAG_NAME</code> should be the name of the autotag to be deleted, which is the same
-as the name of the tag which it applies. E.g. an autotag that adds the tag
-<code>ProgrammingHelp</code> to bookmarks is also named <code>ProgrammingHelp</code>.</p>
+<p><code>TAG_NAME</code> should be the name of an existing autotag.</p>
 </li>
 </ul>
 </div>
@@ -1102,6 +1218,7 @@ will no longer be automatically tagged with <code>Quiz</code>.</p>
 </li>
 </ul>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect2">
@@ -1556,6 +1673,7 @@ This removes all annotations of the offline copy of bookmark 1.</p>
 </li>
 </ul>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect2">
@@ -1678,12 +1796,13 @@ Delete the reminder of index 1.</p>
 </li>
 </ul>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect2">
-<h3 id="coming-soon"><a class="link" href="#coming-soon">3.7. Coming Soon</a></h3>
+<h3 id="upcoming-code-coming-in-v2-0-code"><a class="link" href="#upcoming-code-coming-in-v2-0-code">3.7. Upcoming <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
-<p>The following commands will be implemented in Mark v2.0.</p>
+<p>These features will be available in the next version of Mark.</p>
 </div>
 <div class="sect3">
 <h4 id="sorting-bookmarks-strong-code-sort-code-strong-code-coming-in-v2-0-code"><a class="link" href="#sorting-bookmarks-strong-code-sort-code-strong-code-coming-in-v2-0-code">3.7.1. Sorting bookmarks: <strong><code>sort</code></strong> <code>[coming in v2.0]</code></a></h4>
@@ -1870,97 +1989,148 @@ General notes are found at the bottom of the rightmost column on the offline cop
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Help</strong>: <code><strong>help</strong></code></p>
-</li>
-<li>
-<p><strong>Add</strong>: <code><strong>add</strong> u/URL n/NAME [r/REMARK] [f/FOLDER] [t/TAG]…​</code></p>
-</li>
-<li>
-<p><strong>List</strong>: <code><strong>list</strong></code></p>
-</li>
-<li>
-<p><strong>Edit</strong>: <code><strong>edit</strong> INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]&#8230;&#8203;​</code></p>
-</li>
-<li>
-<p><strong>Find</strong>: <code><strong>find</strong> [KEYWORD]&#8230;&#8203; [t/TAG]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;</code></p>
-</li>
-<li>
-<p><strong>Delete</strong>: <code><strong>delete</strong> INDEX</code></p>
-</li>
-<li>
-<p><strong>Goto</strong>: <code><strong>goto</strong> INDEX</code></p>
-</li>
-<li>
-<p><strong>Favorite</strong>: <code><strong>favorite|fav</strong> INDEX</code></p>
-</li>
-<li>
-<p><strong>Clear</strong>: <code><strong>clear</strong></code></p>
-</li>
-<li>
-<p><strong>Undo</strong>: <code><strong>undo</strong> [STEP=1]</code></p>
-</li>
-<li>
-<p><strong>Redo</strong>: <code><strong>redo</strong> [STEP=1]</code></p>
-</li>
-<li>
-<p><strong>Exit</strong>: <code><strong>exit</strong></code></p>
-</li>
-<li>
-<p><strong>Export</strong>: <code><strong>export</strong> FILENAME</code></p>
-</li>
-<li>
-<p><strong>Import</strong>: <code><strong>import</strong> FILENAME</code></p>
-</li>
-<li>
-<p><strong>Autotag (add)</strong>: <code><strong>autotag</strong> TAG_NAME [n/NAME_KEYWORD]&#8230;&#8203; [u/URL_KEYWORD]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;
-[nn/NOT_NAME_KEYWORD]&#8230;&#8203; [nu/NOT_URL_KEYWORD]&#8230;&#8203; [nf/NOT_FOLDER]&#8230;&#8203;</code></p>
-</li>
-<li>
-<p><strong>Autotag (delete)</strong>: <code><strong>autotag-delete</strong> TAG_NAME</code></p>
-</li>
-<li>
-<p><strong>Cache (add)</strong>: <code><strong>cache</strong> INDEX</code></p>
-</li>
-<li>
-<p><strong>Cache (delete)</strong>: <code><strong>cache-delete</strong> INDEX</code></p>
-</li>
-<li>
-<p><strong>Offline</strong>: <code><strong>offline</strong> INDEX</code></p>
-</li>
-<li>
-<p><strong>Annotate (add)</strong>: <code><strong>annotate</strong> INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</code></p>
-</li>
-<li>
-<p><strong>Annotate (edit)</strong>: <code><strong>annotate-edit</strong> INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p>
-</li>
-<li>
-<p><strong>Annotate (delete)</strong>: <code><strong>annotate-delete</strong> INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p>
-</li>
-<li>
-<p><strong>Reminder (add)</strong>: <code><strong>reminder</strong> INDEX t/TIME_DATE [n/NOTE=Open]</code></p>
-</li>
-<li>
-<p><strong>Reminder (edit)</strong>: <code><strong>reminder-edit</strong> INDEX [t/TIME_DATE] [n/NOTE]</code></p>
-</li>
-<li>
-<p><strong>Reminder (delete)</strong>: <code><strong>reminder-delete</strong> INDEX</code></p>
-</li>
-<li>
-<p><strong>Folder (add)</strong>: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER=ROOT]</code></p>
-</li>
-<li>
-<p><strong>Expand</strong>: <code><strong>expand</strong> [LEVEL=1]</code></p>
-</li>
-<li>
-<p><strong>Collapse</strong>: <code><strong>collapse</strong> [LEVEL=1]</code></p>
-</li>
-<li>
-<p><strong>Tab</strong>: <code><strong>tab</strong> INDEX</code></p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all">
+<caption class="title">Table 1. Summary of command formats</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Category</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Commands</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock">General</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Help: <code><strong>help</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tab: <code><strong>tab</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo: <code><strong>undo</strong> [STEP=1]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo: <code><strong>redo</strong> [STEP=1]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export: <code><strong>export</strong> FILENAME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import: <code><strong>import</strong> FILENAME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clear: <code><strong>clear</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exit: <code><strong>exit</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">Bookmarks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List: <code><strong>list</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find: <code><strong>find</strong> [KEYWORD]&#8230;&#8203; [t/TAG]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Go to: <code><strong>goto</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add bookmark: <code><strong>add</strong> u/URL n/NAME [r/REMARK] [f/FOLDER] [t/TAG]…​</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit bookmark: <code><strong>edit</strong> INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]&#8230;&#8203;​</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete bookmark: <code><strong>delete</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Favorite bookmark: <code><strong>favorite|fav</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Folders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expand view: <code><strong>expand</strong> [LEVEL=1]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Collapse view: <code><strong>collapse</strong> [LEVEL=1]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add folder: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER=ROOT]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Autotags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add autotag: <code><strong>autotag</strong> TAG_NAME [n/NAME_KEYWORD]&#8230;&#8203; [u/URL_KEYWORD]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;
+[nn/NOT_NAME_KEYWORD]&#8230;&#8203; [nu/NOT_URL_KEYWORD]&#8230;&#8203; [nf/NOT_FOLDER]&#8230;&#8203;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete autotag: <code><strong>autotag-delete</strong> TAG_NAME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock">Offline Copies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add cache: <code><strong>cache</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete cache: <code><strong>cache-delete</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Offline view: <code><strong>offline</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add annotation: <code><strong>annotate</strong> INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR=yellow]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit annotation: <code><strong>annotate-edit</strong> INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete annotation: <code><strong>annotate-delete</strong> INDEX [p/P_NUM] [n/KEEP_NOTES=false] [h/KEEP_HIGHLIGHT=false]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Reminders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add reminder: <code><strong>reminder</strong> INDEX t/TIME_DATE [n/NOTE=Open]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit reminder: <code><strong>reminder-edit</strong> INDEX [t/TIME_DATE] [n/NOTE]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete reminder: <code><strong>reminder-delete</strong> INDEX</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Go to reminder: <code><strong>goto-reminder</strong> INDEX</code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all">
+<caption class="title">Table 2. Summary of common command parameters</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Constraints</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FILENAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FILENAME</code> should consist of only alphanumeric characters, hyphens, and/or underscores.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FOLDER_NAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FOLDER_NAME</code> must be alphanumeric</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL</code> should have the format: <code>scheme://authority[/path][?query][#fragment][/]</code> and adhere to the following
+constraints:<br>
+1. The scheme should be either 'http', 'https', 'ftp', or 'file', followed by '://'.<br>
+2. The authority should only contain alphanumeric characters and any of the characters <code>(.-_~!$&amp;'*+,;=:@)</code>.<br>
+3. This can be followed by zero or more path segments. Each path segment begins with a '/' followed by zero or more
+alphanumeric or special characters.<br>
+4. Next, a URL may contain a query string, which begins with a '?'.<br>
+5. It may also contain a fragment after the query string (if present), which begins with a '#'.<br>
+6. Finally, a URL can end with an optional slash '/'.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 07:46:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 16:44:24 UTC</div></div></div></body></html>
