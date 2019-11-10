@@ -1155,8 +1155,8 @@ that contain <code>NUS</code>, <code>School</code> or <code>Uni</code> now have 
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Parameter constraints:</p>
+<div id="autotag-parameter-constraints" class="paragraph">
+<p>There are several restrictions on the usage of command parameters:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1260,7 +1260,103 @@ keywords <code>github</code> or <code>stackoverflow</code> in their URLs.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-automatic-tag-strong-code-autotag-delete-code-strong"><a class="link" href="#deleting-an-automatic-tag-strong-code-autotag-delete-code-strong">3.4.2. Deleting an automatic tag: <strong><code>autotag-delete</code></strong></a></h4>
+<h4 id="editing-an-automatic-tag-strong-code-autotag-edit-code-strong"><a class="link" href="#editing-an-automatic-tag-strong-code-autotag-edit-code-strong">3.4.2. Editing an automatic tag: <strong><code>autotag-edit</code></strong></a></h4>
+<div class="paragraph">
+<p>If you want to modify an autotag, you can use the <strong><code>autotag-edit</code></strong> command to edit the autotag&#8217;s
+name and/or conditions.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This is essentially a shortcut for <strong><code>autotag-delete</code></strong> followed by <strong><code>autotag-add</code></strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>autotag-edit</strong> TAG_NAME [t/NEW_TAG_NAME] [n/NAME_KEYWORD]&#8230;&#8203; [u/URL_KEYWORD]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;
+[nn/NOT_NAME_KEYWORD]&#8230;&#8203; [nu/NOT_URL_KEYWORD]&#8230;&#8203; [nf/NOT_FOLDER]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To modify the autotag named <code>NUS</code>, type <code><strong>autotag-edit</strong> NUS t/University f/School f/General f/Modules f/CS2103T</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagEditCommandUi1.png" alt="AutotagEditCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>You can then observe that the autotag <code>NUS</code> has been renamed <code>University</code>, and its folder conditions now
+include the folder <code>CS2103T</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagEditCommandUi2.png" alt="AutotagEditCommandUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The parameter constraints are similar to <a href="#autotag-parameter-constraints">those for the <code><strong>autotag</strong></code> command</a>,
+with the following differences:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>There should only be one <code>NEW_TAG_NAME</code>.</p>
+</li>
+<li>
+<p>At least one parameter <em>in total</em> should be specified. In other words, if <code>t/NEW_TAG_NAME</code> is present, there is
+no need to specify any conditions.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>autotag-edit</strong> Quiz u/luminus.nus.edu.sg u/quiz nu/attempt</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagEditCommandExample1.png" alt="AutotagEditCommandExample1">
+</div>
+</div>
+<div class="paragraph">
+<p>Modifies the autotag <code>Quiz</code> such that it tags bookmarks with URLs that contain either of the keywords
+<code>luminus.nus.edu.sg</code> or <code>quiz</code>, but do not contain the keyword <code>attempt</code>.</p>
+</div>
+</li>
+<li>
+<p><code><strong>autotag-edit</strong> Quiz t/Quizzes</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutotagEditCommandExample2.png" alt="AutotagEditCommandExample2">
+</div>
+</div>
+<div class="paragraph">
+<p>Modifies the name of the autotag <code>Quiz</code> such that it now tags bookmarks with the tag <code>Quizzes</code> instead of <code>Quiz</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-an-automatic-tag-strong-code-autotag-delete-code-strong"><a class="link" href="#deleting-an-automatic-tag-strong-code-autotag-delete-code-strong">3.4.3. Deleting an automatic tag: <strong><code>autotag-delete</code></strong></a></h4>
 <div class="paragraph">
 <p>If you no longer need an autotag, you can delete it from Mark using the <code>autotag-delete</code>
 command. None of your existing tags are affected when an autotag is deleted.</p>
@@ -2206,4 +2302,4 @@ alphanumeric or special characters.<br>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 18:25:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 23:10:09 UTC</div></div></div></body></html>
