@@ -7,13 +7,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This project portfolio aims to document my contributions to Mark, a project by my team of 5 Computer Science students from NUS.</p>
 </div>
 <div class="paragraph">
-<p>Adapted from AddressBook - Level 3, Mark is a user-friendly bookmark manager application targeted at <strong>NUS Computing students</strong>, mainly for use on a computer and for students who prefer getting things done by typing out commands.</p>
+<p>Adapted from AddressBook - Level 3, Mark is a user-friendly bookmark manager desktop application targeted at <strong>NUS Computing students</strong>, mainly for use on a computer and for students who prefer getting things done by typing out commands via the command line interface (CLI).</p>
 </div>
 <div class="paragraph">
 <p>Here are some key features of Mark:</p>
@@ -34,7 +34,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="contribution-summary"><a class="link" href="#contribution-summary">Contribution Summary</a></h2>
+<h2 id="contribution-summary"><a class="link" href="#contribution-summary">2. Contribution Summary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section serves to describe some of contributions I made to the development of Mark, such as enhancements, documentation, and code reviews.</p>
@@ -125,7 +125,7 @@ one long list and having to search for them.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">3. Contributions to the User Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -140,8 +140,41 @@ one long list and having to search for them.</p>
 <div class="paragraph">
 <p><em>(start of extract from User Guide)</em></p>
 </div>
+<div class="sect2">
+<h3 id="folders"><a class="link" href="#folders">3.1. Folders</a></h3>
+<div class="paragraph">
+<p>The following commands carry out operations on folders in Mark.
+The results of these operations can be viewed in the folder hierarchy of dashboard tab.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The bookmarks that are displayed in the folder hierarchy correspond to the bookmarks in the bookmarks list on the left.<br>
+<br>
+For example, if you have have just performed a <code>find</code> command and the bookmark list shrinks from 100 entries to just 10, the folder hierarchy will also
+shrink from showing 100 bookmarks to 10.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can use the <code>list</code> command to see all your bookmarks in the folder hierarchy.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
-<h4 id="adding-a-folder-strong-code-folder-code-strong"><a class="link" href="#adding-a-folder-strong-code-folder-code-strong">Adding a folder: <strong><code>folder</code></strong></a></h4>
+<h4 id="adding-a-folder-strong-code-folder-code-strong"><a class="link" href="#adding-a-folder-strong-code-folder-code-strong">3.1.1. Adding a folder: <strong><code>folder</code></strong></a></h4>
 <div class="paragraph">
 <p>When your bookmark list is getting too long, you may want to use this command to create new folders to organize bookmarks into.</p>
 </div>
@@ -205,14 +238,64 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-folder-strong-code-folder-edit-code-strong"><a class="link" href="#editing-a-folder-strong-code-folder-edit-code-strong">3.1.2. Editing a folder: <strong><code>folder-edit</code></strong></a></h4>
+<div class="paragraph">
+<p>If your favorite band recently changed its name, you may want to edit your folder for it to reflect its new name. You can do so with this command.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>folder-edit</strong> FROM_FOLDER​_NAME t/TO_FOLDER_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You recently broke up, and want to edit the folder <code>Dear</code> containing all your previous memories to <code>Ex</code>. So you enter the command <code><strong>folder-edit</strong> Dear t/Ex</code> and hit <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EditFolderCommandUi1.png" alt="EditFolderCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>You see folder <code>Dear</code> renamed to <code>Ex</code>. All your bookmarks previously in the folder <code>Dear</code> have also been edited to now be in the folder <code>Ex</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EditFolderCommandUi2.png" alt="EditFolderCommandUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>FROM_FOLDER_NAME</code> and <code>TO_FOLDER_NAME</code> must start with an alphanumeric character, and can only contain alphanumeric characters and spaces.</p>
+</li>
+<li>
+<p><code>FROM_FOLDER_NAME</code> must exist be an existing folder. (Note that you cannot edit the <code>ROOT</code> folder.)</p>
+</li>
+<li>
+<p><code>TO_FOLDER_NAME</code> must NOT be an existing folder. (Note that it can&#8217;t be <code>ROOT</code> also, since it already exists.)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p><em>(end of extract from User Guide)</em></p>
 </div>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -224,13 +307,16 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p><em>(start of extract from Developer Guide)</em></p>
+</div>
 <div class="sect2">
-<h3 id="folders-feature"><a class="link" href="#folders-feature">Folders feature</a></h3>
+<h3 id="folders-feature"><a class="link" href="#folders-feature">4.1. Folders feature</a></h3>
 <div class="paragraph">
 <p>This section aims to explore the implementation of Mark&#8217;s folders and some design considerations.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<h4 id="implementation"><a class="link" href="#implementation">4.1.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The following two sections will explain in more detail how the backend and frontend of this feature works.</p>
 </div>
@@ -349,7 +435,7 @@ an <code>expand</code> command needs to be performed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design considerations</a></h4>
 <div class="paragraph">
 <p>The following are a few design considerations made in deciding how to implement the folders feature:</p>
 </div>
@@ -389,8 +475,11 @@ more advanced tree traversal algorithms as compared to naive list or array opera
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><em>(end of extract from Developer Guide)</em></p>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:43:50 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 05:16:39 UTC</div></div></div></body></html>
