@@ -1,0 +1,780 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>TSAI, HSIAO-HAN - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mark</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T13-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TSAI, HSIAO-HAN - Project Portfolio</h1></div><div id="content"><div class="sect2">
+<h3 id="project-mark"><a class="link" href="#project-mark">PROJECT: Mark</a></h3>
+<hr>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document will introduce my role and contribution in Mark.
+Mark is a 6 weeks group project for the module CS2103T Software Engineering.
+Our team composed of 5 NUS Computer Science year 2 students.
+From this project, we learn the skill of designing a Java application with basic CRUD structure,
+working on git,
+distributing works on Github,
+negotiating and teamwork.</p>
+</div>
+<div class="paragraph">
+<p>Mark is a <em>desktop bookmark manager</em> used for organising websites.
+This application can help the user organize websites by bookmarks,
+manage the bookmarks into folders,
+take note on the offline copy and set reminders for the task.
+The user interacts with Mark using a <em>Command Line Interface</em> (CLI),
+and it uses a <em>Graphical User Interface</em> (GUI) created with JavaFX.
+Mark is written in <em>Java</em>.</p>
+</div>
+<div class="paragraph">
+<p>This is what our app looks like:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="600" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>My role is to design and implement the <code>reminder</code> feature.
+The following section will illustrate more about this feature.
+More details about it are provided in the part of related User and Developer Guide.</p>
+</div>
+<div class="paragraph">
+<p>Note the following symbols and formatting used in this document:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Represents the things you need to notice.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>reminder</code>: Represents the command.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>Tag</code> : Represents the constraints of the command.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>:<br>
+added <strong>the ability to add, edit, delete and goto reminders.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to add a reminder to a specific bookmark.
+The reminder will remind users at the time they indicate.
+Users can also edit and delete it, or even using reminder to open the bookmark .</p>
+</li>
+<li>
+<p>Justification: When users want to plan to read or do some task on bookmark,
+this feature can provide them a better way to plan and organize their task,
+and they would not forget to doing it.</p>
+</li>
+<li>
+<p>Highlights: This feature will help the user automatically cleanup expired reminders after one hour,
+so they do not need to bother themselves to delete it. The notification will show up twice,
+the first time will show before five hour to leave users some time before the deadline.
+Even if users do not close the notification, the notification will disappear after one minute.</p>
+</li>
+<li>
+<p>Credits: <a href="https://stackoverflow.com/questions/44474391/how-to-get-a-scheduled-event-to-interact-with-javafx-gui">Stackoverflow</a>
+gives me the idea of how to implement a reminder notification.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>:<br>
+Please click these links to see a sample of my code.[<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=tsai-hsiao-han&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Code</a>]</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:<br>
+Improved current <code>edit</code> command so that when bookmarks changes the reminder will also change it&#8217;s url.</p>
+<div class="paragraph">
+<p>Improved current <code>delete</code> command so that when a bookmark been deleted it&#8217;s reminder will also deleted.</p>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Check and merge pull requests on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Improve the GUI style and format (Pull requests <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/228">#228</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/123">#123</a>)</p>
+</li>
+<li>
+<p>Wrote tests for existing features to increase coverage form 77.01% to 77.10% (Pull requests <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/251">#251</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added the reminder part for User Guide and Developer Guide: Pull requests <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/48">#48</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/53">#53</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/130">#130</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/162">#162</a></p>
+</li>
+<li>
+<p>Edited About Us and Contact Us document: Pull requests <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/24">#24</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/26">#26</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/66">#66</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/133">#133</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/139">#139</a></p>
+</li>
+<li>
+<p>Reported bugs and fix issue (Issue  <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/issues/229">#229</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/issues/194">#194</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/issues/178">#178</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated a third party library (ControlsFX) to the project (Pull requests <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/42">#42</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This part is about the sections I contributed to the User Guide.
+The section extracted from the User Guide below showcase my ability to write a formal document to our target users.</p>
+</div>
+<div class="sect3">
+<h4 id="em-this-is-the-start-of-extraction-em"><a class="link" href="#em-this-is-the-start-of-extraction-em"><em>------------- This is the start of extraction -------------</em></a></h4>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="reminders"><a class="link" href="#reminders">Reminders</a></h3>
+<div class="paragraph">
+<p>The following commands carry out operations on reminders in Mark.
+You can find reminders on the Dashboard tab.</p>
+</div>
+<div class="sect3">
+<h4 id="Reminder-Command"><a class="link" href="#Reminder-Command">Adding a reminder: <strong><code>reminder</code></strong></a></h4>
+<div class="paragraph">
+<p>This command adds a reminder to a specified bookmark.
+The reminder will inform you at the time you indicate.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can have at most one reminder for one bookmark.<br>
+<br>
+The reminder cannot set the reminding time in the past.<br>
+<br>
+Each reminder will reminds you with popup notification twice:<br>
+<br>
+The first notification will show when the reminding time is within five hours,
+the second time is on the reminding spot.<br>
+<br>
+The expired reminder will be auto delete after one hour.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>reminder</strong> INDEX t/TIME_DATE [n/NOTE=Open]</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You are using Mark, and you want to remind yourself to do the quiz on Luminus bookmark tomorrow night,
+which is 18/11/2019 8p.m.
+Now you can use the <code>reminder</code> command to add a reminder to Luminus.</p>
+</div>
+<div class="paragraph">
+<p>To add a reminder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index of Luminus on reminder list is 1.
+You type the command <code><strong>reminder</strong> 1 t/18/11/2019 2000 n/Do the quiz</code> into the command box and press <em>Enter</em> to execute it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/AddReminderUi1.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The result box will show the message:<br>
+"New reminder added: Do the quiz Time: 10/11/2019 0700 URL:https://luminus.nus.edu.sg/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/AddReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The reminder is added to the reminder list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/AddReminderUi3.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The notification will show up to inform you at the time.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/AddReminderUi4.png" alt="200" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>There are some parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is the index of the bookmark that you want to add with a reminder.</p>
+</li>
+<li>
+<p><code>TIME_DATE</code> follows <code><em>dd/MM/uuuu HHmm</em></code> format. It should be a valid time.</p>
+</li>
+<li>
+<p><code>NOTE</code> is the description of the reminder, the default value is Open.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>reminder</strong> 1 t/02/07/2019 2359</code><br>
+This command line adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
+It reminds you to open the bookmark.</p>
+</li>
+<li>
+<p><code><strong>reminder</strong> 1 t/02/07/2019 2359 n/Read announcements</code><br>
+This command line adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
+The reminder reminds you to read announcements.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-reminder-strong-code-reminder-edit-code-strong"><a class="link" href="#editing-a-reminder-strong-code-reminder-edit-code-strong">Editing a reminder: <strong><code>reminder-edit</code></strong></a></h4>
+<div class="paragraph">
+<p>This command edits the reminder in the list at the specified index.
+You can edit either the time or the note of the reminder.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>reminder-edit</strong> INDEX [t/TIME_DATE] [n/NOTE]</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You have another assignment on Luminus that need to be done tomorrow morning,
+which is 10/11/2019 7 a.m. You want to change the note for reminder to remind you do the assignment.
+Now you can use the <code>reminder-edit</code> command to edit the reminder for Luminus.</p>
+</div>
+<div class="paragraph">
+<p>To edit a reminder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index of the reminder in the reminder list is 1.
+You type the command <code><strong>reminder-edit</strong> 1 n/Do the quiz and the assignment</code> into the command box and press <em>Enter</em> to execute it.
+image::ui-screenshots/EditReminderUi1.png[400, 500]</p>
+</li>
+<li>
+<p>The result box will show the message:<br>
+"Edited Reminder: Do the quiz and the assignment Time: 10/11/2019 0700 URL:https://luminus.nus.edu.sg/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/EditReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The reminder is edited in the reminder list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/EditReminderUi3.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The edited notification will show up to inform you at the time.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/EditReminderUi4.png" alt="200" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>There are some parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is the index of the reminder you want to edit on the dashboard.</p>
+</li>
+<li>
+<p><code>TIME_DATE</code> is the time you want to edit. The time follows <code><em>dd/MM/uuuu HHmm</em></code> format. It should be a valid time.</p>
+</li>
+<li>
+<p><code>NOTE</code> is the description of the reminder that you want to edit.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>reminder-edit</strong> 1 t/02/07/2019 2359</code><br>
+This command edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.</p>
+</li>
+<li>
+<p><code><strong>reminder-edit</strong> 1 t/02/07/2019 2359 n/Check daily news</code><br>
+This command edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.
+Reset the note to Check daily news.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-reminder-strong-code-reminder-delete-code-strong"><a class="link" href="#deleting-a-reminder-strong-code-reminder-delete-code-strong">Deleting a reminder: <strong><code>reminder-delete</code></strong></a></h4>
+<div class="paragraph">
+<p>This command deletes the the reminder in the reminder list at the specified index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>reminder-delete</strong> INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is the index of the reminder you want to delete on the dashboard.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You finished your task on Luminus early, and you do not need the reminder for Luminus anymore.
+Now you can use the <code>reminder-delete</code> command to delete the reminder for Luminus.</p>
+</div>
+<div class="paragraph">
+<p>To delete a reminder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index of the reminder in the reminder list is 1.
+You type the command <code><strong>reminder-delete</strong> 1</code> into the command box and press <em>Enter</em> to execute it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/DeleteReminderUi1.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The result box will show the message:<br>
+"Deleted Reminder: Do the quiz and the assignment Time: 10/11/2019 0700 URL:https://luminus.nus.edu.sg/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/DeleteReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The reminder is deleted in the reminder list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/DeleteReminderUi3.png" alt="400" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>reminder-delete</strong> 2</code><br>
+This command deletes the reminder of index 2.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="opening-a-bookmark-from-a-reminder-strong-code-reminder-goto-code-strong"><a class="link" href="#opening-a-bookmark-from-a-reminder-strong-code-reminder-goto-code-strong">Opening a bookmark from a reminder: <strong><code>reminder-goto</code></strong></a></h4>
+<div class="paragraph">
+<p>Opens the related bookmark of the specified reminder from the bookmark manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>reminder-goto</strong> INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the index of the reminder as viewed on the dashboard.</p>
+</li>
+<li>
+<p><code>INDEX</code> must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, …​</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You want to plan your time table for next semester, which is a task on reminder list.
+Now you can use the <code>reminder-goto</code> command to open the website.</p>
+</div>
+<div class="paragraph">
+<p>To open the bookmark of a reminder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index of the reminder in the reminder list is 2.
+You type the command <code><strong>reminder-goto</strong> 2</code> into the command box and press <em>Enter</em> to execute it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/GotoReminderUi1.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The result box will show the message:<br>
+"Opening Reminder: Start planning next year&#8217;s timetable Time: 07/12/2019 1000 URL:https://nusmods.com/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/GotoReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The tab will switch to Online and show NUSMODs website.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ui-screenshots/GotoReminderUi3.png" alt="400" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>reminder-goto</strong> 1</code><br>
+If reminder 1 points to bookmark 5, this command is equivalent to
+<code><strong>goto</strong> 5</code>. (i.e. opens the 5th bookmark in the bookmark manager.)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-bookmarks-strong-code-sort-code-strong-code-coming-in-v2-0-code"><a class="link" href="#sorting-bookmarks-strong-code-sort-code-strong-code-coming-in-v2-0-code">Sorting bookmarks: <strong><code>sort</code></strong> <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>Sorts the displayed bookmarks according to different criterion (name,
+order added) and displays them as a list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>sort</strong> [CRITERION]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>CRITERION</code> is the field you use to sort. Acceptable values of <code>CRITERION</code>
+are: <strong>name</strong> and <strong>default</strong>. <strong>default</strong> is sorting at the order when the bookmark is added.</p>
+</li>
+<li>
+<p><code>CRITERION</code> is case insensitive, e.g. both URL and url are acceptable
+criterion.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>sort</strong> name</code><br>
+Lists all the bookmarks based on name/alphabetical order.</p>
+</li>
+<li>
+<p><code><strong>sort</strong> default</code><br>
+Sort all the bookmarks based on the order they were added.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="em-this-is-the-end-of-extraction-em"><a class="link" href="#em-this-is-the-end-of-extraction-em"><em>------------- This is the end of extraction -------------</em></a></h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This part is about the sections I contributed to the Developer Guide.
+The section extracted from the Developer Guide below showcase my ability to write a technical documentation to a developer and show technique depth of my contribution.</p>
+</div>
+<div class="sect3">
+<h4 id="em-this-is-the-start-of-extraction-em-2"><a class="link" href="#em-this-is-the-start-of-extraction-em-2"><em>------------- This is the start of extraction -------------</em></a></h4>
+
+</div>
+<div class="sect2">
+<h3 id="reminder-feature"><a class="link" href="#reminder-feature">Reminder feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>A bookmark can attach a reminder, and a reminder can be used to open the bookmark and send notifications to the user.
+This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssociation</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>Reminder</code> contains a reminding time, the <code>Url</code> of the <code>Bookmark</code> and a <code>Note</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>ReminderAssociation</code> represents the association between <code>Reminder</code> and <code>Bookmark</code>, containing
+ the relation from <code>Reminder</code> to <code>Bookmark</code> and <code>Reminder</code> to <code>Bookmark</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReminderAssociationDiagram.png" alt="600" width="400">
+</div>
+<div class="title">Figure 1. Class diagram of the Reminder component</div>
+</div>
+<div class="paragraph">
+<p>There are four parts of the reminder feature:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a reminder to a specific bookmark (executed by <code>AddReminderCommand#execute()</code>)</p>
+</li>
+<li>
+<p>Edit a reminder (executed by <code>EditReminderCommand#execute()</code>)</p>
+</li>
+<li>
+<p>Delete a reminder (executed by <code>DeleteReminderCommand#execute()</code>)</p>
+</li>
+<li>
+<p>Goto the bookmark of a specific reminder (executed by <code>GotoReminderCommand#execute()</code>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These command are triggered by <code>reminder</code> command line entered into the command box,
+which will calls the respective command parser to create the command.
+The bookmark of the reminder will be retrieved and handled according to the command.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram illustrates how the adding reminder operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddReminderSequenceDiagram.png" alt="AddReminderSequenceDiagram">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>AddReminderCommandParser</code> and <code>AddReminderCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the <code>reminder-delete</code> command, instead of calling <code>addReminder(bookmark, reminder)</code> in Model,
+it will call <code>removeReminder(reminder)</code>.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>reminder-edit</code> command, instead of calling <code>addReminder(bookmark, reminder)</code> in Model,
+EditReminderCommand will create a edited copy of the target reminder and call <code>editReminder(target, editedReminder)</code> in Model.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>reminder-goto</code> command, it will retrieved the bookmark of the reminder and generate a GotoCommandResult.
+It works the same as <code>goto</code> command of the bookmark.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user attempts to use a reminder command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReminderActivityDiagram.png" alt="600" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-represent-the-relationship-between-reminder-and-bookmark"><a class="link" href="#aspect-how-to-represent-the-relationship-between-reminder-and-bookmark">Aspect: How to represent the relationship between reminder and bookmark</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use two hashmaps to store both the relationship from reminder to bookmark and bookmark to reminder.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More OOP and can easily find the relationship.</p>
+</li>
+<li>
+<p>Cons: More complex when doing any operation to a reminder. Need to check two hashmaps.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Reminder is a field of bookmark.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement.</p>
+</li>
+<li>
+<p>Cons: Reminder is a field of bookmark, so using a reminder to open the bookmark violate the relationship.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="em-this-is-the-end-of-extraction-em-2"><a class="link" href="#em-this-is-the-end-of-extraction-em-2"><em>------------- This is the end of extraction -------------</em></a></h4>
+<hr>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:43:50 UTC</div></div></div></body></html>

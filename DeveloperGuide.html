@@ -43,11 +43,11 @@
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#testing-of-addressbook-3-features">F.1. Testing of AddressBook 3 features</a></li>
-<li><a href="#testing-of-folders">F.2. Testing of folders</a></li>
-<li><a href="#opening-a-bookmark">F.3. Opening a bookmark</a></li>
-<li><a href="#adding-a-bookmark-to-favorites">F.4. Adding a bookmark to favorites</a></li>
-<li><a href="#undoing-previous-commands">F.5. Undoing previous commands</a></li>
-<li><a href="#redoing-previous-undo-commands">F.6. Redoing previous undo commands</a></li>
+<li><a href="#opening-a-bookmark">F.2. Opening a bookmark</a></li>
+<li><a href="#adding-a-bookmark-to-favorites">F.3. Adding a bookmark to favorites</a></li>
+<li><a href="#undoing-previous-commands">F.4. Undoing previous commands</a></li>
+<li><a href="#redoing-previous-undo-commands">F.5. Redoing previous undo commands</a></li>
+<li><a href="#testing-of-folders">F.6. Testing of folders</a></li>
 <li><a href="#saving-data">F.7. Saving data</a></li>
 <li><a href="#making-annotations">F.8. Making annotations</a></li>
 </ul>
@@ -1415,7 +1415,7 @@ more advanced tree traversal algorithms as compared to naive list or array opera
 <div class="sect3">
 <h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
 <div class="paragraph">
-<p>A bookmark can have a reminder, and a reminder can be used to open the bookmark.
+<p>A bookmark can attach a reminder, and a reminder can be used to open the bookmark and send notifications to the user.
 This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssociation</code>.</p>
 </div>
 <div class="paragraph">
@@ -1427,9 +1427,73 @@ This mechanism is facilitated by <code>Reminder</code> and <code>ReminderAssocia
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ReminderAssociationDiagram.png" alt="ReminderAssociationDiagram">
+<img src="images/ReminderAssociationDiagram.png" alt="600" width="400">
 </div>
-<div class="title">Figure 21. Structure of the Reminder</div>
+<div class="title">Figure 21. Class diagram of the Reminder component</div>
+</div>
+<div class="paragraph">
+<p>There are four parts of the reminder feature:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a reminder to a specific bookmark (executed by <code>AddReminderCommand#execute()</code>)</p>
+</li>
+<li>
+<p>Edit a reminder (executed by <code>EditReminderCommand#execute()</code>)</p>
+</li>
+<li>
+<p>Delete a reminder (executed by <code>DeleteReminderCommand#execute()</code>)</p>
+</li>
+<li>
+<p>Goto the bookmark of a specific reminder (executed by <code>GotoReminderCommand#execute()</code>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These command are triggered by <code>reminder</code> command line entered into the command box,
+which will calls the respective command parser to create the command.
+The bookmark of the reminder will be retrieved and handled according to the command.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram illustrates how the adding reminder operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddReminderSequenceDiagram.png" alt="AddReminderSequenceDiagram">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>AddReminderCommandParser</code> and <code>AddReminderCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the <code>reminder-delete</code> command, instead of calling <code>addReminder(bookmark, reminder)</code> in Model,
+it will call <code>removeReminder(reminder)</code>.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>reminder-edit</code> command, instead of calling <code>addReminder(bookmark, reminder)</code> in Model,
+EditReminderCommand will create a edited copy of the target reminder and call <code>editReminder(target, editedReminder)</code> in Model.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>reminder-goto</code> command, it will retrieved the bookmark of the reminder and generate a GotoCommandResult.
+It works the same as <code>goto</code> command of the bookmark.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user attempts to use a reminder command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ReminderActivityDiagram.png" alt="600" width="500">
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1781,12 +1845,6 @@ web browsing-related activities:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatically clean up old or outdated bookmarks</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep my bookmark list up to date without having to look through it regularly</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort the bookmarks according to name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a specific bookmark</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
@@ -2558,20 +2616,17 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 </li>
 </ul>
 </div>
-<h3 id="UC17" class="discrete">Use case: UC17 - Sort the bookmark list</h3>
+<h3 id="UC17" class="discrete">Use case: UC17 - Open reminder</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User <a href="#UC01">lists bookmarks (UC01)</a>.</p>
+<p>User requests to open a specific reminder in the reminder list.</p>
 </li>
 <li>
-<p>User requests to sort the list in the specified criterion.</p>
-</li>
-<li>
-<p>Mark shows the sorted bookmark list.</p>
+<p>Mark opens the reminder.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2584,17 +2639,11 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-<li>
-<p>2a. Mark detects invalid criterion.</p>
+<p>1a. The given index is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mark shows an error message.</p>
+<p>1a1. Mark shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -2741,189 +2790,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="testing-of-folders"><a class="link" href="#testing-of-folders">F.2. Testing of folders</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>ROOT</code> folder is the top-level folder where all other folders are descendents of. It cannot be added, deleted, edited, or be renamed to.<br>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Do use <code>ROOT</code> as a folder name in folder commands in testing.</p>
-</div>
-<div class="sect3">
-<h4 id="expanding-the-folder-hierarchy"><a class="link" href="#expanding-the-folder-hierarchy">F.2.1. Expanding the folder hierarchy</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Expanding the folder hierarchy all the way</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: There is at least one folder not expanded.</p>
-</li>
-<li>
-<p>Test case: <code>expand 9999</code> (assuming you have less than 9999 levels of folders)<br>
-Expected: The folder hierarchy should show all folders expanded.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Expanding the folder hierarchy while there is nothing left to expand</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: Expand the folder hierarchy all the way, using <code>expand 9999</code> as in the previous test case.</p>
-</li>
-<li>
-<p>Test case: <code>expand</code> / <code>expand 10</code> / <code>expand 9999</code><br>
-Expected: The folder hierarchy should not change.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="collapsing-the-folder-hierarchy"><a class="link" href="#collapsing-the-folder-hierarchy">F.2.2. Collapsing the folder hierarchy</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Collapsing the folder hierarchy all the way</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: There is at least one folder expanded.</p>
-</li>
-<li>
-<p>Test case: <code>collapse 9999</code> (assuming you have less than 9999 levels of folders)<br>
-Expected: The folder hierarchy should show all folders collapsed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Collapsing the folder hierarchy while there is nothing left to collapse</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: Collapse the folder hierarchy all the way, using <code>collapse 9999</code> as in the previous test case.</p>
-</li>
-<li>
-<p>Test case: <code>collapse</code> / <code>collapse 10</code> / <code>collapse 9999</code><br>
-Expected: The folder hierarchy should not change.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-folders"><a class="link" href="#adding-folders">F.2.3. Adding folders</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Adding an existing folder</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: At least one folder exists in Mark. Let the name of the folder be <code>X</code>.</p>
-</li>
-<li>
-<p>Test case: <code>folder X</code> / <code>folder X p/ROOT</code><br>
-Expected: An error occurs, saying <code>X</code> already exists.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Adding a folder without specifiying its parent</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: A folder named <code>X</code> that does not exist in Mark.</p>
-</li>
-<li>
-<p>Test case: <code>folder X</code><br>
-Expected: Folder <code>X</code> is added successfully to the <code>ROOT</code> folder.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-folders"><a class="link" href="#editing-folders">F.2.4. Editing folders</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Editing a non-existing folder</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: A folder named <code>X</code> that does not exist in Mark.</p>
-</li>
-<li>
-<p>Test case: <code>folder-edit X t/anything</code><br>
-Expected: An error occurs, saying <code>X</code> does not exist.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Renaming an existing folder to another existing folder</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: Two different folders named <code>X</code> and <code>Y</code> that exist in Mark.</p>
-</li>
-<li>
-<p>Test case: <code>folder-edit X t/Y</code> / <code>folder-edit Y t/X</code><br>
-Expected: An error occurs, saying that <code>X</code> (or <code>Y</code>) already exists.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-folders"><a class="link" href="#deleting-folders">F.2.5. Deleting folders</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deleting a folder containing other bookmarks and/or folders</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: A folder named <code>X</code> that contains other subfolders.</p>
-</li>
-<li>
-<p>Test case: <code>folder-delete X</code><br>
-Expected: An error occurs, saying that there are still bookmarks/folders in <code>X</code> and so cannot be deleted.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="opening-a-bookmark"><a class="link" href="#opening-a-bookmark">F.3. Opening a bookmark</a></h3>
+<h3 id="opening-a-bookmark"><a class="link" href="#opening-a-bookmark">F.2. Opening a bookmark</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2954,7 +2821,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-bookmark-to-favorites"><a class="link" href="#adding-a-bookmark-to-favorites">F.4. Adding a bookmark to favorites</a></h3>
+<h3 id="adding-a-bookmark-to-favorites"><a class="link" href="#adding-a-bookmark-to-favorites">F.3. Adding a bookmark to favorites</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2968,7 +2835,7 @@ The first bookmark does not contain <code>Favorite</code> tag.</p>
 <li>
 <p>Test case: <code>favorite 1</code> or <code>fav 1</code><br>
    Expected: A <code>Favorite</code> tag is added to the first bookmark and the bookmark also appears in the list
-   of favorite bookmarks in the top right corner of the dashboard tab.
+of favorite bookmarks in the top right corner of the dashboard tab.
 Details of the bookmark shown in the status message.</p>
 </li>
 <li>
@@ -2986,7 +2853,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-commands"><a class="link" href="#undoing-previous-commands">F.5. Undoing previous commands</a></h3>
+<h3 id="undoing-previous-commands"><a class="link" href="#undoing-previous-commands">F.4. Undoing previous commands</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3031,7 +2898,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-previous-undo-commands"><a class="link" href="#redoing-previous-undo-commands">F.6. Redoing previous undo commands</a></h3>
+<h3 id="redoing-previous-undo-commands"><a class="link" href="#redoing-previous-undo-commands">F.5. Redoing previous undo commands</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3075,6 +2942,316 @@ Expected: Similar to previous.</p>
 </div>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing-of-folders"><a class="link" href="#testing-of-folders">F.6. Testing of folders</a></h3>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>ROOT</code> folder is the top-level folder where all other folders are descendents of. It cannot be added, deleted, edited, or be renamed to.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Do use <code>ROOT</code> as a folder name in folder commands in testing.</p>
+</div>
+<div class="sect3">
+<h4 id="expanding-the-folder-hierarchy"><a class="link" href="#expanding-the-folder-hierarchy">F.6.1. Expanding the folder hierarchy</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Expanding the folder hierarchy all the way</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There is at least one folder not expanded.</p>
+</li>
+<li>
+<p>Test case: <code>expand 9999</code> (assuming you have less than 9999 levels of folders)<br>
+Expected: The folder hierarchy should show all folders expanded.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Expanding the folder hierarchy while there is nothing left to expand</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Expand the folder hierarchy all the way, using <code>expand 9999</code> as in the previous test case.</p>
+</li>
+<li>
+<p>Test case: <code>expand</code> / <code>expand 10</code> / <code>expand 9999</code><br>
+Expected: The folder hierarchy should not change.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="collapsing-the-folder-hierarchy"><a class="link" href="#collapsing-the-folder-hierarchy">F.6.2. Collapsing the folder hierarchy</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Collapsing the folder hierarchy all the way</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There is at least one folder expanded.</p>
+</li>
+<li>
+<p>Test case: <code>collapse 9999</code> (assuming you have less than 9999 levels of folders)<br>
+Expected: The folder hierarchy should show all folders collapsed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Collapsing the folder hierarchy while there is nothing left to collapse</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Collapse the folder hierarchy all the way, using <code>collapse 9999</code> as in the previous test case.</p>
+</li>
+<li>
+<p>Test case: <code>collapse</code> / <code>collapse 10</code> / <code>collapse 9999</code><br>
+Expected: The folder hierarchy should not change.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-folders"><a class="link" href="#adding-folders">F.6.3. Adding folders</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an existing folder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one folder exists in Mark. Let the name of the folder be <code>X</code>.</p>
+</li>
+<li>
+<p>Test case: <code>folder X</code> / <code>folder X p/ROOT</code><br>
+Expected: An error occurs, saying <code>X</code> already exists.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a folder without specifiying its parent</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A folder named <code>X</code> that does not exist in Mark.</p>
+</li>
+<li>
+<p>Test case: <code>folder X</code><br>
+Expected: Folder <code>X</code> is added successfully to the <code>ROOT</code> folder.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-folders"><a class="link" href="#editing-folders">F.6.4. Editing folders</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a non-existing folder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A folder named <code>X</code> that does not exist in Mark.</p>
+</li>
+<li>
+<p>Test case: <code>folder-edit X t/anything</code><br>
+Expected: An error occurs, saying <code>X</code> does not exist.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Renaming an existing folder to another existing folder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Two different folders named <code>X</code> and <code>Y</code> that exist in Mark.</p>
+</li>
+<li>
+<p>Test case: <code>folder-edit X t/Y</code> / <code>folder-edit Y t/X</code><br>
+Expected: An error occurs, saying that <code>X</code> (or <code>Y</code>) already exists.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-folders"><a class="link" href="#deleting-folders">F.6.5. Deleting folders</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a folder containing other bookmarks and/or folders</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A folder named <code>X</code> that contains other subfolders.</p>
+</li>
+<li>
+<p>Test case: <code>folder-delete X</code><br>
+Expected: An error occurs, saying that there are still bookmarks/folders in <code>X</code> and so cannot be deleted.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-reminder"><a class="link" href="#adding-a-reminder">F.6.6. Adding a reminder</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a reminder while all bookmarks are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. Multiple bookmarks in the list.</p>
+</li>
+<li>
+<p>Test case: <code>reminder 1 t/12/12/2030 1200</code><br>
+Expected: The reminder of the first bookmark is added into reminder list.</p>
+</li>
+<li>
+<p>Test case: <code>reminder 0 t/12/12/2030 1200</code><br>
+Expected: No reminder is added into the reminder list. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>reminder 1 t/30/02/2030 1200</code><br>
+Expected: No reminder is added into the reminder list. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-reminder"><a class="link" href="#editing-a-reminder">F.6.7. Editing a reminder</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a reminder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The reminder list has 5 reminder.</p>
+</li>
+<li>
+<p>Test case: <code>reminder-edit 1 n/Read</code><br>
+Expected: The note of the first reminder changes to "Read".</p>
+</li>
+<li>
+<p>Test case: <code>reminder-edit 0 n/Read</code><br>
+Expected: No reminder is edited in the reminder list. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>reminder-edit 6 n/Read</code><br>
+Expected: No reminder is edited in the reminder list. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-reminder"><a class="link" href="#deleting-a-reminder">F.6.8. Deleting a reminder</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a reminder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The reminder list has 5 reminder.</p>
+</li>
+<li>
+<p>Test case: <code>reminder-delete 1</code><br>
+Expected: The first reminder in the list is deleted.</p>
+</li>
+<li>
+<p>Test case: `reminder-delete 0 `<br>
+Expected: No reminder is deleted in the reminder list. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>reminder-delete 6</code><br>
+Expected: No reminder is edited in the reminder list. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="goto-a-reminder"><a class="link" href="#goto-a-reminder">F.6.9. Goto a reminder</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Opening a bookmark using a reminder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The reminder list has 5 reminder.</p>
+</li>
+<li>
+<p>Test case: <code>reminder-goto 1</code><br>
+Expected: The first reminder in the list is opened.</p>
+</li>
+<li>
+<p>Test case: `reminder-goto 0 `<br>
+Expected: No website will show. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>reminder-goto 6</code><br>
+Expected: No website will show. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3244,4 +3421,4 @@ Expected: Annotation on the offline copy of the first bookmark is affected. Para
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:39:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:43:50 UTC</div></div></div></body></html>

@@ -2004,15 +2004,102 @@ This removes all annotations of the offline copy of bookmark 1.</p>
 <div class="sect2">
 <h3 id="reminders"><a class="link" href="#reminders">3.6. Reminders</a></h3>
 <div class="paragraph">
-<p>The following commands carry out operations on reminders in Mark.</p>
+<p>The following commands carry out operations on reminders in Mark.
+You can find reminders on the Dashboard tab.</p>
 </div>
 <div class="sect3">
 <h4 id="Reminder-Command"><a class="link" href="#Reminder-Command">3.6.1. Adding a reminder: <strong><code>reminder</code></strong></a></h4>
 <div class="paragraph">
-<p>Adds a reminder of a specified bookmark. You can set the time for the reminder.</p>
+<p>This command adds a reminder to a specified bookmark.
+The reminder will inform you at the time you indicate.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can have at most one reminder for one bookmark.<br>
+<br>
+The reminder cannot set the reminding time in the past.<br>
+<br>
+Each reminder will reminds you with popup notification twice:<br>
+<br>
+The first notification will show when the reminding time is within five hours,
+the second time is on the reminding spot.<br>
+<br>
+The expired reminder will be auto delete after one hour.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>reminder</strong> INDEX t/TIME_DATE [n/NOTE=Open]</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You are using Mark, and you want to remind yourself to do the quiz on Luminus bookmark tomorrow night,
+which is 18/11/2019 8p.m.
+Now you can use the <code>reminder</code> command to add a reminder to Luminus.</p>
+</div>
+<div class="paragraph">
+<p>To add a reminder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index of Luminus on reminder list is 1.
+You type the command <code><strong>reminder</strong> 1 t/18/11/2019 2000 n/Do the quiz</code> into the command box and press <em>Enter</em> to execute it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AddReminderUi1.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The result box will show the message:<br>
+"New reminder added: Do the quiz Time: 10/11/2019 0700 URL:https://luminus.nus.edu.sg/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AddReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The reminder is added to the reminder list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AddReminderUi3.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The notification will show up to inform you at the time.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/AddReminderUi4.png" alt="200" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>There are some parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -2022,7 +2109,7 @@ This removes all annotations of the offline copy of bookmark 1.</p>
 <p><code>INDEX</code> is the index of the bookmark that you want to add with a reminder.</p>
 </li>
 <li>
-<p><code>TIME_DATE</code> follows <code><em>dd/MM/uuuu HHmm</em></code> format.</p>
+<p><code>TIME_DATE</code> follows <code><em>dd/MM/uuuu HHmm</em></code> format. It should be a valid time.</p>
 </li>
 <li>
 <p><code>NOTE</code> is the description of the reminder, the default value is Open.</p>
@@ -2032,18 +2119,18 @@ This removes all annotations of the offline copy of bookmark 1.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code><strong>reminder</strong> 1 t/02/07/2019 2359</code><br>
-Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
+This command line adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
 It reminds you to open the bookmark.</p>
 </li>
 <li>
 <p><code><strong>reminder</strong> 1 t/02/07/2019 2359 n/Read announcements</code><br>
-Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
+This command line adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019.
 The reminder reminds you to read announcements.</p>
 </li>
 </ul>
@@ -2052,10 +2139,67 @@ The reminder reminds you to read announcements.</p>
 <div class="sect3">
 <h4 id="editing-a-reminder-strong-code-reminder-edit-code-strong"><a class="link" href="#editing-a-reminder-strong-code-reminder-edit-code-strong">3.6.2. Editing a reminder: <strong><code>reminder-edit</code></strong></a></h4>
 <div class="paragraph">
-<p>Edits the reminder at the specified index. You can edit either the time or the note of the reminder.</p>
+<p>This command edits the reminder in the list at the specified index.
+You can edit either the time or the note of the reminder.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>reminder-edit</strong> INDEX [t/TIME_DATE] [n/NOTE]</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You have another assignment on Luminus that need to be done tomorrow morning,
+which is 10/11/2019 7 a.m. You want to change the note for reminder to remind you do the assignment.
+Now you can use the <code>reminder-edit</code> command to edit the reminder for Luminus.</p>
+</div>
+<div class="paragraph">
+<p>To edit a reminder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index of the reminder in the reminder list is 1.
+You type the command <code><strong>reminder-edit</strong> 1 n/Do the quiz and the assignment</code> into the command box and press <em>Enter</em> to execute it.
+image::ui-screenshots/EditReminderUi1.png[400, 500]</p>
+</li>
+<li>
+<p>The result box will show the message:<br>
+"Edited Reminder: Do the quiz and the assignment Time: 10/11/2019 0700 URL:https://luminus.nus.edu.sg/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/EditReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The reminder is edited in the reminder list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/EditReminderUi3.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The edited notification will show up to inform you at the time.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/EditReminderUi4.png" alt="200" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>There are some parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -2065,7 +2209,7 @@ The reminder reminds you to read announcements.</p>
 <p><code>INDEX</code> is the index of the reminder you want to edit on the dashboard.</p>
 </li>
 <li>
-<p><code>TIME_DATE</code> is the time you want to edit. The time follows <code><em>dd/MM/uuuu HHmm</em></code> format.</p>
+<p><code>TIME_DATE</code> is the time you want to edit. The time follows <code><em>dd/MM/uuuu HHmm</em></code> format. It should be a valid time.</p>
 </li>
 <li>
 <p><code>NOTE</code> is the description of the reminder that you want to edit.</p>
@@ -2075,17 +2219,17 @@ The reminder reminds you to read announcements.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code><strong>reminder-edit</strong> 1 t/02/07/2019 2359</code><br>
-Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.</p>
+This command edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.</p>
 </li>
 <li>
 <p><code><strong>reminder-edit</strong> 1 t/02/07/2019 2359 n/Check daily news</code><br>
-Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.
+This command edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019.
 Reset the note to Check daily news.</p>
 </li>
 </ul>
@@ -2094,7 +2238,7 @@ Reset the note to Check daily news.</p>
 <div class="sect3">
 <h4 id="deleting-a-reminder-strong-code-reminder-delete-code-strong"><a class="link" href="#deleting-a-reminder-strong-code-reminder-delete-code-strong">3.6.3. Deleting a reminder: <strong><code>reminder-delete</code></strong></a></h4>
 <div class="paragraph">
-<p>Deletes the the reminder at the specified index.</p>
+<p>This command deletes the the reminder in the reminder list at the specified index.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>reminder-delete</strong> INDEX</code></p>
@@ -2111,13 +2255,144 @@ Reset the note to Check daily news.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You finished your task on Luminus early, and you do not need the reminder for Luminus anymore.
+Now you can use the <code>reminder-delete</code> command to delete the reminder for Luminus.</p>
+</div>
+<div class="paragraph">
+<p>To delete a reminder:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>reminder-delete</strong> 1</code><br>
-Delete the reminder of index 1.</p>
+<p>The index of the reminder in the reminder list is 1.
+You type the command <code><strong>reminder-delete</strong> 1</code> into the command box and press <em>Enter</em> to execute it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/DeleteReminderUi1.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The result box will show the message:<br>
+"Deleted Reminder: Do the quiz and the assignment Time: 10/11/2019 0700 URL:https://luminus.nus.edu.sg/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/DeleteReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The reminder is deleted in the reminder list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/DeleteReminderUi3.png" alt="400" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>reminder-delete</strong> 2</code><br>
+This command deletes the reminder of index 2.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="opening-a-bookmark-from-a-reminder-strong-code-reminder-goto-code-strong"><a class="link" href="#opening-a-bookmark-from-a-reminder-strong-code-reminder-goto-code-strong">3.6.4. Opening a bookmark from a reminder: <strong><code>reminder-goto</code></strong></a></h4>
+<div class="paragraph">
+<p>Opens the related bookmark of the specified reminder from the bookmark manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>reminder-goto</strong> INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>INDEX is the index of the reminder as viewed on the dashboard.</p>
+</li>
+<li>
+<p><code>INDEX</code> must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, …​</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>You want to plan your time table for next semester, which is a task on reminder list.
+Now you can use the <code>reminder-goto</code> command to open the website.</p>
+</div>
+<div class="paragraph">
+<p>To open the bookmark of a reminder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index of the reminder in the reminder list is 2.
+You type the command <code><strong>reminder-goto</strong> 2</code> into the command box and press <em>Enter</em> to execute it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/GotoReminderUi1.png" alt="400" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The result box will show the message:<br>
+"Opening Reminder: Start planning next year&#8217;s timetable Time: 07/12/2019 1000 URL:https://nusmods.com/"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/GotoReminderUi2.png" alt="400" width="400">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The tab will switch to Online and show NUSMODs website.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/GotoReminderUi3.png" alt="400" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>reminder-goto</strong> 1</code><br>
+If reminder 1 points to bookmark 5, this command is equivalent to
+<code><strong>goto</strong> 5</code>. (i.e. opens the 5th bookmark in the bookmark manager.)</p>
 </li>
 </ul>
 </div>
@@ -2171,48 +2446,13 @@ Sort all the bookmarks based on the order they were added.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code"><a class="link" href="#opening-a-bookmark-from-a-reminder-strong-code-goto-reminder-code-strong-code-coming-in-v2-0-code">3.7.2. Opening a bookmark from a reminder: <strong><code>goto-reminder</code></strong> <code>[coming in v2.0]</code></a></h4>
-<div class="paragraph">
-<p>Opens the related bookmark of the specified reminder from the bookmark manager.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code><strong>goto-reminder</strong> INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>INDEX is the index of the reminder as viewed on the dashboard.</p>
-</li>
-<li>
-<p>The index must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, …​</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>goto-reminder</strong> 1</code><br>
-If reminder 1 points to bookmark 5, this command is equivalent to
-<code><strong>goto</strong> 5</code>. (i.e. opens the 5th bookmark in the bookmark manager.)</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="automatically-completing-partially-typed-commands-code-coming-in-v2-0-code"><a class="link" href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.7.3. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></h4>
+<h4 id="automatically-completing-partially-typed-commands-code-coming-in-v2-0-code"><a class="link" href="#automatically-completing-partially-typed-commands-code-coming-in-v2-0-code">3.7.2. Automatically completing partially typed commands <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Automatically fills in partially typed commands if the command is unique.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code"><a class="link" href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.7.4. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></h4>
+<h4 id="sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code"><a class="link" href="#sharing-bookmarks-and-notes-via-email-telegram-code-coming-in-v2-0-code">3.7.3. Sharing bookmarks and notes via Email/ Telegram <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Shares your bookmarks and notes with your friends via Email or Telegram.</p>
 </div>
@@ -2263,6 +2503,11 @@ reminders, and a view of the folder hierarchy for bookmarks.</p>
 <dt class="hdlist1"><a id="folder-hierarchy"></a> Folder Hierarchy</dt>
 <dd>
 <p>The structure of folders in Mark. This is displayed in the dashboard tab when the application starts.</p>
+</dd>
+<dt class="hdlist1"><a id="reminder"></a> Reminder</dt>
+<dd>
+<p>The reminder in Mark reminds you to check a specific bookmark.
+This is displayed in the dashboard tab when the application starts.</p>
 </dd>
 <dt class="hdlist1"><a id="offline-copy"></a> Offline copy</dt>
 <dd>
@@ -2392,7 +2637,7 @@ General notes are found at the bottom of the rightmost column on the offline cop
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete reminder: <code><strong>reminder-delete</strong> INDEX</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Go to reminder: <code><strong>goto-reminder</strong> INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Go to reminder: <code><strong>reminder-goto</strong> INDEX</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -2430,4 +2675,4 @@ alphanumeric or special characters.<br>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:39:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:43:50 UTC</div></div></div></body></html>
