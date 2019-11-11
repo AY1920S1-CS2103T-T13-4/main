@@ -162,7 +162,7 @@ Mark has three <a id="Tabs"></a> tabs: <strong>Dashboard</strong>, <strong>Onlin
 folders, and autotags in Mark.</p>
 <div id="imgId-dashboard" class="imageblock">
 <div class="content">
-<img src="images/ui-screenshots/Ui_DashboardTab.png" alt="@Dashboard Tab View" width="600" height="400">
+<img src="images/Ui.png" alt="@Dashboard Tab View" width="600" height="400">
 </div>
 <div class="title">Figure 4. Mark&#8217;s Dashboard tab</div>
 </div>
@@ -273,7 +273,7 @@ E.g. if the command specifies <code>u/URL n/NAME</code>, <code>n/NAME u/URL</cod
 <div class="sect3">
 <h4 id="viewing-help-strong-code-help-code-strong"><a class="link" href="#viewing-help-strong-code-help-code-strong">3.1.1. Viewing help: <strong><code>help</code></strong></a></h4>
 <div class="paragraph">
-<p>Shows the list of commands in the bookmark manager.</p>
+<p>Displays a link that you can copy to this page.</p>
 </div>
 <div class="paragraph">
 <p>Format: <strong><code>help</code></strong></p>
@@ -282,11 +282,39 @@ E.g. if the command specifies <code>u/URL n/NAME</code>, <code>n/NAME u/URL</cod
 <div class="sect3">
 <h4 id="switching-tabs-strong-code-tab-code-strong"><a class="link" href="#switching-tabs-strong-code-tab-code-strong">3.1.2. Switching tabs: <strong><code>tab</code></strong></a></h4>
 <div class="paragraph">
-<p>Switches the current app view to the <a href="#Tabs">tab</a> that corresponds to the given
-index. For your convenience, you can use keywords <code>dash</code>, <code>on</code> or <code>off</code> instead of an index.</p>
+<p>You can switch the current app view to a another <a href="#Tabs">tab</a> with this command.</p>
+</div>
+<div class="paragraph">
+<p>Just provide an index as specified below. For your convenience, you can also use keywords <code>dash</code>, <code>on</code> or <code>off</code> instead of an index.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>tab</strong> INDEX</code> or <code><strong>tab</strong> KEYWORD</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You want to go to the dashboard. So you type <code><strong>tab</strong> 1</code> and press <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/TabUI1.png" alt="TabUI1">
+</div>
+</div>
+</li>
+<li>
+<p>You see the dashboard tab instead of the previously showing online tab.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/TabUi2.png" alt="TabUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -305,14 +333,10 @@ index. For your convenience, you can use keywords <code>dash</code>, <code>on</c
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><code><strong>tab</strong> 1</code><br>
-Goes to the <a href="#Dashboard">Dashboard</a> tab.</p>
-</li>
 <li>
 <p><code><strong>tab</strong> on</code><br>
 Goes to the Online tab which is a web view.</p>
@@ -517,10 +541,33 @@ file <code>mark/data/bookmarks/myBookmarks.json</code>.</p>
 <div class="sect3">
 <h4 id="clearing-all-data-strong-code-clear-code-strong"><a class="link" href="#clearing-all-data-strong-code-clear-code-strong">3.1.7. Clearing all data: <strong><code>clear</code></strong></a></h4>
 <div class="paragraph">
-<p>Clears all data from Mark. All bookmarks, folders, autotags, and reminders will be cleared.</p>
+<p>You can start your life anew with Mark! With this command, all bookmarks, folders, autotags, and reminders will be cleared.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>clear</strong></code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You decide that Mark is too cluttered, and so out of frustration you type <code>clear</code> into the command box and smash <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/ClearCommandUi1.png" alt="ClearCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>Mark is now empty!</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/ClearCommandUi2.png" alt="ClearCommandUi2">
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -553,11 +600,38 @@ currently shown in the bookmark list.</p>
 <div class="sect3">
 <h4 id="finding-bookmarks"><a class="link" href="#finding-bookmarks">3.2.2. Locating bookmarks by name, URL, tag or folder: <strong><code>find</code></strong></a></h4>
 <div class="paragraph">
-<p>Finds bookmarks that contain any of the given keywords in their name or
+<p>With this command, you can find bookmarks that contain any of the given keywords in their name or
 URL, or that are tagged with the given tag(s) or stored under the given folder(s).</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>find</strong> [KEYWORD]&#8230;&#8203; [t/TAG]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You decide to search for a bookmark with <code>Website</code> or <code>Video</code> in its name or url, or with the tag <code>Fun</code>.
+You type <code><strong>find</strong> Website Video t/Fun</code> and press <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/FindCommandUi1.png" alt="FindCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>Opps! You realise you have no life. You only have CS2103T-related bookmarks and no fun bookmarks.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/FindCommandUi2.png" alt="FindCommandUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -592,7 +666,7 @@ URL, or that are tagged with the given tag(s) or stored under the given folder(s
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -743,10 +817,37 @@ The new bookmark&#8217;s remark is <code>Contains textbook &amp; important deadl
 <div class="sect3">
 <h4 id="editing-bookmarks"><a class="link" href="#editing-bookmarks">3.2.5. Editing a bookmark: <strong><code>edit</code></strong></a></h4>
 <div class="paragraph">
-<p>Edits an existing bookmark in the bookmark manager.</p>
+<p>IVLE changed to LumiNUS? No worries! With the edit command you can easily fix your incorrect bookmarks.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>edit</strong> INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your school learning management system has changed hands, so you enter the command <code><strong>edit</strong> 2 n/LumiNUS u/https://luminus.nus.edu.sg</code>
+and press <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/EditCommandUi1.png" alt="EditCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>Yay! Now all that&#8217;s left to do is to appreciate the new cutting-edge technology&#8230;&#8203;</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/EditCommandUi2.png" alt="EditCommandUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -776,7 +877,7 @@ any tags after it.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -794,10 +895,37 @@ Clears all existing tags from the 2nd bookmark.</p>
 <div class="sect3">
 <h4 id="deleting-a-bookmark-strong-code-delete-code-strong"><a class="link" href="#deleting-a-bookmark-strong-code-delete-code-strong">3.2.6. Deleting a bookmark: <strong><code>delete</code></strong></a></h4>
 <div class="paragraph">
-<p>Deletes the specified bookmark from the bookmark manager.</p>
+<p>Mark values your right to data privacy. Unlike competing software from major industry leaders, you can actually delete bookmarks you don&#8217;t want anymore.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>delete</strong> INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You receive the heartbreaking news that Club Penguin is now closed forever. Painfully, you type <code><strong>delete</strong> 1</code> (of course you only have 1 bookmark, Club Penguin is your life)
+and press <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/DeleteCommandUi1.png" alt="DeleteCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>What else do you have to live for?</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/DeleteCommandUi2.png" alt="DeleteCommandUi2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -817,7 +945,7 @@ Clears all existing tags from the 2nd bookmark.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -891,8 +1019,9 @@ The results of these operations can be viewed in the folder hierarchy of dashboa
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/FolderHierarchy.png" alt="FolderHierarchy">
+<img src="images/ui-screenshots/FolderHierarchy.png" alt="FolderHierarchy">
 </div>
+<div class="title">Figure 7. Folder hierarchy as seen in the dashboard tab</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -938,7 +1067,7 @@ You can use the <code>list</code> command to see all your bookmarks in the folde
 <p>You want to expand all unexpanded folders by one level with just one command. Type <code><strong>expand</strong></code> in the command box and hit <kbd>Enter</kbd>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpandCommandUi1.png" alt="ExpandCommandUi1">
+<img src="images/ui-screenshots/ExpandCommandUi1.png" alt="ExpandCommandUi1">
 </div>
 </div>
 </li>
@@ -946,11 +1075,14 @@ You can use the <code>list</code> command to see all your bookmarks in the folde
 <p>You see all folders expanded by one level.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpandCommandUi2.png" alt="ExpandCommandUi2">
+<img src="images/ui-screenshots/ExpandCommandUi2.png" alt="ExpandCommandUi2">
 </div>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -998,7 +1130,7 @@ Expands the folder hierarchy by 3 levels.</p>
 <p>You want to collapse the deepest expanded folders by one level with just one command. Type <code><strong>collapse</strong></code> in the command box and hit <kbd>Enter</kbd>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/CollapseCommandUi1.png" alt="CollapseCommandUi1">
+<img src="images/ui-screenshots/CollapseCommandUi1.png" alt="CollapseCommandUi1">
 </div>
 </div>
 </li>
@@ -1006,11 +1138,14 @@ Expands the folder hierarchy by 3 levels.</p>
 <p>You see the deepest expanded folders collapsed by one level.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/CollapseCommandUi2.png" alt="CollapseCommandUi2">
+<img src="images/ui-screenshots/CollapseCommandUi2.png" alt="CollapseCommandUi2">
 </div>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1058,7 +1193,7 @@ Collapses the folder hierarchy by 9999 levels, most likely collapsing them all t
 <p>You notice you have 20 bookmarks all related to CS2103T. You decide to create a folder for them, so you enter the command <code><strong>folder</strong> CS2103T</code> and hit <kbd>Enter</kbd>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddFolderCommandUi1.png" alt="AddFolderCommandUi1">
+<img src="images/ui-screenshots/AddFolderCommandUi1.png" alt="AddFolderCommandUi1">
 </div>
 </div>
 </li>
@@ -1066,11 +1201,14 @@ Collapses the folder hierarchy by 9999 levels, most likely collapsing them all t
 <p>You see a new empty folder <code>CS2103T</code> appear in the dashboard.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddFolderCommandUi2.png" alt="AddFolderCommandUi2">
+<img src="images/ui-screenshots/AddFolderCommandUi2.png" alt="AddFolderCommandUi2">
 </div>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1124,7 +1262,7 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 <p>You recently broke up, and want to edit the folder <code>Dear</code> containing all your previous memories to <code>Ex</code>. So you enter the command <code><strong>folder-edit</strong> Dear t/Ex</code> and hit <kbd>Enter</kbd>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditFolderCommandUi1.png" alt="EditFolderCommandUi1">
+<img src="images/ui-screenshots/EditFolderCommandUi1.png" alt="EditFolderCommandUi1">
 </div>
 </div>
 </li>
@@ -1132,11 +1270,14 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 <p>You see folder <code>Dear</code> renamed to <code>Ex</code>. All your bookmarks previously in the folder <code>Dear</code> have also been edited to now be in the folder <code>Ex</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditFolderCommandUi2.png" alt="EditFolderCommandUi2">
+<img src="images/ui-screenshots/EditFolderCommandUi2.png" alt="EditFolderCommandUi2">
 </div>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1173,7 +1314,7 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 <p>You see an unused folder <code>CS2101</code> in the Dashboard, and input <code><strong>folder-delete</strong> CS2101</code> into the command box.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteFolderCommandUi1.png" alt="DeleteFolderCommandUi1">
+<img src="images/ui-screenshots/DeleteFolderCommandUi1.png" alt="DeleteFolderCommandUi1">
 </div>
 </div>
 </li>
@@ -1181,11 +1322,14 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 <p>You no longer see folder <code>CS2101</code> appear in the folders section of the Dashboard.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteFolderCommandUi2.png" alt="DeleteFolderCommandUi2">
+<img src="images/ui-screenshots/DeleteFolderCommandUi2.png" alt="DeleteFolderCommandUi2">
 </div>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1222,7 +1366,7 @@ the <strong>Dashboard</strong> tab, as seen below.</p>
 <div class="content">
 <img src="images/ui-screenshots/AutotagPanel.png" alt="AutotagPanel">
 </div>
-<div class="title">Figure 7. The autotag panel on the Dashboard tab</div>
+<div class="title">Figure 8. The autotag panel on the Dashboard tab</div>
 </div>
 <div class="paragraph">
 <p>The commands in this section provide a way to add and remove autotags in Mark.</p>
@@ -2680,4 +2824,4 @@ alphanumeric or special characters.<br>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:06:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:13:04 UTC</div></div></div></body></html>
