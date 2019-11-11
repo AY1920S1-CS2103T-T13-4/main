@@ -13,8 +13,9 @@
 <p>My team of 5 software engineering students was tasked with morphing an existing Command Line Interface (CLI)
 <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3">desktop application</a>
 into a useful application for a specific target group. We chose to create a bookmark manager application
-known as Mark, which is intended for computing students. Mark was conceptualised and implemented over a period of
-8 weeks. It is written in Java and has a Graphical User Interface (GUI) that was created using JavaFX.</p>
+named Mark, which aims to help computing students manage their web browsing activities. Mark was conceptualised and
+implemented over a period of 8 weeks. It is written in Java and has a Graphical User Interface (GUI) that was
+created using JavaFX.</p>
 </div>
 <div class="paragraph">
 <p>This is what Mark looks like:</p>
@@ -37,7 +38,7 @@ the User and Developer Guides in relation to the enhancements made.</p>
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section provides a summary of my contributions in terms of code, documentation and other team-related matters.</p>
+<p>This section provides a summary of my contributions regarding code, documentation and other team-related matters.</p>
 </div>
 <div class="sect2">
 <h3 id="enhancements-added"><a class="link" href="#enhancements-added">Enhancements added</a></h3>
@@ -63,11 +64,9 @@ Mark contains a list of predeclared autotags, and the user can also create custo
 <div class="ulist">
 <ul>
 <li>
-<p>It is troublesome for users to have to manually add tags every time they add or edit a bookmark, especially when
-multiple bookmarks need to be tagged similarly.
-The autotag feature allows them to tag similar bookmarks in one command, as well as set up tagging system that will
-continue to categorise bookmarks automatically. This makes it easier to find important information at a glance when
-searching for tags.</p>
+<p>It is troublesome for users to have to manually tag similar bookmarks individually.
+The autotag feature allows them to do so in a single step. They can also set up an autotagging system to categorise
+bookmarks automatically.</p>
 </li>
 </ul>
 </div>
@@ -93,8 +92,7 @@ and finally making autotags visible in the UI component.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>One of my team members contributed a more elegant solution to combine autotag conditions, which I adopted
-in my implementation.</p>
+<p>One of my team members suggested a more elegant way to combine autotag conditions, which I adapted.</p>
 </li>
 </ul>
 </div>
@@ -592,8 +590,11 @@ will no longer be automatically tagged with <code>Quiz</code>.</p>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>The autotag mechanism is facilitated by <code>AutotagController</code>. It stores and manages a list of <code>SelectiveBookmarkTaggers</code> which apply tags to
-bookmarks if they match specific criteria. It also implements the following operations:</p>
+<p>The autotag mechanism is facilitated by the main class <code>AutotagController</code>. It stores and manages a list of
+<code>SelectiveBookmarkTaggers</code>, which represent autotags in the <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>AutotagController</code> implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -618,43 +619,90 @@ and <code>Model#applyAllTaggers()</code> respectively.</p>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the autotag mechanism behaves at each step.</p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
-<p>Step 1. The user opens the application with an existing list of bookmarks and no autotags.</p>
+<p><strong>Step 1</strong>. The user opens the application with an existing list of bookmarks and no autotags.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AutotagState0.png" alt="AutotagState0">
+<img src="../images/AutotagState0.png" alt="350" width="350">
 </div>
+<div class="title">Figure 2. The initial state of Mark</div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes the command <code><strong>autotag</strong> Help u/stackoverflow.com/questions</code> to add an autotag that tags all
+<p><strong>Step 2</strong>. The user executes the command <code><strong>autotag</strong> Help u/stackoverflow.com/questions</code> to add an autotag that tags all
 bookmarks from <strong>stackoverflow.com/questions</strong> with the tag <strong>Help</strong>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A <code>SelectiveBookmarkTagger</code> is created with a <code>UrlContainsKeywordsPredicate</code> and a <code>Tag</code> named <strong>Help</strong>.
-The predicate&#8217;s keyword is <strong>stackoverflow.com/questions</strong>.</p>
+<p>A <code>SelectiveBookmarkTagger</code> is created with a <code>BookmarkPredicate</code> and a <code>Tag</code> named <strong>Help</strong>.
+The predicate&#8217;s URL keyword is <strong>stackoverflow.com/questions</strong>.</p>
 </li>
 <li>
-<p><code>b2</code>, which matches <code>UrlContainsKeywordsPredicate</code>, is replaced by a copy of itself that
-also contains the tag <code>Help</code>.</p>
+<p>The new autotag is applied to bookmark <code>b2</code>, which matches the <code>UrlContainsKeywordsPredicate</code>. This is carried out by
+replacing <code>b2</code> with a copy of itself (<code>b3</code>) that also contains the tag <strong>Help</strong>.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AutotagState1.png" alt="AutotagState1">
+<img src="../images/AutotagState1.png" alt="400" width="400">
 </div>
+<div class="title">Figure 3. The state of Mark after an autotag is added and applied to existing bookmarks</div>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the <code>autotag</code> command works.
-<em>(The sequence diagram will be improved in future versions of the Developer Guide.)</em></p>
+<p><strong>Step 3</strong>. The user then executes the command <code><strong>add</strong> n/JavaFX new scene u/https://stackoverflow.com/questions/29080759/</code>
+to bookmark a question on StackOverflow.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A new bookmark with the name <code>JavaFX new scene</code> is created.</p>
+</li>
+<li>
+<p>This bookmark matches the conditions for the previously added autotag, so it is tagged <strong>Help</strong>.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AutotagSequenceDiagram.png" alt="AutotagSequenceDiagram">
+<img src="../images/AutotagState2.png" alt="400" width="400">
 </div>
+<div class="title">Figure 4. The state of Mark after a new bookmark is added and tagged automatically</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The following diagrams show how the <code><strong>autotag</strong></code> command works in more detail.</p>
+</div>
+<div class="paragraph">
+<p>The parsing of an <code><strong>autotag</strong></code> command is done in a similar way as shown in the first half of the
+<a href="#undo-sequence-diagram">sequence diagram for the <code>undo</code> command</a>. This result in the creation of an
+<code>AutotagCommand</code> that contains a <code>SelectiveBookmarkTagger</code> to be added to the <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>When <code>AutotagCommand#execute(model, storage)</code> is called, the command first checks whether the given <code>model</code> contains
+the command&#8217;s <code>SelectiveBookmarkTagger</code> (also known as <code>tagger</code>).
+If it does not, <code>tagger</code> is added to <code>model</code>, and all taggers in <code>model</code> are then applied to the bookmarks in <code>model</code>.
+Finally, the current state of Mark is saved with a message that indicates the successful execution of the
+<code><strong>autotag</strong></code> command. This sequence of operations is illustrated in the following diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutotagSequenceDiagram.png" alt="300" width="300">
+</div>
+<div class="title">Figure 5. Sequence diagram showing the general execution of an <code>AutotagCommand</code></div>
+</div>
+<div class="paragraph">
+<p>The next sequence diagram provides more details of how taggers are applied to bookmarks in Mark.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ApplyAllTaggersSequenceDiagram.png" alt="500" width="500">
+</div>
+<div class="title">Figure 6. Sequence diagram showing the execution of <code>Model#applyAllTaggers()</code></div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -663,44 +711,35 @@ also contains the tag <code>Help</code>.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>AutotagCommand</code> should end at the destroy marker (X), but due to a limitation of PlantUML, it
-reaches the end of this diagram.
+The <strong>sd</strong> frame should cover the whole diagram, but due to a limitation of PlantUML, it does not.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Autotags will now be applied whenever a bookmark is added or modified.</strong></p>
+<p>With reference to the above diagram, the <code>Model</code>
+first calls the method <code>VersionedMark#applyAllTaggers()</code>. <code>VersionedMark</code> then obtains its <code>list</code> of bookmarks, and
+passes the list to its <code>AutotagController</code> to apply all <code>SelectiveBookmarkTaggers</code> to the list.
+The <code>AutotagController</code> then iterates through all the bookmarks and taggers, and applies tags to bookmarks using the method
+<code>SelectiveBookmarkTagger#applyTagSelectively(Bookmark)</code>. A new list of bookmarks is returned, which <code>VersionedMark</code>
+sets as its bookmark list.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. The user then executes the command <code><strong>add</strong> n/JavaFX new scene u/https://stackoverflow.com/questions/29080759/</code>
-to bookmark a question on StackOverflow.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>This bookmark matches the conditions for the previously added autotag, so it is tagged <strong>Help</strong>.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AutotagState2.png" alt="AutotagState2">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram (<a href="#autotag-activity-diagram">Activity diagram showing how an autotag is added</a>) summarizes what happens when an autotag is added.
+<p>The following activity diagram summarizes what happens when an autotag is added (assuming valid user input).
 A similar mechanism is used to tag bookmarks when a bookmark is added or modified.</p>
 </div>
 <div id="autotag-activity-diagram" class="imageblock">
 <div class="content">
-<img src="../images/AutotagActivityDiagram.png" alt="AutotagActivityDiagram">
+<img src="../images/AutotagActivityDiagram.png" alt="300" width="300">
 </div>
-<div class="title">Figure 2. Activity diagram showing how an autotag is added</div>
+<div class="title">Figure 7. Activity diagram showing how an autotag is added</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p>The following aspects of the autotag mechanism were considered when designing the autotag implementation.</p>
+</div>
 <div class="sect4">
 <h5 id="aspect-how-autotags-are-applied"><a class="link" href="#aspect-how-autotags-are-applied">Aspect: How autotags are applied</a></h5>
 <div class="ulist">
@@ -713,7 +752,7 @@ A similar mechanism is used to tag bookmarks when a bookmark is added or modifie
 <p>Pros: Easy to implement.</p>
 </li>
 <li>
-<p>Cons: May have performance issues in terms of runtime, as bookmarks may be checked multiple times.</p>
+<p>Cons: May have performance issues in terms of runtime, as bookmarks can be checked multiple times.</p>
 </li>
 </ul>
 </div>
@@ -783,4 +822,4 @@ A similar mechanism is used to tag bookmarks when a bookmark is added or modifie
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 05:46:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 05:47:28 UTC</div></div></div></body></html>
