@@ -41,7 +41,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mark is for those who <strong>prefer to use a desktop app for managing
+<p>Mark is for those who <strong>prefer to use a desktop application for managing
 bookmarks</strong>. More importantly, it is <strong>optimized for those who prefer to
 work with a Command Line Interface</strong> (CLI) while still having the
 benefits of a Graphical User Interface (GUI). If you can type fast, Mark
@@ -70,11 +70,12 @@ traditional GUI apps. Interested? Move on to <a href="#quick-start">Section 2, &
 <p>Copy the file to the folder you want to use as the home folder for your Mark.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<p>Double-click the file to start the application. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
+<div class="title">Figure 1. GUI for Mark</div>
 </div>
 </li>
 <li>
@@ -89,17 +90,17 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all bookmarks</p>
 </li>
 <li>
-<p><strong><code>folder Tutorials</code></strong> : create a folder named <code>Tutorials</code></p>
+<p><strong><code>folder Tutorials</code></strong> : creates a folder named <code>Tutorials</code></p>
 </li>
 <li>
 <p><strong><code>add u/https://git-scm.com/book/en/v2 n/Pro Git f/Tutorials</code></strong> : adds a bookmark
-named <code>Pro Git</code> to Mark.</p>
+named <code>Pro Git</code> to Mark</p>
 </li>
 <li>
 <p><strong><code>delete 3</code></strong> : deletes the 3rd bookmark shown in the current bookmark list</p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><strong><code>exit</code></strong> : exits the application</p>
 </li>
 </ul>
 </div>
@@ -121,7 +122,7 @@ named <code>Pro Git</code> to Mark.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A <em>command box</em> at the top of the screen</p>
+<p>A <em>command box</em> and <em>result display box</em> at the top of the screen</p>
 </li>
 <li>
 <p>A <em>bookmark list</em> on the left of the screen</p>
@@ -133,13 +134,13 @@ named <code>Pro Git</code> to Mark.</p>
 </div>
 <div class="paragraph">
 <p>The <strong><em>command box</em></strong> is the area for you to enter commands. The result of each command will be shown
-in the result display box, immediately below the command box.</p>
+in the <strong><em>result display box</em></strong>, immediately below the command box.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ui-screenshots/CommandBox.png" alt="CommandBox">
 </div>
-<div class="title">Figure 1. The command box and result display box</div>
+<div class="title">Figure 2. The command box and result display box</div>
 </div>
 <div class="paragraph">
 <p>The <strong><em>bookmark list</em></strong> shows details about the bookmarks in Mark.</p>
@@ -148,7 +149,7 @@ in the result display box, immediately below the command box.</p>
 <div class="content">
 <img src="images/ui-screenshots/BookmarkList.png" alt="BookmarkList">
 </div>
-<div class="title">Figure 2. The bookmark list</div>
+<div class="title">Figure 3. The bookmark list</div>
 </div>
 <div class="paragraph">
 <p>The <strong><em>main viewing area</em></strong> shows one of three available tabs at any point in time.
@@ -163,7 +164,7 @@ folders, and autotags in Mark.</p>
 <div class="content">
 <img src="images/ui-screenshots/Ui_DashboardTab.png" alt="@Dashboard Tab View" width="600" height="400">
 </div>
-<div class="title">Figure 3. Mark&#8217;s Dashboard tab</div>
+<div class="title">Figure 4. Mark&#8217;s Dashboard tab</div>
 </div>
 </li>
 <li>
@@ -173,17 +174,17 @@ and view web pages.</p>
 <div class="content">
 <img src="images/ui-screenshots/Ui_OnlineTab.png" alt="@Online Tab View" width="600" height="400">
 </div>
-<div class="title">Figure 4. Mark&#8217;s Online tab</div>
+<div class="title">Figure 5. Mark&#8217;s Online tab</div>
 </div>
 </li>
 <li>
-<p>The <strong>Offline</strong> tab displays offline copies of bookmarked web pages,
+<p>The <strong>Offline</strong> tab displays the most recently opened offline copy of bookmarked web pages,
 which you can browse and annotate directly.</p>
 <div id="imgId-offline" class="imageblock">
 <div class="content">
 <img src="images/ui-screenshots/Ui_OfflineTab.png" alt="@Offline Tab View" width="600" height="400">
 </div>
-<div class="title">Figure 5. Mark&#8217;s Offline tab</div>
+<div class="title">Figure 6. Mark&#8217;s Offline tab</div>
 </div>
 </li>
 </ul>
@@ -256,7 +257,7 @@ E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e.
 <code>t/module t/read-later</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be used in any order.<br>
+<p>Parameters can be used in any order unless otherwise specified.<br>
 E.g. if the command specifies <code>u/URL n/NAME</code>, <code>n/NAME u/URL</code> is also acceptable.</p>
 </li>
 </ul>
@@ -326,58 +327,57 @@ Goes to the Offline tab which shows the offline copy of bookmarks.</p>
 <div class="sect3">
 <h4 id="undoing-previous-commands-strong-code-undo-code-strong"><a class="link" href="#undoing-previous-commands-strong-code-undo-code-strong">3.1.3. Undoing previous commands: <strong><code>undo</code></strong></a></h4>
 <div class="paragraph">
-<p>Restores the list to the state before the given number of previous undoable commands were
+<p>If you mistakenly enter a command that permanently changes Mark, do not worry, you can always use <code>undo</code> to
+rectify the mistake! This command restores Mark to the state before the given number of previous undoable commands were
 executed.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>undo</strong> [STEP=1]</code></p>
 </div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you accidentally delete a wrong bookmark and you want to bring it back. There is no
+need for you to manually add that bookmark back as <code>undo</code> will do the magic for you. Just input <code>undo</code>
+in the command box, the deleted bookmark will reappear in your bookmark list.</p>
+</li>
+<li>
+<p>Suppose you have entered two <code>delete</code> commands, <code><strong>delete</strong> 1</code> and <code><strong>delete</strong> 2</code>, and now you
+want to get back both bookmarks, a possible way is enter <code>undo</code> twice. Besides, Mark also
+offers an alternative where you can just type <code>undo 2</code> to undo these two commands.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Undoable commands include commands that modify the bookmark list or
-reminders, which includes <code>add</code>, <code>edit</code>, <code>delete</code>, <code>clear</code>, <code>reminder</code>,
-<code>reminder edit</code>, <code>reminder delete</code>, etc).</p>
+<p><code>STEP</code> must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, &#8230;&#8203;</p>
 </li>
 <li>
-<p>The step must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, …​</p>
+<p>Undoable commands include commands that modify the bookmark list, folders,
+reminders or annotations, which includes <code>add</code>, <code>edit</code>, <code>delete</code>, <code>clear</code>, <code>reminder</code>,
+<code>folder</code>, <code>annotate</code>, etc).</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>undo</strong></code><br>
-Restores the list to the state before the previous undoable command was executed.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="redoing-previously-undone-commands-strong-code-redo-code-strong"><a class="link" href="#redoing-previously-undone-commands-strong-code-redo-code-strong">3.1.4. Redoing previously undone commands: <strong><code>redo</code></strong></a></h4>
 <div class="paragraph">
-<p>Reverses the given number of <code><strong>undo</strong></code> commands.</p>
+<p>This command reverses the given number of undone actions.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>redo</strong> [STEP=1]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The step must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, …​</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -388,7 +388,29 @@ Restores the list to the state before the previous undoable command was executed
 <p><code><strong>redo</strong></code><br>
 Reverses the most recent <code><strong>undo</strong></code> command.</p>
 </li>
+<li>
+<p><code><strong>delete</strong> 1</code><br>
+<code><strong>delete</strong> 2</code><br>
+<code><strong>undo</strong> 2</code><br>
+<code><strong>redo</strong> 2</code><br>
+Restores the bookmark list to the state before the <code><strong>undo</strong> 2</code> command was executed. The
+two bookmarks get deleted again.</p>
+</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>STEP</code> must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -532,7 +554,7 @@ currently shown in the bookmark list.</p>
 <h4 id="finding-bookmarks"><a class="link" href="#finding-bookmarks">3.2.2. Locating bookmarks by name, URL, tag or folder: <strong><code>find</code></strong></a></h4>
 <div class="paragraph">
 <p>Finds bookmarks that contain any of the given keywords in their name or
-URL, or that are tagged with the given tag(s).</p>
+URL, or that are tagged with the given tag(s) or stored under the given folder(s).</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>find</strong> [KEYWORD]&#8230;&#8203; [t/TAG]&#8230;&#8203; [f/FOLDER]&#8230;&#8203;</code></p>
@@ -545,7 +567,10 @@ URL, or that are tagged with the given tag(s).</p>
 <p>At least one keyword, tag or folder must be provided.</p>
 </li>
 <li>
-<p>Keyword search is case insensitive. e.g video will match Video.</p>
+<p>The list of keywords to be searched must be before tags and folders.</p>
+</li>
+<li>
+<p>Search for keywords, tags and folders is case insensitive. e.g video will match Video.</p>
 </li>
 <li>
 <p>The order of the keywords does not matter. e.g. <code>Website Video</code> will match <code>Video Website</code>.</p>
@@ -589,10 +614,25 @@ Returns any bookmark with the tag School or folder CS2103T or that contains gith
 <div class="sect3">
 <h4 id="opening-a-bookmark-strong-code-goto-code-strong"><a class="link" href="#opening-a-bookmark-strong-code-goto-code-strong">3.2.3. Opening a bookmark: <strong><code>goto</code></strong></a></h4>
 <div class="paragraph">
-<p>Opens the specified the bookmark from the bookmark manager.</p>
+<p>This command opens the specified the bookmark from the bookmark manager.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>goto</strong> INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>list</strong></code><br>
+<code><strong>goto</strong> 1</code><br>
+Opens the first bookmark in the bookmark manager.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -610,18 +650,6 @@ Returns any bookmark with the tag School or folder CS2103T or that contains gith
 </ul>
 </div>
 </div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>list</strong></code><br>
-<code><strong>goto</strong> 1</code><br>
-Opens the first bookmark in the bookmark manager.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect3">
@@ -809,10 +837,13 @@ Deletes the 1st bookmark in the results of the find command.</p>
 <div class="sect3">
 <h4 id="adding-a-bookmark-to-favorites-strong-code-favorite-fav-code-strong"><a class="link" href="#adding-a-bookmark-to-favorites-strong-code-favorite-fav-code-strong">3.2.7. Adding a bookmark to Favorites: <strong><code>favorite|fav</code></strong></a></h4>
 <div class="paragraph">
-<p>Adds a Favorite tag to the specified bookmark.</p>
+<p>This command adds a <code>Favorite</code> tag to the specified bookmark.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>favorite|fav</strong> INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1089,7 +1120,7 @@ the <strong>Dashboard</strong> tab, as seen below.</p>
 <div class="content">
 <img src="images/ui-screenshots/AutotagPanel.png" alt="AutotagPanel">
 </div>
-<div class="title">Figure 6. The autotag panel on the Dashboard tab</div>
+<div class="title">Figure 7. The autotag panel on the Dashboard tab</div>
 </div>
 <div class="paragraph">
 <p>The commands in this section provide a way to add and remove autotags in Mark.</p>
@@ -2302,4 +2333,4 @@ alphanumeric or special characters.<br>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 23:10:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:30:15 UTC</div></div></div></body></html>

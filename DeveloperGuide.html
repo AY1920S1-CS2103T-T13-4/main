@@ -44,7 +44,11 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
 <li><a href="#deleting-a-bookmark">F.2. Deleting a bookmark</a></li>
-<li><a href="#saving-data">F.3. Saving data</a></li>
+<li><a href="#opening-a-bookmark">F.3. Opening a bookmark</a></li>
+<li><a href="#adding-a-bookmark-to-favorites">F.4. Adding a bookmark to favorites</a></li>
+<li><a href="#undoing-previous-commands">F.5. Undoing previous commands</a></li>
+<li><a href="#redoing-previous-undo-commands">F.6. Redoing previous undo commands</a></li>
+<li><a href="#saving-data">F.7. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -423,29 +427,43 @@ and the <code>Url</code> of the <code>Bookmark</code> it is associated with.</p>
 </div>
 <div class="sect2">
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo/Redo feature</a></h3>
+<div class="paragraph">
+<p>The Undo and Redo feature are crucial to give users the flexibility of reverting wrongly executed commands.
+This section explains the implementation of the undo/redo mechanism as well as some design considerations
+when implementing this feature.</p>
+</div>
 <div class="sect3">
 <h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedMark</code>.
 It extends <code>Mark</code> with an undo/redo history, stored internally as a list of <code>markStateRecord</code> and <code>currentPointer</code>.
-Additionally, it implements the following operations:</p>
+The class diagram for <code>MarkStateRecord</code> and its relationship with <code>ReadonlyMark</code>, <code>Mark</code> and <code>VersionedMark</code> is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MarkStateRecordClassDiagram.png" alt="MarkStateRecordClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>As shown in the class diagram, <code>VersionedMark</code> implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedMark#save()</code>&#8201;&#8212;&#8201;Saves the current Mark state and the corresponding record to its history.</p>
+<p><code>VersionedMark#save(String record)</code>&#8201;&#8212;&#8201;Saves the current Mark state and the corresponding record to its history.</p>
 </li>
 <li>
-<p><code>VersionedMark#undo()</code>&#8201;&#8212;&#8201;Restores the previous Mark state from its history and returns the record.</p>
+<p><code>VersionedMark#undo(int step)</code>&#8201;&#8212;&#8201;Undoes the given number of actions and returns the record which
+consists of the list of actions being undone.</p>
 </li>
 <li>
-<p><code>VersionedMark#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone Mark state from its history and returns the record for that
-state.</p>
+<p><code>VersionedMark#redo(int step)</code>&#8201;&#8212;&#8201;Redoes the given number actions and returns the record which
+consists of the list of actions being undone.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#saveMark()</code>, <code>Model#undoMark()</code> and <code>Model#redoMark()</code>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#saveMark(String record)</code>, <code>Model#undoMark(int step)</code> and <code>Model#redoMark(int step)</code>
 respectively.</p>
 </div>
 <div class="paragraph">
@@ -462,8 +480,8 @@ Mark state and an empty record, and the <code>currentPointer</code> pointing to 
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>delete 5</code> command to delete the 5th bookmark in the Mark. The <code>delete</code> command calls
-<code>Model#saveMark()</code>, causing the modified state of the Mark and the record of the command after command execution to be
-saved in the <code>markStateRecords</code>, and the <code>currentPointer</code> is shifted to the newly inserted state record.</p>
+<code>Model#saveMark(String record)</code>, causing the modified state of the Mark and the record of the command after command execution
+to be saved in the <code>markStateRecords</code>, and the <code>currentPointer</code> is shifted to the newly inserted state record.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -472,7 +490,7 @@ saved in the <code>markStateRecords</code>, and the <code>currentPointer</code> 
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes <code>add u/www.google.com &#8230;&#8203;</code> to add a new bookmark. The <code>add</code> command also calls
-<code>Model#saveMark()</code>,
+<code>Model#saveMark(String record)</code>,
 causing another modified Mark state and the record to be saved into the <code>markStateRecords</code>, and the <code>currentPointer</code> is
 again shifted to the newly inserted state record..</p>
 </div>
@@ -488,7 +506,7 @@ again shifted to the newly inserted state record..</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#saveMark()</code>, so the Mark state will not be saved into the
+If a command fails its execution, it will not call <code>Model#saveMark(String record)</code>, so the Mark state will not be saved into the
 <code>markStateRecords</code>.
 </td>
 </tr>
@@ -496,7 +514,8 @@ If a command fails its execution, it will not call <code>Model#saveMark()</code>
 </div>
 <div class="paragraph">
 <p>Step 4. The user now decides that adding the bookmark was a mistake, and decides to undo that action by executing the
-<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoMark()</code>, which will shift the <code>currentPointer</code> once to the left,
+<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoMark(1)</code> since by default the number of steps
+to undo is 1 if not specified. This command shifts the <code>currentPointer</code> once to the left,
 pointing it to the previous state record, and restores the Mark to that state.</p>
 </div>
 <div class="imageblock">
@@ -513,8 +532,8 @@ pointing it to the previous state record, and restores the Mark to that state.</
 <td class="content">
 If the <code>currentPointer</code> is at index 0, pointing to the initial Mark state, then there are no previous Mark states to
 restore.
-The <code>undo</code> command uses <code>Model#canUndoMark()</code> to check if this is the case. If so, it will return an error to the user
-rather than attempting to perform the undo.
+The <code>undo</code> command uses <code>Model#canUndoMark(1)</code> to check the if there are enough commands to undo.
+In this case, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -541,8 +560,8 @@ the lifeline reaches the end of diagram.
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoMark()</code>, which shifts the <code>currentPointer</code> once to the right,
-pointing to the previously undone state record, and restores the Mark to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoMark(int step)</code>, which shifts the <code>currentPointer</code> to the right by the given number of steps,
+and restores the Mark to the state corresponding to the <code>currentPointer</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -552,15 +571,15 @@ pointing to the previously undone state record, and restores the Mark to that st
 </td>
 <td class="content">
 If the <code>currentPointer</code> is at index <code>markStateRecords.size() - 1</code>, pointing to the latest Mark state, then there
-are no undone Mark states to restore. The <code>redo</code> command uses <code>Model#canRedoMark()</code> to check if this is
-the case. If so, it will return an error to the user rather than attempting to perform the redo.
+are no undone Mark states to restore. The <code>redo</code> command uses <code>Model#canRedoMark(1)</code> to check the if there are enough commands to redo.
+In this case, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
 <p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the Mark, such as <code>find</code>, will
-usually not call <code>Model#saveMark()</code>, <code>Model#undoMark()</code> or <code>Model#redoMark()</code>. Thus, the <code>markStateRecords</code> remains
+usually not call <code>Model#saveMark(String record)</code>, <code>Model#undoMark(int step)</code> or <code>Model#redoMark(int step)</code>. Thus, the <code>markStateRecords</code> remains
 unchanged.</p>
 </div>
 <div class="imageblock">
@@ -569,7 +588,7 @@ unchanged.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#saveMark()</code>. Since the <code>currentPointer</code> is not pointing at the end
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#saveMark(String record)</code>. Since the <code>currentPointer</code> is not pointing at the end
 of the <code>markStateRecords</code>, all state records after the <code>currentPointer</code> will be purged.
 We designed it this way because it no longer makes sense to redo the <code>add u/www.google.com &#8230;&#8203;</code> command. This is the
 behavior that most modern desktop applications follow.</p>
@@ -590,6 +609,9 @@ behavior that most modern desktop applications follow.</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p>This section explains some of the design considerations we had when implementing this feature.</p>
+</div>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -615,7 +637,7 @@ behavior that most modern desktop applications follow.</p>
 <p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the bookmark being deleted).</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: Must ensure that the implementation of each individual command are correct.</p>
 </li>
 </ul>
 </div>
@@ -650,6 +672,40 @@ behavior that most modern desktop applications follow.</p>
 <li>
 <p>Cons: Undo/redo multiple commands can take O(n) time as each undo/redo action requires popping a state record from the
 undo stack and pushing it into the redo stack. There is no way to pop multiple state records efficiently at one time.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-commands-to-include-for-undo-redo"><a class="link" href="#aspect-commands-to-include-for-undo-redo">Aspect: Commands to include for undo/redo</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Include only commands that modify the state of Mark data.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only meaningful app data is stored, less memory is consumed</p>
+</li>
+<li>
+<p>Cons: Unable to retrieve commands that do not alter the state of Mark, such as <code>find</code>, <code>list</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Include all commands</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: All commands can be undone and redone</p>
+</li>
+<li>
+<p>Cons: More data to be stored and these data might not be meaningful to the users. More data related to
+Command class also needs to be stored and VersionedMark might need to depend on Logic which breaks the layered architecture of the existing application</p>
 </li>
 </ul>
 </div>
@@ -2333,8 +2389,8 @@ Steps 3a1-3a2 are repeated until the data entered are correct.</p>
 </dd>
 <dt class="hdlist1"><a id="undoable-commands"></a> Undoable commands</dt>
 <dd>
-<p>Commands that modify the bookmark list or reminders, which includes <code>add</code>, <code>edit</code>, <code>delete</code>, <code>clear</code>, <code>reminder</code>,
-<code>reminder edit</code>, and <code>reminder delete</code></p>
+<p>Commands that modify the bookmark list, reminders, folders or annotations, which include <code>add</code>, <code>edit</code>, <code>delete</code>, <code>clear</code>, <code>reminder</code>,
+<code>reminder-edit</code>, <code>reminder-delete</code>, <code>folder</code>, <code>folder-edit</code>, <code>folder-delete</code>, <code>autotag</code>, <code>autotag-delete</code>, <code>annotate</code>, <code>annotate-delete</code>, <code>annotate-edit</code>, etc</p>
 </dd>
 </dl>
 </div>
@@ -2409,14 +2465,14 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First bookmark is deleted from the list. Details of the deleted bookmark shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First bookmark is deleted from the list. Details of the deleted bookmark shown in the status message.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
 Expected: No bookmark is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect <code>delete</code> commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -2429,7 +2485,162 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
+<h3 id="opening-a-bookmark"><a class="link" href="#opening-a-bookmark">F.3. Opening a bookmark</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Opening a bookmark while all bookmarks are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. Multiple bookmarks in the list.</p>
+</li>
+<li>
+<p>Test case: <code>goto 1</code><br>
+   Expected: Tab view is switched to the online tab if the current view is not online tab.
+First bookmark is opened in the online tab.
+Details of the opened bookmark shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>goto 0</code><br>
+Expected: No bookmark is opened. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect <code>goto</code> commands to try: <code>goto</code>, <code>goto x</code> (where x is larger than the list size) <br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-bookmark-to-favorites"><a class="link" href="#adding-a-bookmark-to-favorites">F.4. Adding a bookmark to favorites</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a Favorite tag to a bookmark while all bookmarks are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. Multiple bookmarks in the list.
+The first bookmark does not contain <code>Favorite</code> tag.</p>
+</li>
+<li>
+<p>Test case: <code>favorite 1</code> or <code>fav 1</code><br>
+   Expected: A <code>Favorite</code> tag is added to the first bookmark and the bookmark also appears in the list
+   of favorite bookmarks in the top right corner of the dashboard tab.
+Details of the bookmark shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>fav 0</code><br>
+Expected: No bookmark is tagged <code>Favorite</code>. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect <code>favorite</code> commands to try: <code>favorite</code>, <code>favorite x</code> (where x is larger than the list size) <br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-commands"><a class="link" href="#undoing-previous-commands">F.5. Undoing previous commands</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Undoing the most recent undoable command</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. Multiple bookmarks in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code> followed by <code>undo</code><br>
+   Expected: The deleted bookmark after the first command re-appears in the bookmark list.
+Details of the <code>delete</code> action shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Undoing multiple previous undoable commands</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. More than two bookmarks in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code> followed by <code>delete 1</code> and then <code>undo 2</code><br>
+   Expected: The deleted bookmarks after the first two command re-appear in the bookmark list.
+Details of the two reverted <code>delete</code> actions shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>undo 0</code><br>
+Expected: No action is undone. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect <code>undo</code> commands to try: <code>undo</code>, <code>undo x</code> (where x is larger than the maximum number of undoable actions) <br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-previous-undo-commands"><a class="link" href="#redoing-previous-undo-commands">F.6. Redoing previous undo commands</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Redoing the most recent undo command</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. Multiple bookmarks in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code> followed by <code>undo</code> and <code>redo</code><br>
+   Expected: The deleted bookmark after the first command re-appears in the bookmark list.
+After the <code>redo</code> command, the deleted bookmark disappears from the bookmark list again.
+Details of the restored <code>delete</code> action shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Redoing multiple previous undo commands</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookmarks using the <code>list</code> command. More than two bookmarks in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code> followed by <code>delete 1</code> and <code>undo 2</code>, then <code>redo 2</code><br>
+   Expected: The two deleted bookmarks after the first two command re-appear in the bookmark list after the <code>undo 2</code> command.
+After the <code>redo 2</code> commands, the two bookmarks get deleted again.
+Details of the two restored <code>delete</code> actions shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>redo 0</code><br>
+Expected: No action is redone. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect <code>redo</code> commands to try: <code>redo</code>, <code>redo x</code> (where x is larger than the maximum number of actions to redo) <br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.7. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2449,4 +2660,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 23:10:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:30:15 UTC</div></div></div></body></html>

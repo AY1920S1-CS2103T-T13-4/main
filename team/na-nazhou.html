@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Na Nazhou - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Na Nazhou - Project Portfolio</title><link rel="stylesheet" href="./gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mark</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T13-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Na Nazhou - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mark</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T13-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Na Nazhou - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-mark"><a class="link" href="#project-mark">PROJECT: Mark</a></h2>
 <div class="sectionbody">
 
@@ -9,47 +9,81 @@
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p><strong>Mark</strong> is designed for those who prefer to use a desktop application for managing bookmarks as well as tasks related to web pages.
+More importantly, it is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>Mark is morphed from an existing desktop Java application <a href="https://nus-cs2103-ay1920s1.github.io/addressbook-level3/">Address Book</a> and several
+enhancements were made to it over a period of 8 weeks by my team of 5 software developers.
+The following sections document all the contributions that I have made to Mark.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of Contributions</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Here is a summary of my personal contributions to the team project over the 8 weeks. All the code contribution
+ can be found <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=na-nazhou&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=Na-Nazhou&amp;tabRepo=AY1920S1-CS2103T-T13-4%2Fmain%5Bmaster%5D">here</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="major-enhancement-undo-redo-a-specific-number-of-previous-commands"><a class="link" href="#major-enhancement-undo-redo-a-specific-number-of-previous-commands">Major Enhancement: Undo/Redo a specific number of previous commands</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p><strong>What it does</strong>:
+This feature allows the user to undo a given number previous undoable commands (i.e. commands that alter the state
+of bookmarks or reminders). Previous undo commands can also be reversed by specifying the number
+of actions the undo command has undone. A list of actions undone/redone by the user will also be shown
+to the user as a command result displayed in the result display box after each undo/redo command.</p>
 </li>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p><strong>Justification</strong>:
+This feature improves Mark significantly because a user can make mistakes in commands and the application should provide a convenient way to rectify them. In addition, allowing
+users to specify the number of actions to undo/redo greatly improves users' productivity as they can now undo/redo multiple actions using one command
+instead to typing undo/redo repeatedly.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p><strong>Highlights</strong>:
+This enhancement affects existing commands and commands to be added in future.
+An in-depth analysis of design alternatives was required.
+The implementation too was challenging as it required changes to existing commands.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
-</li>
-<li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p><strong>Credits</strong>:
+Basic idea from <a href="https://github.com/se-edu/addressbook-level4">AddressBook (Level 4)</a></p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="minor-enhancements"><a class="link" href="#minor-enhancements">Minor Enhancements</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Added a <code>goto</code> command that can immediately open a bookmark in the embedded web view of the app</p>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p>Added support for opening any bookmark by double clicking the bookmark in either bookmark list, folder tree view or favorite bookmark list
+in the GUI</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Added a <code>favorite</code> command that can add an existing bookmark to the list of favorite bookmarks and a separate list of
+of favorite bookmarks to the dashboard tab of the app</p>
 </li>
 <li>
-<p><strong>Other contributions</strong>:</p>
+<p>Improved the existing <code>add</code> command to support bookmarking current web page by supplying a keyword <code>this</code>
+in place of the <code>URL</code> field</p>
+</li>
+<li>
+<p>Improved the existing <code>find</code> command to support filtering bookmarks by tags and/or folders</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other Contributions</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -57,20 +91,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
-</li>
-</ul>
-</div>
+<p>Set up the team organisation and team repo</p>
 </li>
 <li>
-<p>Enhancements to existing features:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Managed issue tracker and milestones for team repo</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Managed release <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/releases/tag/v1.3"><code>v1.3</code></a> on GitHub</p>
 </li>
 </ul>
 </div>
@@ -80,7 +107,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Migrated Developer Guide from Address Book to Mark and added the user stories: <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/7">#7</a></p>
 </li>
 </ul>
 </div>
@@ -90,16 +117,11 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial reviews): <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/14">#14</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/66">#66</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/73">#73</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/75">#75</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/112">#112</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pull/153">#153</a><br>
+A complete list of PRs reviewed can be found <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3ANa-Nazhou">here</a>.</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
+<p>Reported bugs and suggestions for the team project: <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/issues/85">#85</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/issues/102">#102</a>, <a href="https://github.com/AY1920S1-CS2103T-T13-4/main/issues/170">#170</a></p>
 </li>
 </ul>
 </div>
@@ -109,41 +131,52 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
+<p>Integrated several CI tools (Travis, AppVeyor) to the team repo</p>
 </li>
 <li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Added additional tools (Codacy, Netlify and Coveralls) to the team repo</p>
+</li>
+<li>
+<p>Added some useful GitHub plugins (WIP bot, PR Triage) to the team repo</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="opening-a-bookmark-strong-code-goto-code-strong"><a class="link" href="#opening-a-bookmark-strong-code-goto-code-strong">Opening a bookmark: <strong><code>goto</code></strong></a></h4>
 <div class="paragraph">
-<p>Opens the specified the bookmark from the bookmark manager.</p>
+<p>I wrote about the usage of <code>goto</code>, <code>favorite</code>, <code>undo</code> and <code>redo</code> commands for the User Guide.
+Given below are sections I contributed to the User Guide.
+They showcase my ability to write documentation targeting end-users.</p>
+</div>
+<div class="sect2">
+<h3 id="opening-a-bookmark-strong-code-goto-code-strong"><a class="link" href="#opening-a-bookmark-strong-code-goto-code-strong">Opening a bookmark: <strong><code>goto</code></strong></a></h3>
+<div class="paragraph">
+<p>This command opens the specified the bookmark from the bookmark manager.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>goto</strong> INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>list</strong></code><br>
+<code><strong>goto</strong> 1</code><br>
+Opens the first bookmark in the bookmark manager.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -162,26 +195,17 @@
 </div>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-bookmark-to-favorites-strong-code-favorite-fav-code-strong"><a class="link" href="#adding-a-bookmark-to-favorites-strong-code-favorite-fav-code-strong">Adding a bookmark to Favorites: <strong><code>favorite|fav</code></strong></a></h3>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>list</strong></code><br>
-<code><strong>goto</strong> 1</code><br>
-Opens the first bookmark in the bookmark manager.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-a-bookmark-to-favorites-strong-code-favorite-fav-code-strong"><a class="link" href="#adding-a-bookmark-to-favorites-strong-code-favorite-fav-code-strong">Adding a bookmark to Favorites: <strong><code>favorite|fav</code></strong></a></h4>
-<div class="paragraph">
-<p>Adds a Favorite tag to the specified bookmark.</p>
+<p>This command adds a <code>Favorite</code> tag to the specified bookmark.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>favorite|fav</strong> INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -219,61 +243,41 @@ Adds a Favorite tag to the second bookmark in the bookmark manager.</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="undoing-previous-commands-strong-code-undo-code-strong"><a class="link" href="#undoing-previous-commands-strong-code-undo-code-strong">Undoing previous commands: <strong><code>undo</code></strong></a></h4>
+<div class="sect2">
+<h3 id="undoing-previous-commands-strong-code-undo-code-strong"><a class="link" href="#undoing-previous-commands-strong-code-undo-code-strong">Undoing previous commands: <strong><code>undo</code></strong></a></h3>
 <div class="paragraph">
-<p>Restores the list to the state before the given number of previous undoable commands were
+<p>If you mistakenly enter a command that permanently changes Mark, do not worry, you can always use <code>undo</code> to
+rectify the mistake! This command restores Mark to the state before the given number of previous undoable commands were
 executed.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>undo</strong> [STEP=1]</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Undoable commands include commands that modify the bookmark list or
-reminders, which includes <code>add</code>, <code>edit</code>, <code>delete</code>, <code>clear</code>, <code>reminder</code>,
-<code>reminder edit</code>, <code>reminder delete</code>, etc).</p>
-</li>
-<li>
-<p>The step must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, …​</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>For example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>undo</strong></code><br>
-Restores the list to the state before the previous undoable command was executed.</p>
+<p>When you accidentally delete a wrong bookmark and you want to bring it back. There is no
+need for you to manually add that bookmark back as <code>undo</code> will do the magic for you. Just input <code>undo</code>
+in the command box, the deleted bookmark will reappear in your bookmark list.</p>
+</li>
+<li>
+<p>Suppose you have entered two <code>delete</code> commands, <code><strong>delete</strong> 1</code> and <code><strong>delete</strong> 2</code>, and now you
+want to get back both bookmarks, a possible way is enter <code>undo</code> twice. Besides, Mark also
+offers an alternative where you can just type <code>undo 2</code> to undo these two commands.</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="redoing-previously-undone-commands-strong-code-redo-code-strong"><a class="link" href="#redoing-previously-undone-commands-strong-code-redo-code-strong">Redoing previously undone commands: <strong><code>redo</code></strong></a></h4>
+<div class="sect2">
+<h3 id="redoing-previously-undone-commands-strong-code-redo-code-strong"><a class="link" href="#redoing-previously-undone-commands-strong-code-redo-code-strong">Redoing previously undone commands: <strong><code>redo</code></strong></a></h3>
 <div class="paragraph">
-<p>Reverses the given number of <code><strong>undo</strong></code> commands.</p>
+<p>This command reverses the given number of undone actions.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>redo</strong> [STEP=1]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The step must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, …​</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -284,7 +288,29 @@ Restores the list to the state before the previous undoable command was executed
 <p><code><strong>redo</strong></code><br>
 Reverses the most recent <code><strong>undo</strong></code> command.</p>
 </li>
+<li>
+<p><code><strong>delete</strong> 1</code><br>
+<code><strong>delete</strong> 2</code><br>
+<code><strong>undo</strong> 2</code><br>
+<code><strong>redo</strong> 2</code><br>
+Restores the bookmark list to the state before the <code><strong>undo</strong> 2</code> command was executed. The
+two bookmarks get deleted again.</p>
+</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>STEP</code> must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -292,19 +318,13 @@ Reverses the most recent <code><strong>undo</strong></code> command.</p>
 <div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>I modified the section about logic component in the Developer Guide and
+added the description of the architecture and some use cases of Undo/Redo feature to the Developer
+Guide as well.
+Given below are sections I contributed to the Developer Guide.
+They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</p>
+</div>
 <div class="sect2">
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic component</a></h3>
 <div class="paragraph">
@@ -369,29 +389,43 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 <div class="sect2">
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo feature</a></h3>
+<div class="paragraph">
+<p>The Undo and Redo feature are crucial to give users the flexibility of reverting wrongly executed commands.
+This section explains the implementation of the undo/redo mechanism as well as some design considerations
+when implementing this feature.</p>
+</div>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedMark</code>.
 It extends <code>Mark</code> with an undo/redo history, stored internally as a list of <code>markStateRecord</code> and <code>currentPointer</code>.
-Additionally, it implements the following operations:</p>
+The class diagram for <code>MarkStateRecord</code> and its relationship with <code>ReadonlyMark</code>, <code>Mark</code> and <code>VersionedMark</code> is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MarkStateRecordClassDiagram.png" alt="MarkStateRecordClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>As shown in the class diagram, <code>VersionedMark</code> implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedMark#save()</code>&#8201;&#8212;&#8201;Saves the current Mark state and the corresponding record to its history.</p>
+<p><code>VersionedMark#save(String record)</code>&#8201;&#8212;&#8201;Saves the current Mark state and the corresponding record to its history.</p>
 </li>
 <li>
-<p><code>VersionedMark#undo()</code>&#8201;&#8212;&#8201;Restores the previous Mark state from its history and returns the record.</p>
+<p><code>VersionedMark#undo(int step)</code>&#8201;&#8212;&#8201;Undoes the given number of actions and returns the record which
+consists of the list of actions being undone.</p>
 </li>
 <li>
-<p><code>VersionedMark#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone Mark state from its history and returns the record for that
-state.</p>
+<p><code>VersionedMark#redo(int step)</code>&#8201;&#8212;&#8201;Redoes the given number actions and returns the record which
+consists of the list of actions being undone.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#saveMark()</code>, <code>Model#undoMark()</code> and <code>Model#redoMark()</code>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#saveMark(String record)</code>, <code>Model#undoMark(int step)</code> and <code>Model#redoMark(int step)</code>
 respectively.</p>
 </div>
 <div class="paragraph">
@@ -408,8 +442,8 @@ Mark state and an empty record, and the <code>currentPointer</code> pointing to 
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>delete 5</code> command to delete the 5th bookmark in the Mark. The <code>delete</code> command calls
-<code>Model#saveMark()</code>, causing the modified state of the Mark and the record of the command after command execution to be
-saved in the <code>markStateRecords</code>, and the <code>currentPointer</code> is shifted to the newly inserted state record.</p>
+<code>Model#saveMark(String record)</code>, causing the modified state of the Mark and the record of the command after command execution
+to be saved in the <code>markStateRecords</code>, and the <code>currentPointer</code> is shifted to the newly inserted state record.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -418,7 +452,7 @@ saved in the <code>markStateRecords</code>, and the <code>currentPointer</code> 
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes <code>add u/www.google.com &#8230;&#8203;</code> to add a new bookmark. The <code>add</code> command also calls
-<code>Model#saveMark()</code>,
+<code>Model#saveMark(String record)</code>,
 causing another modified Mark state and the record to be saved into the <code>markStateRecords</code>, and the <code>currentPointer</code> is
 again shifted to the newly inserted state record..</p>
 </div>
@@ -434,7 +468,7 @@ again shifted to the newly inserted state record..</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#saveMark()</code>, so the Mark state will not be saved into the
+If a command fails its execution, it will not call <code>Model#saveMark(String record)</code>, so the Mark state will not be saved into the
 <code>markStateRecords</code>.
 </td>
 </tr>
@@ -442,7 +476,8 @@ If a command fails its execution, it will not call <code>Model#saveMark()</code>
 </div>
 <div class="paragraph">
 <p>Step 4. The user now decides that adding the bookmark was a mistake, and decides to undo that action by executing the
-<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoMark()</code>, which will shift the <code>currentPointer</code> once to the left,
+<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoMark(1)</code> since by default the number of steps
+to undo is 1 if not specified. This command shifts the <code>currentPointer</code> once to the left,
 pointing it to the previous state record, and restores the Mark to that state.</p>
 </div>
 <div class="imageblock">
@@ -459,8 +494,8 @@ pointing it to the previous state record, and restores the Mark to that state.</
 <td class="content">
 If the <code>currentPointer</code> is at index 0, pointing to the initial Mark state, then there are no previous Mark states to
 restore.
-The <code>undo</code> command uses <code>Model#canUndoMark()</code> to check if this is the case. If so, it will return an error to the user
-rather than attempting to perform the undo.
+The <code>undo</code> command uses <code>Model#canUndoMark(1)</code> to check the if there are enough commands to undo.
+In this case, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -487,8 +522,8 @@ the lifeline reaches the end of diagram.
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoMark()</code>, which shifts the <code>currentPointer</code> once to the right,
-pointing to the previously undone state record, and restores the Mark to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoMark(int step)</code>, which shifts the <code>currentPointer</code> to the right by the given number of steps,
+and restores the Mark to the state corresponding to the <code>currentPointer</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -498,15 +533,15 @@ pointing to the previously undone state record, and restores the Mark to that st
 </td>
 <td class="content">
 If the <code>currentPointer</code> is at index <code>markStateRecords.size() - 1</code>, pointing to the latest Mark state, then there
-are no undone Mark states to restore. The <code>redo</code> command uses <code>Model#canRedoMark()</code> to check if this is
-the case. If so, it will return an error to the user rather than attempting to perform the redo.
+are no undone Mark states to restore. The <code>redo</code> command uses <code>Model#canRedoMark(1)</code> to check the if there are enough commands to redo.
+In this case, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
 <p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the Mark, such as <code>find</code>, will
-usually not call <code>Model#saveMark()</code>, <code>Model#undoMark()</code> or <code>Model#redoMark()</code>. Thus, the <code>markStateRecords</code> remains
+usually not call <code>Model#saveMark(String record)</code>, <code>Model#undoMark(int step)</code> or <code>Model#redoMark(int step)</code>. Thus, the <code>markStateRecords</code> remains
 unchanged.</p>
 </div>
 <div class="imageblock">
@@ -515,7 +550,7 @@ unchanged.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#saveMark()</code>. Since the <code>currentPointer</code> is not pointing at the end
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#saveMark(String record)</code>. Since the <code>currentPointer</code> is not pointing at the end
 of the <code>markStateRecords</code>, all state records after the <code>currentPointer</code> will be purged.
 We designed it this way because it no longer makes sense to redo the <code>add u/www.google.com &#8230;&#8203;</code> command. This is the
 behavior that most modern desktop applications follow.</p>
@@ -536,6 +571,9 @@ behavior that most modern desktop applications follow.</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p>This section explains some of the design considerations we had when implementing this feature.</p>
+</div>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -561,7 +599,7 @@ behavior that most modern desktop applications follow.</p>
 <p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the bookmark being deleted).</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: Must ensure that the implementation of each individual command are correct.</p>
 </li>
 </ul>
 </div>
@@ -602,7 +640,47 @@ undo stack and pushing it into the redo stack. There is no way to pop multiple s
 </li>
 </ul>
 </div>
-<h3 id="UC09" class="discrete">Use case: UC09 - Undo previous <a href="#undoable-commands">undoable commands</a></h3>
+</div>
+<div class="sect4">
+<h5 id="aspect-commands-to-include-for-undo-redo"><a class="link" href="#aspect-commands-to-include-for-undo-redo">Aspect: Commands to include for undo/redo</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Include only commands that modify the state of Mark data.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only meaningful app data is stored, less memory is consumed</p>
+</li>
+<li>
+<p>Cons: Unable to retrieve commands that do not alter the state of Mark, such as <code>find</code>, <code>list</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Include all commands</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: All commands can be undone and redone</p>
+</li>
+<li>
+<p>Cons: More data to be stored and these data might not be meaningful to the users. More data related to
+Command class also needs to be stored and VersionedMark might need to depend on Logic which breaks the layered architecture of the existing application</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-cases-for-undo-redo"><a class="link" href="#use-cases-for-undo-redo">Use Cases for Undo/Redo</a></h3>
+<div class="sect3">
+<h4 id="use-case-uc09-undo-previous-undoable-commands"><a class="link" href="#use-case-uc09-undo-previous-undoable-commands">Use case: UC09 - Undo previous undoable commands</a></h4>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -636,7 +714,9 @@ undoable command was executed.</p>
 </li>
 </ul>
 </div>
-<h3 id="UC10" class="discrete">Use case: UC10 - Redo previously undone commands</h3>
+</div>
+<div class="sect3">
+<h4 id="use-case-uc10-redo-previously-undone-commands"><a class="link" href="#use-case-uc10-redo-previously-undone-commands">Use case: UC10 - Redo previously undone commands</a></h4>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -672,5 +752,4 @@ undoable command was executed.</p>
 </div>
 </div>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 23:10:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:30:15 UTC</div></div></div></body></html>
