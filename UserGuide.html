@@ -697,7 +697,7 @@ it is added to the root folder and has the default remark "-".</p>
 <p>Any number of tags can be added using <code>t/</code> (including 0).</p>
 </li>
 <li>
-<p><code>FOLDER</code> must be an existing folder (see <a href="#folder">Section 3.3.3, &#8220;Adding a new folder: <strong><code>folder</code></strong>&#8221;</a>).</p>
+<p><code>FOLDER</code> must be an existing folder (see <a href="#folder">Section 3.3.3, &#8220;Adding a folder: <strong><code>folder</code></strong>&#8221;</a>).</p>
 </li>
 <li>
 <p>The keyword <code>this</code> can be used in place of a URL to bookmark the current page,
@@ -886,15 +886,66 @@ Adds a Favorite tag to the second bookmark in the bookmark manager.</p>
 <div class="sect2">
 <h3 id="folders"><a class="link" href="#folders">3.3. Folders</a></h3>
 <div class="paragraph">
-<p>The following commands carry out operations on folders in Mark.</p>
+<p>The following commands carry out operations on folders in Mark.
+The results of these operations can be viewed in the folder hierarchy of dashboard tab.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The bookmarks that are displayed in the folder hierarchy correspond to the bookmarks in the bookmarks list on the left.<br>
+<br>
+For example, if you have have just performed a <code>find</code> command and the bookmark list shrinks from 100 entries to just 10, the folder hierarchy will also
+shrink from showing 100 bookmarks to 10.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can use the <code>list</code> command to see all your bookmarks in the folder hierarchy.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="expanding-the-folder-hierarchy-strong-code-expand-code-strong"><a class="link" href="#expanding-the-folder-hierarchy-strong-code-expand-code-strong">3.3.1. Expanding the folder hierarchy: <strong><code>expand</code></strong></a></h4>
 <div class="paragraph">
-<p>Expands the folder hierarchy by the specified number of levels.</p>
+<p>If you want to expand all unexpanded folders, use this command.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>expand</strong> [LEVEL=1]</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You want to expand all unexpanded folders by one level with just one command. Type <code><strong>expand</strong></code> in the command box and hit <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpandCommandUi1.png" alt="ExpandCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>You see all folders expanded by one level.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpandCommandUi2.png" alt="ExpandCommandUi2">
+</div>
+</div>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -914,7 +965,7 @@ Adds a Favorite tag to the second bookmark in the bookmark manager.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -928,10 +979,33 @@ Expands the folder hierarchy by 3 levels.</p>
 <div class="sect3">
 <h4 id="collapsing-the-folder-hierarchy-strong-code-collapse-code-strong"><a class="link" href="#collapsing-the-folder-hierarchy-strong-code-collapse-code-strong">3.3.2. Collapsing the folder hierarchy: <strong><code>collapse</code></strong></a></h4>
 <div class="paragraph">
-<p>Collapses the folder hierarchy by the specified number of levels.</p>
+<p>If you have too many expanded folders and want to collapse them, use this command.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>collapse</strong> [LEVEL=1]</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You want to collapse the deepest expanded folders by one level with just one command. Type <code><strong>collapse</strong></code> in the command box and hit <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/CollapseCommandUi1.png" alt="CollapseCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>You see the deepest expanded folders collapsed by one level.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/CollapseCommandUi2.png" alt="CollapseCommandUi2">
+</div>
+</div>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -951,24 +1025,47 @@ Expands the folder hierarchy by 3 levels.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other xamples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>collapse</strong> 1</code><br>
-Collapses the folder hierarchy by 1 level.</p>
+<p><code><strong>collapse</strong> 9999</code><br>
+Collapses the folder hierarchy by 9999 levels, most likely collapsing them all the way.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="folder"><a class="link" href="#folder">3.3.3. Adding a new folder: <strong><code>folder</code></strong></a></h4>
+<h4 id="folder"><a class="link" href="#folder">3.3.3. Adding a folder: <strong><code>folder</code></strong></a></h4>
 <div class="paragraph">
-<p>Creates a new folder for organizing bookmarks into.</p>
+<p>When your bookmark list is getting too long, you may want to use this command to create new folders to organize bookmarks into.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>folder</strong> FOLDER_NAME [p/PARENT_FOLDER=ROOT]</code></p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You notice you have 20 bookmarks all related to CS2103T. You decide to create a folder for them, so you enter the command <code><strong>folder</strong> CS2103T</code> and hit <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFolderCommandUi1.png" alt="AddFolderCommandUi1">
+</div>
+</div>
+</li>
+<li>
+<p>You see a new empty folder <code>CS2103T</code> appear in the dashboard.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFolderCommandUi2.png" alt="AddFolderCommandUi2">
+</div>
+</div>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -994,7 +1091,7 @@ Collapses the folder hierarchy by 1 level.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Other examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1019,7 +1116,7 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 <div class="ulist">
 <ul>
 <li>
-<p>You recently broke up, and want to edit the folder <code>Dear</code> containing all your previous memories to <code>Ex</code>. So you enter the command <code><strong>folder-edit</strong> Dear t/Ex</code> and hit enter.</p>
+<p>You recently broke up, and want to edit the folder <code>Dear</code> containing all your previous memories to <code>Ex</code>. So you enter the command <code><strong>folder-edit</strong> Dear t/Ex</code> and hit <kbd>Enter</kbd>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditFolderCommandUi1.png" alt="EditFolderCommandUi1">
@@ -1068,7 +1165,7 @@ Creates a new folder named <code>CS2103</code> under the parent folder <code>NUS
 <div class="ulist">
 <ul>
 <li>
-<p>You see an unused bookmark <code>CS2101</code> in the Dashboard, and input <code><strong>folder-delete</strong> CS2101</code> into the command box.</p>
+<p>You see an unused folder <code>CS2101</code> in the Dashboard, and input <code><strong>folder-delete</strong> CS2101</code> into the command box.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeleteFolderCommandUi1.png" alt="DeleteFolderCommandUi1">
@@ -2333,4 +2430,4 @@ alphanumeric or special characters.<br>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:31:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:35:00 UTC</div></div></div></body></html>

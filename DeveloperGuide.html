@@ -42,8 +42,8 @@
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-bookmark">F.2. Deleting a bookmark</a></li>
+<li><a href="#testing-of-addressbook-3-features">F.1. Testing of AddressBook 3 features</a></li>
+<li><a href="#testing-of-folders">F.2. Testing of folders</a></li>
 <li><a href="#opening-a-bookmark">F.3. Opening a bookmark</a></li>
 <li><a href="#adding-a-bookmark-to-favorites">F.4. Adding a bookmark to favorites</a></li>
 <li><a href="#undoing-previous-commands">F.5. Undoing previous commands</a></li>
@@ -338,7 +338,7 @@ Mark. Each <code>Mark</code>, in turn, comprises a <code>UniqueBookmarkList</cod
 <div class="title">Figure 9. Structure of the Bookmark Package</div>
 </div>
 <div class="paragraph">
-<p>More details regarding the implementation of Folders can be found in <a href="#Folder feature">[Folder feature]</a>.</p>
+<p>More details regarding the implementation of Folders can be found in <a href="#folders-feature">Section 4.4, &#8220;Folders feature&#8221;</a>.</p>
 </div>
 <div id="annotation-cd" class="imageblock">
 <div class="content">
@@ -1244,8 +1244,16 @@ makes it difficult to separate the responsibility. Hence the first alternative i
 </div>
 <div class="sect2">
 <h3 id="folders-feature"><a class="link" href="#folders-feature">4.4. Folders feature</a></h3>
+<div class="paragraph">
+<p>This section aims to explore the implementation of Mark&#8217;s folders and some design considerations.</p>
+</div>
 <div class="sect3">
 <h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The following two sections will explain in more detail how the backend and frontend of this feature works.</p>
+</div>
+<div class="sect4">
+<h5 id="model-implementation-of-folders"><a class="link" href="#model-implementation-of-folders">Model implementation of folders</a></h5>
 <div class="paragraph">
 <p>A bookmark can be in a folder, and a folder can be nested within other folders for traditional directory organization.</p>
 </div>
@@ -1319,13 +1327,52 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 <p>Finally, the user sees his folder added successfully in the folder hierarchy.</p>
 </div>
 </div>
+<div class="sect4">
+<h5 id="ui-implementation-of-the-expand-command"><a class="link" href="#ui-implementation-of-the-expand-command">UI implementation of the expand command</a></h5>
+<div class="paragraph">
+<p>Mark displays the folders and their bookmarks in a JavaFX <code>TreeView</code>, and listens for any updates to the bookmarks
+or the folder structure via <code>Observable</code> s so that the UI can also be updated accordingly.</p>
+</div>
+<div class="paragraph">
+<p>As Mark is mainly a CLI-based application, the <code>expand</code> command is provided to allow users to "click" on all unexpanded folders.</p>
+</div>
+<div class="paragraph">
+<p>As the underlying folder structure is not altered, <code>Oberservable</code> s cannot help us and so the command must send a signal to the UI that
+an <code>expand</code> command needs to be performed.</p>
+</div>
+<div class="paragraph">
+<p>Then, the following method is called to perform the expansion:</p>
+</div>
+<div class="listingblock">
+<div class="title">Code snippet from <code>seedu.mark.ui.FolderStructureTreeView</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="directive">private</span> <span class="type">void</span> expand(TreeItem&lt;<span class="predefined-type">String</span>&gt; node, <span class="type">int</span> levels) {
+    <span class="keyword">if</span> (levels &lt;= <span class="integer">0</span>) {
+        <span class="keyword">return</span>;
+    }
+    <span class="keyword">if</span> (node.isExpanded()) {
+        node.getChildren().forEach(child -&gt; expand(child, levels));
+    } <span class="keyword">else</span> {
+        node.expandedProperty().set(<span class="predefined-constant">true</span>); <span class="comment">// we expand it</span>
+        <span class="comment">// make sure all children are not expanded</span>
+        node.getChildren().forEach(child -&gt; child.setExpanded(<span class="predefined-constant">false</span>));
+        expand(node, levels - <span class="integer">1</span>);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The method recursively expands a folder, and then recursively calls itself on all of that folder&#8217;s subfolders until the desired level of expansion is achieved.</p>
+</div>
+</div>
+</div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design considerations</a></h4>
 <div class="paragraph">
 <p>The following are a few design considerations made in deciding how to implement the folders feature:</p>
 </div>
 <div class="sect4">
-<h5 id="aspect-how-the-folder-hierarchy-is-saved-into-storage"><a class="link" href="#aspect-how-the-folder-hierarchy-is-saved-into-storage">Aspect: How the folder hierarchy is saved into storage.</a></h5>
+<h5 id="aspect-how-the-folder-hierarchy-is-saved-into-storage"><a class="link" href="#aspect-how-the-folder-hierarchy-is-saved-into-storage">Aspect: How the folder hierarchy is saved into storage</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1333,23 +1380,27 @@ The lifeline for <code>AddFolderCommand</code> should end at the destroy marker 
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement</p>
+<p>Pros: Easy to implement. Adding another field to a bookmark is simple, and storing the folder structure
+on its own makes it more modular and easy to test as well.</p>
 </li>
 <li>
-<p>Cons: Easy for model to get into invalid state (e.g. bookmark has a folder that is not in the hierarchy)</p>
+<p>Cons: Easy for model to get into invalid state. For example, when renaming folders, the bookmarks containing the old folder names needs to be updated separately.
+This leads to tight coupling and potential future maintenance issues.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Change the bookmarks from being stored in a list to being stored as a hierarchy</p>
+<p><strong>Alternative 2:</strong> Change the bookmarks from being stored in a list to being stored in a tree structure.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Single source of truth, its folder is simply where it&#8217;s located</p>
+<p>Pros: Single source of truth, a bookmark&#8217;s folder is simply which part of the tree it resides in. When a folder is renamed,
+the bookmarks in that folder will still be in the same folder, so there is no extra step needed to update the bookmarks. This reduces coupling between the bookmarks and folders too.</p>
 </li>
 <li>
-<p>Cons: The whole <code>BookmarkList</code> abstraction will have to be rewritten</p>
+<p>Cons: The whole <code>BookmarkList</code> abstraction will have to be rewritten. It is also significantly harder (in terms of ease of implementation) to filter, edit, and add bookmarks due to having to use
+more advanced tree traversal algorithms as compared to naive list or array operations.</p>
 </li>
 </ul>
 </div>
@@ -2620,7 +2671,12 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
+<h3 id="testing-of-addressbook-3-features"><a class="link" href="#testing-of-addressbook-3-features">F.1. Testing of AddressBook 3 features</a></h3>
+<div class="paragraph">
+<p>The following are some tests for the original AddressBook 3.</p>
+</div>
+<div class="sect3">
+<h4 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1.1. Launch and Shutdown</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2653,12 +2709,9 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-bookmark"><a class="link" href="#deleting-a-bookmark">F.2. Deleting a bookmark</a></h3>
+<div class="sect3">
+<h4 id="deleting-a-bookmark"><a class="link" href="#deleting-a-bookmark">F.1.2. Deleting a bookmark</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2685,8 +2738,188 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing-of-folders"><a class="link" href="#testing-of-folders">F.2. Testing of folders</a></h3>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>ROOT</code> folder is the top-level folder where all other folders are descendents of. It cannot be added, deleted, edited, or be renamed to.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Do use <code>ROOT</code> as a folder name in folder commands in testing.</p>
+</div>
+<div class="sect3">
+<h4 id="expanding-the-folder-hierarchy"><a class="link" href="#expanding-the-folder-hierarchy">F.2.1. Expanding the folder hierarchy</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Expanding the folder hierarchy all the way</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There is at least one folder not expanded.</p>
+</li>
+<li>
+<p>Test case: <code>expand 9999</code> (assuming you have less than 9999 levels of folders)<br>
+Expected: The folder hierarchy should show all folders expanded.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Expanding the folder hierarchy while there is nothing left to expand</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Expand the folder hierarchy all the way, using <code>expand 9999</code> as in the previous test case.</p>
+</li>
+<li>
+<p>Test case: <code>expand</code> / <code>expand 10</code> / <code>expand 9999</code><br>
+Expected: The folder hierarchy should not change.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="collapsing-the-folder-hierarchy"><a class="link" href="#collapsing-the-folder-hierarchy">F.2.2. Collapsing the folder hierarchy</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Collapsing the folder hierarchy all the way</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There is at least one folder expanded.</p>
+</li>
+<li>
+<p>Test case: <code>collapse 9999</code> (assuming you have less than 9999 levels of folders)<br>
+Expected: The folder hierarchy should show all folders collapsed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Collapsing the folder hierarchy while there is nothing left to collapse</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Collapse the folder hierarchy all the way, using <code>collapse 9999</code> as in the previous test case.</p>
+</li>
+<li>
+<p>Test case: <code>collapse</code> / <code>collapse 10</code> / <code>collapse 9999</code><br>
+Expected: The folder hierarchy should not change.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-folders"><a class="link" href="#adding-folders">F.2.3. Adding folders</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an existing folder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one folder exists in Mark. Let the name of the folder be <code>X</code>.</p>
+</li>
+<li>
+<p>Test case: <code>folder X</code> / <code>folder X p/ROOT</code><br>
+Expected: An error occurs, saying <code>X</code> already exists.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a folder without specifiying its parent</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A folder named <code>X</code> that does not exist in Mark.</p>
+</li>
+<li>
+<p>Test case: <code>folder X</code><br>
+Expected: Folder <code>X</code> is added successfully to the <code>ROOT</code> folder.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-folders"><a class="link" href="#editing-folders">F.2.4. Editing folders</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a non-existing folder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A folder named <code>X</code> that does not exist in Mark.</p>
+</li>
+<li>
+<p>Test case: <code>folder-edit X t/anything</code><br>
+Expected: An error occurs, saying <code>X</code> does not exist.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Renaming an existing folder to another existing folder</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Two different folders named <code>X</code> and <code>Y</code> that exist in Mark.</p>
+</li>
+<li>
+<p>Test case: <code>folder-edit X t/Y</code> / <code>folder-edit Y t/X</code><br>
+Expected: An error occurs, saying that <code>X</code> (or <code>Y</code>) already exists.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-folders"><a class="link" href="#deleting-folders">F.2.5. Deleting folders</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a folder containing other bookmarks and/or folders</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A folder named <code>X</code> that contains other subfolders.</p>
+</li>
+<li>
+<p>Test case: <code>folder-delete X</code><br>
+Expected: An error occurs, saying that there are still bookmarks/folders in <code>X</code> and so cannot be deleted.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3011,4 +3244,4 @@ Expected: Annotation on the offline copy of the first bookmark is affected. Para
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:31:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:35:00 UTC</div></div></div></body></html>
