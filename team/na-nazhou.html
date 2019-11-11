@@ -14,7 +14,7 @@
 More importantly, it is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
 </div>
 <div class="paragraph">
-<p>Mark is morphed from an existing desktop Java application <a href="https://nus-cs2103-ay1920s1.github.io/addressbook-level3/">Address Book</a> and several
+<p>Mark is morphed from an existing desktop Java application <a href="https://nus-cs2103-ay1920s1.github.io/addressbook-level3/">Address Book (Level 3)</a> and several
 enhancements were made to it over a period of 8 weeks by my team of 5 software developers.
 The following sections document all the contributions that I have made to Mark.</p>
 </div>
@@ -24,7 +24,7 @@ The following sections document all the contributions that I have made to Mark.<
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">2. Summary of Contributions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here is a summary of my personal contributions to the team project over the 8 weeks. All the code contribution
+<p>Here is a summary of my personal contributions to the team project over the 8 weeks. All my code contributions
  can be found <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=na-nazhou&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=Na-Nazhou&amp;tabRepo=AY1920S1-CS2103T-T13-4%2Fmain%5Bmaster%5D">here</a>.</p>
 </div>
 <div class="sect2">
@@ -52,7 +52,7 @@ The implementation too was challenging as it required changes to existing comman
 </li>
 <li>
 <p><strong>Credits</strong>:
-Basic idea from <a href="https://github.com/se-edu/addressbook-level4">AddressBook (Level 4)</a></p>
+The basic idea is adapted from <a href="https://github.com/se-edu/addressbook-level4">AddressBook (Level 4)</a></p>
 </li>
 </ul>
 </div>
@@ -205,6 +205,22 @@ Opens the first bookmark in the bookmark manager.</p>
 <p>Format: <code><strong>favorite|fav</strong> INDEX</code></p>
 </div>
 <div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you want to add the first bookmark in the bookmark list to your favorite bookmarks,
+simply input <code><strong>favorite</strong> 1</code>, a <code>Favorite</code> tag will be added to the fist bookmark and the
+bookmark will also appear in the favorite bookmark list in the dashboard.</p>
+</li>
+<li>
+<p>Alternatively, you can also type a shorter command <code><strong>fav</strong> 1</code> to add the first bookmark to your
+favorite bookmarks as well.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
@@ -226,21 +242,6 @@ Opens the first bookmark in the bookmark manager.</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>favorite</strong> 1</code><br>
-Adds a Favorite tag to the first bookmark in the bookmark manager.</p>
-</li>
-<li>
-<p><code><strong>fav</strong> 2</code><br>
-Adds a Favorite tag to the second bookmark in the bookmark manager.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
@@ -270,6 +271,25 @@ offers an alternative where you can just type <code>undo 2</code> to undo these 
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>STEP</code> must be a positive integer <code>1</code>, <code>2</code>, <code>3</code>, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Undoable commands include commands that modify the bookmark list, folders,
+reminders or annotations, which includes <code>add</code>, <code>edit</code>, <code>delete</code>, <code>clear</code>, <code>reminder</code>,
+<code>folder</code>, <code>annotate</code>, etc).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="redoing-previously-undone-commands-strong-code-redo-code-strong"><a class="link" href="#redoing-previously-undone-commands-strong-code-redo-code-strong">3.4. Redoing previously undone commands: <strong><code>redo</code></strong></a></h3>
@@ -293,8 +313,8 @@ Reverses the most recent <code><strong>undo</strong></code> command.</p>
 <code><strong>delete</strong> 2</code><br>
 <code><strong>undo</strong> 2</code><br>
 <code><strong>redo</strong> 2</code><br>
-Restores the bookmark list to the state before the <code><strong>undo</strong> 2</code> command was executed. The
-two bookmarks get deleted again.</p>
+The <code><strong>redo</strong> 2</code> command restores the bookmark list to the state before the <code><strong>undo</strong> 2</code> command was executed.
+You will see the two bookmarks you just recovered get deleted again.</p>
 </li>
 </ul>
 </div>
@@ -319,7 +339,7 @@ two bookmarks get deleted again.</p>
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>I modified the section about logic component in the Developer Guide and
+<p>I modified the section about the logic component in the Developer Guide and
 added the description of the architecture and some use cases of Undo/Redo feature to the Developer
 Guide as well.
 Given below are sections I contributed to the Developer Guide.
@@ -752,4 +772,4 @@ undoable command was executed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:59:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:00:53 UTC</div></div></div></body></html>

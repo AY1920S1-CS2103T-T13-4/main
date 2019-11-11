@@ -417,8 +417,8 @@ Reverses the most recent <code><strong>undo</strong></code> command.</p>
 <code><strong>delete</strong> 2</code><br>
 <code><strong>undo</strong> 2</code><br>
 <code><strong>redo</strong> 2</code><br>
-Restores the bookmark list to the state before the <code><strong>undo</strong> 2</code> command was executed. The
-two bookmarks get deleted again.</p>
+The <code><strong>redo</strong> 2</code> command restores the bookmark list to the state before the <code><strong>undo</strong> 2</code> command was executed.
+You will see the two bookmarks you just recovered get deleted again.</p>
 </li>
 </ul>
 </div>
@@ -971,6 +971,31 @@ Deletes the 1st bookmark in the results of the find command.</p>
 <p>Format: <code><strong>favorite|fav</strong> INDEX</code></p>
 </div>
 <div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you want to add the first bookmark in the bookmark list to your favorite bookmarks,
+simply input <code><strong>favorite</strong> 1</code>, a <code>Favorite</code> tag will be added to the fist bookmark and the
+bookmark will also appear in the favorite bookmark list in the dashboard.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ui-screenshots/FavoriteCommandUI1.png" alt="FavoriteCommandUI1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternatively, you can also type a shorter command <code><strong>fav</strong> 1</code> to add the first bookmark to your
+favorite bookmarks as well.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
@@ -992,21 +1017,6 @@ Deletes the 1st bookmark in the results of the find command.</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>favorite</strong> 1</code><br>
-Adds a Favorite tag to the first bookmark in the bookmark manager.</p>
-</li>
-<li>
-<p><code><strong>fav</strong> 2</code><br>
-Adds a Favorite tag to the second bookmark in the bookmark manager.</p>
-</li>
-</ul>
 </div>
 <hr>
 </div>
@@ -2824,4 +2834,4 @@ alphanumeric or special characters.<br>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:59:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:00:53 UTC</div></div></div></body></html>
