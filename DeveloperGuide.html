@@ -387,8 +387,8 @@ tag or folder name. More details regarding the implementation of Folders can be 
 <p>The above diagram shows the structure of the Annotation package, which is accessed by <code>ModelManager</code> via <code>OfflineDocument</code>.
 An <code>OfflineDocument</code> consists of zero or more <code>Paragraph</code> objects, which are each identified by a <code>ParagraphIdentifier</code>.
 A <code>Paragraph</code> can either be a <code>TrueParagraph</code>, which has a <code>ParagraphContent</code> and zero or one <code>Annotation</code>,
-or a <code>PhantomParagraph</code>, which has no <code>ParagraphContent</code> but must have an <code>Annotation</code>.
-An <code>Annotation</code> consists of a <code>Highlight</code> and an <code>AnnotationNote</code>.</p>
+or a <code>PhantomParagraph</code>, which has no <code>ParagraphContent</code> but must have an <code>Annotation</code> with an <code>AnnotationNote</code>.
+In general, an <code>Annotation</code> consists of a <code>Highlight</code> and an <code>AnnotationNote</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2988,12 +2988,103 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exporting-data"><a class="link" href="#exporting-data">F.1.6. Exporting data</a></h4>
-
+<h4 id="exporting-mark-data"><a class="link" href="#exporting-mark-data">F.1.6. Exporting Mark data</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exporting data to a valid file</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: None. However, the expected outcome is written with the assumption that <code>mark.jar</code> is opened
+from a folder named [applicationHome] (replace this with the name of the folder that <code>mark.jar</code> is in).
+(Also, note that if a file named <code>myBookmarks.json</code> already exists in the folder <code>[applicationHome]/data/bookmarks/</code>,
+it will be overwritten.)</p>
+</li>
+<li>
+<p>Test case 1 (success): <code>export myBookmarks</code><br>
+Expected outcome: A file named <code>myBookmark.json</code> is created in the folder <code>[applicationHome]/data/bookmarks/</code>.
+(You will have to use your File Explorer/ bash (Windows)/ Finder/ terminal (Mac) to confirm this.)
+The file is identical to the <code>mark.json</code> file in the folder <code>[applicationHome]/data/</code>. This can be checked by
+using the <code>diff</code> utility on your laptop&#8217;s command line, or copying-and-pasting both files into
+<a href="https://www.diffchecker.com/" class="bare">https://www.diffchecker.com/</a> to compare them.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Other test cases you can copy-and-paste</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case 2 (error): <code>export myBookmarks.json</code><br>
+Expected outcome: The application shows an error message indicating that the provided file name should not include
+the <code>.json</code> file extension.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
-<h4 id="importing-data"><a class="link" href="#importing-data">F.1.7. Importing data</a></h4>
-
+<h4 id="importing-bookmarks"><a class="link" href="#importing-bookmarks">F.1.7. Importing bookmarks</a></h4>
+<div class="paragraph">
+<p>You may have to manipulate data in Mark or in the exported <code>.json</code> files to observe different results when
+importing bookmarks.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Attempting to import bookmarks from a file that does not contain new bookmarks</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Test case 1 from the manual instructions for <a href="#Exporting data">exporting data</a> has been
+successfully completed. No changes to bookmarks have been made.</p>
+</li>
+<li>
+<p>Test case 1 (success): <code>import myBookmarks</code><br>
+Expected outcome: The application shows a message indicating that no new bookmarks have been imported. A list of
+duplicate bookmarks is also provided.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Importing bookmarks from a file that contains some new bookmarks</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A valid data file <code>myBookmarks.json</code> exists in the folder <code>[applicationHome]/data/bookmarks</code>.
+Some bookmarks have been deleted since <code>export myBookmarks</code> was executed (e.g. <code>delete 4</code>, <code>delete 5</code>, <code>delete 6</code>).</p>
+</li>
+<li>
+<p>Test case 2 (success): <code>import myBookmarks</code><br>
+Expected outcome: The deleted bookmarks have been added to the bottom of the bookmark list, and they are in the
+correct folders. A folder named <code>ImportedBookmarks</code> has also been created.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Importing bookmarks into an empty Mark</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Mark is empty. You can do this by executing the <code>clear</code> command. (Don&#8217;t worry, as long as you
+do not exit the application, you will be able to recover your data later using <code>undo</code>.) Also, a valid data file named
+<code>myBookmarks.json</code> should exist in the folder <code>[applicationHome]/data/bookmarks</code>.</p>
+</li>
+<li>
+<p>Test case 3 (success): <code>import myBookmarks</code><br>
+Expected outcome: All the bookmarks have been imported to the folder <code>ImportedBookmarks</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3330,7 +3421,179 @@ Expected: Annotation on the offline copy of the first bookmark is affected. Para
 </div>
 <div class="sect2">
 <h3 id="testing-of-autotags"><a class="link" href="#testing-of-autotags">F.5. Testing of autotags</a></h3>
-
+<div class="sect3">
+<h4 id="creating-an-autotag"><a class="link" href="#creating-an-autotag">F.5.1. Creating an autotag</a></h4>
+<div class="paragraph">
+<p>General prerequisites: Sample Mark data are being used. Specific requirements for each test case are
+elaborated below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding autotags that do not immediately tag any bookmarks.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: <code>find t/Hidden</code> shows 0 bookmarks. There is no autotag named <code>Hidden</code>.</p>
+</li>
+<li>
+<p>Test case 1 (success): <code>autotag Hidden f/Secret</code><br>
+Expected outcomes: The autotag <code>Hidden</code> can be seen in the autotag panel on the <strong>Dashboard</strong>.
+Searching <code>find t/Hidden</code> results in 0 bookmarks being listed. Creating a folder named <code>Secret</code> (e.g. <code>folder Secret</code>)
+and adding a bookmark to the folder (e.g. <code>add n/Nope u/https://testingSecret.com f/Secret</code>) results in the new
+bookmark being tagged with <code>Hidden</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding autotags that immediately tag bookmarks.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: <code>find t/readLater</code> shows 0 bookmarks. There are 3 bookmarks with URLs containing
+<code>blog</code> or <code>medium</code>.</p>
+</li>
+<li>
+<p>Test case 2 (success): <code>autotag readLater u/blog u/medium nf/School</code><br>
+Expected outcome: The autotag <code>readLater</code> is added. <code>find t/readLater</code> shows 3 bookmarks, all of which have
+been tagged <code>readLater</code>. Adding a bookmark using <code>add n/Added Autotag1 u/https://blogger.org</code> results in the new
+bookmark being tagged, but the bookmark created by inputting <code>add n/Added Autotag2 u/https://blogspot.com f/School</code>
+is not tagged.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Trying to add autotags that already exist. Error messages will be shown.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: An autotag named <code>NUS</code> already exists.</p>
+</li>
+<li>
+<p>Test case 3 (error): <code>autotag NUS u/nus.edu.sg n/School f/School</code><br>
+Expected outcome: The application shows an error message indicating that an autotag with the given name already exists.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Other test cases that you can copy-and-paste:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case 4 (success): <code>autotag Bouncy n/Ball u/tennis nf/Dance</code></p>
+</li>
+<li>
+<p>Test case 5 (success): <code>autotag Quiz f/NUS f/Module nu/github nu/stackoverflow</code></p>
+</li>
+<li>
+<p>Test case 6 (success): <code>autotag LumiNUS u/luminus.nus.edu.sg nf/Miscellaneous</code></p>
+</li>
+<li>
+<p>Test case 7 (error): <code>autotag asdfjkl; n/Help</code><br>
+Expected outcome: The applications shows an error message indicating that tag names must be alphanumeric.</p>
+</li>
+<li>
+<p>Test case 8 (error): <code>autotag noConditions</code><br>
+Expected outcome: The applications shows an error message indicating that at least one condition must be specified.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-an-autotag"><a class="link" href="#editing-an-autotag">F.5.2. Editing an autotag</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing an autotag&#8217;s name</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: An autotag named <code>Video</code> already exists, but no autotag named <code>Videos</code> exists. The
+autotag <code>Video</code> tags bookmarks with URLs containing <code>youtube.com</code>.</p>
+</li>
+<li>
+<p>Test case 1 (success): <code>autotag-edit Video t/Videos</code><br>
+Expected outcome: The autotag&#8217;s name has been changed from <code>Video</code> to <code>Videos</code>. Bookmarks that match the original
+autotag conditions (i.e. URLs contain <code>youtube.com</code>) have been tagged <code>Videos</code>. None of the original tags were
+removed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing an autotag&#8217;s conditions</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: An autotag named <code>NUS</code> already exists.</p>
+</li>
+<li>
+<p>Test case 2 (success): <code>autotag-edit NUS n/School n/Uni n/NUS</code><br>
+Expected outcome: One autotag named <code>NUS</code> is shown on the Dashboard. The autotag conditions specify that
+bookmarks with names containing <code>School</code>, <code>Uni</code>, or <code>NUS</code> will be tagged.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-an-autotag"><a class="link" href="#deleting-an-autotag">F.5.3. Deleting an autotag</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting an autotag that already exists</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: An autotag named <code>Videos</code> already exists. (For example, if you followed test case 1 in the
+testing instructions for <code><strong>autotag-edit</strong></code>.)</p>
+</li>
+<li>
+<p>Test case 1 (success): <code>autotag-delete Videos</code><br>
+Expected outcome: The autotag <code>Videos</code> has been deleted and is no longer visible on the <strong>Dashboard</strong>. However,
+no bookmarks have been changed (you can verify this using <code>find t/Videos</code>).</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Trying to delete an autotag that does not exist</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: No autotag named <code>KittyKat</code> exists.</p>
+</li>
+<li>
+<p>Test case 2 (error): <code>autotag-delete KittyKat</code><br>
+Expected outcome: The application shows an error message indicating that no autotag with the given tag name was found.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Other test cases that you can copy-and-paste:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case 3 (error): <code>autotag-delete Videos some random stuff</code></p>
+</li>
+<li>
+<p>Test case 4 (error): <code>autotag-delete Videos t/HopingToRenameIt</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="testing-of-reminders"><a class="link" href="#testing-of-reminders">F.6. Testing of reminders</a></h3>
@@ -3464,4 +3727,4 @@ Expected: No website will show. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 06:35:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 09:29:16 UTC</div></div></div></body></html>
