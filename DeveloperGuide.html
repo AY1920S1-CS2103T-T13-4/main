@@ -2827,7 +2827,29 @@ These instructions only provide a starting point for testers to work on; testers
 <h3 id="testing-of-general-features"><a class="link" href="#testing-of-general-features">F.1. Testing of general features</a></h3>
 <div class="sect3">
 <h4 id="changing-tabs"><a class="link" href="#changing-tabs">F.1.1. Changing tabs</a></h4>
-
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Changing from one tab to another</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case 1: <code>tab 1</code><br>
+Expected: View switches to Dashboard tab.</p>
+</li>
+<li>
+<p>Test case 2: <code>tab on</code><br>
+Expected: View switches to Online tab.</p>
+</li>
+<li>
+<p>Test case 3: <code>tab off</code><br>
+Expected: View switches to Offline tab.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
 <h4 id="opening-a-bookmark"><a class="link" href="#opening-a-bookmark">F.1.2. Opening a bookmark</a></h4>
@@ -3261,9 +3283,6 @@ Expected: An error occurs, saying that there are still bookmarks/folders in <cod
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -3668,7 +3687,7 @@ Expected: No reminder is edited in the reminder list. Error details shown in the
 Expected: The first reminder in the list is deleted.</p>
 </li>
 <li>
-<p>Test case: `reminder-delete 0 `<br>
+<p>Test case: <code>reminder-delete 0</code><br>
 Expected: No reminder is deleted in the reminder list. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
@@ -3712,4 +3731,4 @@ Expected: No website will show. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:51:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:53:41 UTC</div></div></div></body></html>
